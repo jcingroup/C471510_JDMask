@@ -579,9 +579,10 @@
     <Content Include="Scripts\build\func\c-comm.js" />
     <Content Include="Scripts\build\func\inc\c-Comm.js" />
     <Content Include="Scripts\build\func\inc\c-ImgFileSort.js" />
+    <Content Include="Scripts\build\func\m-ChangePassword.js" />
     <Content Include="Scripts\build\func\m-login.js" />
-    <Content Include="Scripts\build\func\m-product.js" />
-    <Content Include="Scripts\build\func\m-purchase.js" />
+    <Content Include="Scripts\build\func\m-Menu.js" />
+    <Content Include="Scripts\build\func\m-news.js" />
     <Content Include="Scripts\build\func\m-Roles.js" />
     <Content Include="Scripts\build\func\m-sales.js" />
     <Content Include="Scripts\build\func\m-Users.js" />
