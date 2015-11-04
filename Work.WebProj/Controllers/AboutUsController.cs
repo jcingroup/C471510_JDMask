@@ -12,16 +12,11 @@ using DotWeb.CommSetup;
 using DotWeb.Controller;
 namespace DotWeb.Controllers
 {
-    public class IndexController : WebUserController
+    public class AboutUsController : WebUserController
     {
         public ActionResult Index()
         {
-            return View("Index");
-        }
-
-        public RedirectResult Login()
-        {
-            return Redirect("~/Base/Login");
+            return View("AboutUs");
         }
     }
 }

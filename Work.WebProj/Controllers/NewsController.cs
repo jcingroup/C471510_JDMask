@@ -12,16 +12,16 @@ using DotWeb.CommSetup;
 using DotWeb.Controller;
 namespace DotWeb.Controllers
 {
-    public class IndexController : WebUserController
+    public class NewsController : WebUserController
     {
-        public ActionResult Index()
+        public ActionResult list()
         {
-            return View("Index");
+            return View("News_list");
         }
 
-        public RedirectResult Login()
+        public ActionResult content()
         {
-            return Redirect("~/Base/Login");
+            return View("News_content");
         }
     }
 }
