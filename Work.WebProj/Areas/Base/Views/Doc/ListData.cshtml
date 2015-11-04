@@ -10,9 +10,11 @@
     <li><a href="~/Base/Doc/ListGrid"><i class="fa-cogs"></i> @ViewBag.MenuName</a></li>
     <li>@ViewBag.Caption</li>
 }
+@section IncludeCSS{
+}
 @section IncludeScript{
     @Html.Partial("Manage/JSGlobalVar")
-    <script src="~/Scripts/build/comminc.js"></script>
+    <script src="~/Scripts/build/commincx.js"></script>
 }
 @section sidebar{
     @Html.Partial("Manage/vucMenu")

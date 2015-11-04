@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4c0a31bda6c843f3b102292f00e4e1ad" Name="Diagram1">
+        <EntityTypeShape EntityType="C47A0_JDMaskModel.AspNetRoles" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="C47A0_JDMaskModel.AspNetUsers" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="C47A0_JDMaskModel.Department" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="C47A0_JDMaskModel.i_Currency" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="C47A0_JDMaskModel.i_IDX" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="C47A0_JDMaskModel.i_Lang" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="C47A0_JDMaskModel.i_Parm" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="C47A0_JDMaskModel.i_SN" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="C47A0_JDMaskModel.i_UserLoginLog" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="C47A0_JDMaskModel.Menu" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <AssociationConnector Association="C47A0_JDMaskModel.FK_AspNetUsers_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="C47A0_JDMaskModel.AspNetUserRoles" ManuallyRouted="false" />
+        <AssociationConnector Association="C47A0_JDMaskModel.MenuRole" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="C47A0_JDMaskModel.News" Width="1.5" PointX="8.375" PointY="6.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -197,18 +197,10 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Active\ActiveAreaRegistration.cs" />
-    <Compile Include="Areas\Active\Controllers\IssueDataController.cs" />
-    <Compile Include="Areas\Active\Controllers\PurchaseController.cs" />
-    <Compile Include="Areas\Active\Controllers\SalesController.cs" />
-    <Compile Include="Areas\Active\Controllers\ProductDataController.cs" />
+    <Compile Include="Areas\Active\Controllers\NewsDataController.cs" />
     <Compile Include="Areas\Base\Controllers\DocController.cs" />
     <Compile Include="Areas\Base\Controllers\LoginController.cs" />
-    <Content Include="Areas\Active\Views\ProductData\Category.cshtml" />
-    <Content Include="Areas\Active\Views\ProductData\Main.cshtml" />
-    <Content Include="Areas\Active\Views\Sales\Main.cshtml" />
-    <Content Include="Areas\Active\Views\Purchase\Main.cshtml" />
-    <Content Include="Areas\Active\Views\IssueData\Category.cshtml" />
-    <Content Include="Areas\Active\Views\IssueData\Main.cshtml" />
+    <Content Include="Areas\Active\Views\NewsData\Main.cshtml" />
     <None Include="Areas\Base\Controllers\ReportChartController.cs" />
     <Compile Include="Areas\Base\Controllers\MenuController.cs" />
     <Compile Include="Areas\Base\Controllers\RolesController.cs" />
@@ -217,13 +209,9 @@
     <Content Include="Areas\Base\Views\Login\index.tablet.cshtml" />
     <Compile Include="Controllers\AboutUsController.cs" />
     <Compile Include="Controllers\Api\GetActionController.cs" />
-    <Compile Include="Controllers\Api\IssueCategoryController.cs" />
     <Compile Include="Controllers\Api\MenuController.cs" />
-    <Compile Include="Controllers\Api\ProductCategoryController.cs" />
-    <Compile Include="Controllers\Api\IssueController.cs" />
-    <Compile Include="Controllers\Api\ProductController.cs" />
+    <Compile Include="Controllers\Api\NewsController.cs" />
     <Compile Include="Controllers\Api\RolesController.cs" />
-    <Compile Include="Controllers\Api\PurchaseController.cs" />
     <Compile Include="Controllers\Api\UsersController.cs" />
     <Compile Include="Controllers\ContactUsController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
@@ -606,9 +594,10 @@
     <Content Include="Scripts\build\func\c-comm.js" />
     <Content Include="Scripts\build\func\inc\c-Comm.js" />
     <Content Include="Scripts\build\func\inc\c-ImgFileSort.js" />
+    <Content Include="Scripts\build\func\m-ChangePassword.js" />
     <Content Include="Scripts\build\func\m-login.js" />
-    <Content Include="Scripts\build\func\m-product.js" />
-    <Content Include="Scripts\build\func\m-purchase.js" />
+    <Content Include="Scripts\build\func\m-Menu.js" />
+    <Content Include="Scripts\build\func\m-news.js" />
     <Content Include="Scripts\build\func\m-Roles.js" />
     <Content Include="Scripts\build\func\m-sales.js" />
     <Content Include="Scripts\build\func\m-Users.js" />
@@ -759,12 +748,7 @@
     <Content Include="Views\Shared\DisplayTemplates\MenuHelperModel.cshtml" />
     <TypeScriptCompile Include="Scripts\es6ts.ts" />
     <TypeScriptCompile Include="Scripts\src\tsx\c-comm.tsx" />
-    <TypeScriptCompile Include="Scripts\src\tsx\m-issue_category.tsx" />
-    <TypeScriptCompile Include="Scripts\src\tsx\m-issue.tsx" />
-    <TypeScriptCompile Include="Scripts\src\tsx\m-product_category.tsx" />
-    <TypeScriptCompile Include="Scripts\src\tsx\m-product.tsx" />
-    <TypeScriptCompile Include="Scripts\src\tsx\m-purchase.tsx" />
-    <TypeScriptCompile Include="Scripts\src\tsx\m-sales.tsx" />
+    <TypeScriptCompile Include="Scripts\src\tsx\m-news.tsx" />
     <TypeScriptCompile Include="Scripts\ts-def\commfunc.ts" />
     <TypeScriptCompile Include="Scripts\ts-def\commupload.ts" />
     <TypeScriptCompile Include="Scripts\ts-def\commwww.ts" />
@@ -845,10 +829,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Active\Views\ProductData\App_LocalResources\Main.cshtml.resx" />
-    <Content Include="Areas\Active\Views\Sales\App_LocalResources\Main.cshtml.resx" />
-    <Content Include="Areas\Active\Views\Purchase\App_LocalResources\Main.cshtml.resx" />
-    <Content Include="Areas\Active\Views\IssueData\App_LocalResources\Main.cshtml.resx" />
+    <Content Include="Areas\Active\Views\NewsData\App_LocalResources\Main.cshtml.resx" />
     <Content Include="Areas\Base\Views\Menu\App_LocalResources\Main.cshtml.resx" />
     <EmbeddedResource Include="_Code\RPTFile\MemeberLabel.rdlc" />
   </ItemGroup>

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="C45A0_SmithModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="C47A0_JDMaskModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AspNetRoles">
           <Key>
             <PropertyRef Name="Id" />
@@ -110,42 +110,6 @@
           <Property Name="logintime" Type="datetime" Nullable="false" />
           <Property Name="browers" Type="varchar" MaxLength="2048" Nullable="false" />
         </EntityType>
-        <EntityType Name="Issue">
-          <Key>
-            <PropertyRef Name="issue_id" />
-          </Key>
-          <Property Name="issue_id" Type="int" Nullable="false" />
-          <Property Name="issue_category_id" Type="int" Nullable="false" />
-          <Property Name="issue_title" Type="nvarchar" MaxLength="64" Nullable="false" />
-          <Property Name="issue_content" Type="nvarchar" MaxLength="512" />
-          <Property Name="issue_date" Type="datetime" Nullable="false" />
-          <Property Name="issue_ans" Type="nvarchar" MaxLength="512" />
-          <Property Name="i_Hide" Type="bit" Nullable="false" />
-          <Property Name="i_InsertUserID" Type="nvarchar" MaxLength="128" />
-          <Property Name="i_InsertDeptID" Type="int" />
-          <Property Name="i_InsertDateTime" Type="datetime" />
-          <Property Name="i_UpdateUserID" Type="nvarchar" MaxLength="128" />
-          <Property Name="i_UpdateDeptID" Type="int" />
-          <Property Name="i_UpdateDateTime" Type="datetime" />
-          <Property Name="i_Lang" Type="char" MaxLength="5" Nullable="false" />
-        </EntityType>
-        <EntityType Name="IssueCategory">
-          <Key>
-            <PropertyRef Name="issue_category_id" />
-          </Key>
-          <Property Name="issue_category_id" Type="int" Nullable="false" />
-          <Property Name="category_name" Type="nvarchar" MaxLength="64" Nullable="false" />
-          <Property Name="sort" Type="int" />
-          <Property Name="memo" Type="nvarchar" MaxLength="256" />
-          <Property Name="i_Hide" Type="bit" Nullable="false" />
-          <Property Name="i_InsertUserID" Type="nvarchar" MaxLength="128" />
-          <Property Name="i_InsertDeptID" Type="int" />
-          <Property Name="i_InsertDateTime" Type="datetime" />
-          <Property Name="i_UpdateUserID" Type="nvarchar" MaxLength="128" />
-          <Property Name="i_UpdateDeptID" Type="int" />
-          <Property Name="i_UpdateDateTime" Type="datetime" />
-          <Property Name="i_Lang" Type="char" MaxLength="5" Nullable="false" />
-        </EntityType>
         <EntityType Name="Menu">
           <Key>
             <PropertyRef Name="menu_id" />
@@ -172,55 +136,14 @@
           <Property Name="menu_id" Type="int" Nullable="false" />
           <Property Name="role_id" Type="nvarchar" MaxLength="128" Nullable="false" />
         </EntityType>
-        <EntityType Name="Product">
+        <EntityType Name="News">
           <Key>
-            <PropertyRef Name="product_id" />
+            <PropertyRef Name="news_id" />
           </Key>
-          <Property Name="product_id" Type="int" Nullable="false" />
-          <Property Name="category_id" Type="int" Nullable="false" />
-          <Property Name="product_name" Type="nvarchar" MaxLength="64" />
-          <Property Name="product_content" Type="text" />
-          <Property Name="price" Type="float" Nullable="false" />
-          <Property Name="sort" Type="int" />
-          <Property Name="i_Hide" Type="bit" Nullable="false" />
-          <Property Name="i_InsertUserID" Type="nvarchar" MaxLength="128" />
-          <Property Name="i_InsertDeptID" Type="int" />
-          <Property Name="i_InsertDateTime" Type="datetime" />
-          <Property Name="i_UpdateUserID" Type="nvarchar" MaxLength="128" />
-          <Property Name="i_UpdateDeptID" Type="int" />
-          <Property Name="i_UpdateDateTime" Type="datetime" />
-          <Property Name="i_Lang" Type="char" MaxLength="5" Nullable="false" />
-        </EntityType>
-        <EntityType Name="ProductCategory">
-          <Key>
-            <PropertyRef Name="product_category_id" />
-          </Key>
-          <Property Name="product_category_id" Type="int" Nullable="false" />
-          <Property Name="category_name" Type="nvarchar" MaxLength="64" Nullable="false" />
-          <Property Name="sort" Type="int" />
-          <Property Name="memo" Type="nvarchar" MaxLength="256" />
-          <Property Name="i_Hide" Type="bit" Nullable="false" />
-          <Property Name="i_InsertUserID" Type="nvarchar" MaxLength="128" />
-          <Property Name="i_InsertDeptID" Type="int" />
-          <Property Name="i_InsertDateTime" Type="datetime" />
-          <Property Name="i_UpdateUserID" Type="nvarchar" MaxLength="128" />
-          <Property Name="i_UpdateDeptID" Type="int" />
-          <Property Name="i_UpdateDateTime" Type="datetime" />
-          <Property Name="i_Lang" Type="char" MaxLength="5" Nullable="false" />
-        </EntityType>
-        <!--產生期間發現錯誤:
-警告 6002: 資料表/檢視 'C45A0_Smith.dbo.Purchase' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
-        <EntityType Name="Purchase">
-          <Key>
-            <PropertyRef Name="purchase_id" />
-            <PropertyRef Name="set_date" />
-            <PropertyRef Name="total" />
-            <PropertyRef Name="i_Hide" />
-            <PropertyRef Name="i_Lang" />
-          </Key>
-          <Property Name="purchase_id" Type="int" Nullable="false" />
-          <Property Name="set_date" Type="datetime" Nullable="false" />
-          <Property Name="total" Type="int" Nullable="false" />
+          <Property Name="news_id" Type="int" Nullable="false" />
+          <Property Name="news_title" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="news_content" Type="text" />
+          <Property Name="news_date" Type="datetime" Nullable="false" />
           <Property Name="i_Hide" Type="bit" Nullable="false" />
           <Property Name="i_InsertUserID" Type="nvarchar" MaxLength="128" />
           <Property Name="i_InsertDeptID" Type="int" />
@@ -270,18 +193,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Issue_IssueCategory">
-          <End Role="IssueCategory" Type="Self.IssueCategory" Multiplicity="1" />
-          <End Role="Issue" Type="Self.Issue" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="IssueCategory">
-              <PropertyRef Name="issue_category_id" />
-            </Principal>
-            <Dependent Role="Issue">
-              <PropertyRef Name="issue_category_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_MenuRole_AspNetRoles">
           <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1" />
           <End Role="MenuRole" Type="Self.MenuRole" Multiplicity="*" />
@@ -306,19 +217,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Product_ProductCategory">
-          <End Role="ProductCategory" Type="Self.ProductCategory" Multiplicity="1" />
-          <End Role="Product" Type="Self.Product" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ProductCategory">
-              <PropertyRef Name="product_category_id" />
-            </Principal>
-            <Dependent Role="Product">
-              <PropertyRef Name="category_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="C45A0_SmithModelStoreContainer">
+        <EntityContainer Name="C47A0_JDMaskModelStoreContainer">
           <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
@@ -329,27 +228,9 @@
           <EntitySet Name="i_Parm" EntityType="Self.i_Parm" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="i_SN" EntityType="Self.i_SN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="i_UserLoginLog" EntityType="Self.i_UserLoginLog" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Issue" EntityType="Self.Issue" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="IssueCategory" EntityType="Self.IssueCategory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MenuRole" EntityType="Self.MenuRole" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ProductCategory" EntityType="Self.ProductCategory" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Purchase" EntityType="Self.Purchase" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Purchase].[purchase_id] AS [purchase_id], 
-    [Purchase].[set_date] AS [set_date], 
-    [Purchase].[total] AS [total], 
-    [Purchase].[i_Hide] AS [i_Hide], 
-    [Purchase].[i_InsertUserID] AS [i_InsertUserID], 
-    [Purchase].[i_InsertDeptID] AS [i_InsertDeptID], 
-    [Purchase].[i_InsertDateTime] AS [i_InsertDateTime], 
-    [Purchase].[i_UpdateUserID] AS [i_UpdateUserID], 
-    [Purchase].[i_UpdateDeptID] AS [i_UpdateDeptID], 
-    [Purchase].[i_UpdateDateTime] AS [i_UpdateDateTime], 
-    [Purchase].[i_Lang] AS [i_Lang]
-    FROM [dbo].[Purchase] AS [Purchase]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_AspNetUsers_Department" Association="Self.FK_AspNetUsers_Department">
             <End Role="Department" EntitySet="Department" />
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
@@ -362,10 +243,6 @@
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
           </AssociationSet>
-          <AssociationSet Name="FK_Issue_IssueCategory" Association="Self.FK_Issue_IssueCategory">
-            <End Role="IssueCategory" EntitySet="IssueCategory" />
-            <End Role="Issue" EntitySet="Issue" />
-          </AssociationSet>
           <AssociationSet Name="FK_MenuRole_AspNetRoles" Association="Self.FK_MenuRole_AspNetRoles">
             <End Role="AspNetRoles" EntitySet="AspNetRoles" />
             <End Role="MenuRole" EntitySet="MenuRole" />
@@ -374,15 +251,11 @@
             <End Role="Menu" EntitySet="Menu" />
             <End Role="MenuRole" EntitySet="MenuRole" />
           </AssociationSet>
-          <AssociationSet Name="FK_Product_ProductCategory" Association="Self.FK_Product_ProductCategory">
-            <End Role="ProductCategory" EntitySet="ProductCategory" />
-            <End Role="Product" EntitySet="Product" />
-          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="C45A0_SmithModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="C47A0_JDMaskModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="AspNetRoles">
           <Key>
             <PropertyRef Name="Id" />
@@ -524,7 +397,7 @@
           <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="*" />
           <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="C45A0_SmithEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="C47A0_JDMaskEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" />
           <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" />
           <EntitySet Name="Department" EntityType="Self.Department" />
@@ -547,81 +420,16 @@
             <End Role="AspNetRoles" EntitySet="AspNetRoles" />
             <End Role="Menu" EntitySet="Menu" />
           </AssociationSet>
-          <EntitySet Name="ProductCategory" EntityType="C45A0_SmithModel.ProductCategory" />
-          <EntitySet Name="Product" EntityType="C45A0_SmithModel.Product" />
-          <AssociationSet Name="FK_Product_ProductCategory" Association="C45A0_SmithModel.FK_Product_ProductCategory">
-            <End Role="ProductCategory" EntitySet="ProductCategory" />
-            <End Role="Product" EntitySet="Product" />
-          </AssociationSet>
-          <EntitySet Name="Purchase" EntityType="C45A0_SmithModel.Purchase" />
-          <EntitySet Name="Issue" EntityType="C45A0_SmithModel.Issue" />
-          <EntitySet Name="IssueCategory" EntityType="C45A0_SmithModel.IssueCategory" />
-          <AssociationSet Name="FK_Issue_IssueCategory" Association="C45A0_SmithModel.FK_Issue_IssueCategory">
-            <End Role="IssueCategory" EntitySet="IssueCategory" />
-            <End Role="Issue" EntitySet="Issue" />
-          </AssociationSet>
+          <EntitySet Name="News" EntityType="C47A0_JDMaskModel.News" />
         </EntityContainer>
-        <EntityType Name="ProductCategory">
+        <EntityType Name="News">
           <Key>
-            <PropertyRef Name="product_category_id" />
+            <PropertyRef Name="news_id" />
           </Key>
-          <Property Name="product_category_id" Type="Int32" Nullable="false" />
-          <Property Name="category_name" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="sort" Type="Int32" />
-          <Property Name="memo" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-          <Property Name="i_Hide" Type="Boolean" Nullable="false" />
-          <Property Name="i_InsertUserID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="i_InsertDeptID" Type="Int32" />
-          <Property Name="i_InsertDateTime" Type="DateTime" Precision="3" />
-          <Property Name="i_UpdateUserID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="i_UpdateDeptID" Type="Int32" />
-          <Property Name="i_UpdateDateTime" Type="DateTime" Precision="3" />
-          <Property Name="i_Lang" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="Product" Relationship="C45A0_SmithModel.FK_Product_ProductCategory" FromRole="ProductCategory" ToRole="Product" />
-        </EntityType>
-        <EntityType Name="Product">
-          <Key>
-            <PropertyRef Name="product_id" />
-          </Key>
-          <Property Name="product_id" Type="Int32" Nullable="false" />
-          <Property Name="category_id" Type="Int32" Nullable="false" />
-          <Property Name="product_name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="product_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="price" Type="Double" Nullable="false" />
-          <Property Name="sort" Type="Int32" />
-          <Property Name="i_Hide" Type="Boolean" Nullable="false" />
-          <Property Name="i_InsertUserID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="i_InsertDeptID" Type="Int32" />
-          <Property Name="i_InsertDateTime" Type="DateTime" Precision="3" />
-          <Property Name="i_UpdateUserID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="i_UpdateDeptID" Type="Int32" />
-          <Property Name="i_UpdateDateTime" Type="DateTime" Precision="3" />
-          <Property Name="i_Lang" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="ProductCategory" Relationship="C45A0_SmithModel.FK_Product_ProductCategory" FromRole="Product" ToRole="ProductCategory" />
-        </EntityType>
-        <Association Name="FK_Product_ProductCategory">
-          <End Type="C45A0_SmithModel.ProductCategory" Role="ProductCategory" Multiplicity="1" />
-          <End Type="C45A0_SmithModel.Product" Role="Product" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ProductCategory">
-              <PropertyRef Name="product_category_id" />
-            </Principal>
-            <Dependent Role="Product">
-              <PropertyRef Name="category_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="Purchase">
-          <Key>
-            <PropertyRef Name="purchase_id" />
-            <PropertyRef Name="set_date" />
-            <PropertyRef Name="total" />
-            <PropertyRef Name="i_Hide" />
-            <PropertyRef Name="i_Lang" />
-          </Key>
-          <Property Name="purchase_id" Type="Int32" Nullable="false" />
-          <Property Name="set_date" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="total" Type="Int32" Nullable="false" />
+          <Property Name="news_id" Type="Int32" Nullable="false" />
+          <Property Name="news_title" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="news_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="news_date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="i_Hide" Type="Boolean" Nullable="false" />
           <Property Name="i_InsertUserID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
           <Property Name="i_InsertDeptID" Type="Int32" />
@@ -631,64 +439,14 @@
           <Property Name="i_UpdateDateTime" Type="DateTime" Precision="3" />
           <Property Name="i_Lang" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
         </EntityType>
-        <EntityType Name="Issue">
-          <Key>
-            <PropertyRef Name="issue_id" />
-          </Key>
-          <Property Name="issue_id" Type="Int32" Nullable="false" />
-          <Property Name="issue_category_id" Type="Int32" Nullable="false" />
-          <Property Name="issue_title" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="issue_content" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
-          <Property Name="issue_date" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="issue_ans" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
-          <Property Name="i_Hide" Type="Boolean" Nullable="false" />
-          <Property Name="i_InsertUserID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="i_InsertDeptID" Type="Int32" />
-          <Property Name="i_InsertDateTime" Type="DateTime" Precision="3" />
-          <Property Name="i_UpdateUserID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="i_UpdateDeptID" Type="Int32" />
-          <Property Name="i_UpdateDateTime" Type="DateTime" Precision="3" />
-          <Property Name="i_Lang" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="IssueCategory" Relationship="C45A0_SmithModel.FK_Issue_IssueCategory" FromRole="Issue" ToRole="IssueCategory" />
-        </EntityType>
-        <EntityType Name="IssueCategory">
-          <Key>
-            <PropertyRef Name="issue_category_id" />
-          </Key>
-          <Property Name="issue_category_id" Type="Int32" Nullable="false" />
-          <Property Name="category_name" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="sort" Type="Int32" />
-          <Property Name="memo" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-          <Property Name="i_Hide" Type="Boolean" Nullable="false" />
-          <Property Name="i_InsertUserID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="i_InsertDeptID" Type="Int32" />
-          <Property Name="i_InsertDateTime" Type="DateTime" Precision="3" />
-          <Property Name="i_UpdateUserID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="i_UpdateDeptID" Type="Int32" />
-          <Property Name="i_UpdateDateTime" Type="DateTime" Precision="3" />
-          <Property Name="i_Lang" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="Issue" Relationship="C45A0_SmithModel.FK_Issue_IssueCategory" FromRole="IssueCategory" ToRole="Issue" />
-        </EntityType>
-        <Association Name="FK_Issue_IssueCategory">
-          <End Type="C45A0_SmithModel.IssueCategory" Role="IssueCategory" Multiplicity="1" />
-          <End Type="C45A0_SmithModel.Issue" Role="Issue" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="IssueCategory">
-              <PropertyRef Name="issue_category_id" />
-            </Principal>
-            <Dependent Role="Issue">
-              <PropertyRef Name="issue_category_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="C45A0_SmithModelStoreContainer" CdmEntityContainer="C45A0_SmithEntities">
+        <EntityContainerMapping StorageEntityContainer="C47A0_JDMaskModelStoreContainer" CdmEntityContainer="C47A0_JDMaskEntities">
           <EntitySetMapping Name="AspNetRoles">
-            <EntityTypeMapping TypeName="C45A0_SmithModel.AspNetRoles">
+            <EntityTypeMapping TypeName="C47A0_JDMaskModel.AspNetRoles">
               <MappingFragment StoreEntitySet="AspNetRoles">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -696,7 +454,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AspNetUsers">
-            <EntityTypeMapping TypeName="C45A0_SmithModel.AspNetUsers">
+            <EntityTypeMapping TypeName="C47A0_JDMaskModel.AspNetUsers">
               <MappingFragment StoreEntitySet="AspNetUsers">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="department_id" ColumnName="department_id" />
@@ -717,7 +475,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Department">
-            <EntityTypeMapping TypeName="C45A0_SmithModel.Department">
+            <EntityTypeMapping TypeName="C47A0_JDMaskModel.Department">
               <MappingFragment StoreEntitySet="Department">
                 <ScalarProperty Name="department_id" ColumnName="department_id" />
                 <ScalarProperty Name="department_name" ColumnName="department_name" />
@@ -726,7 +484,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="i_Currency">
-            <EntityTypeMapping TypeName="C45A0_SmithModel.i_Currency">
+            <EntityTypeMapping TypeName="C47A0_JDMaskModel.i_Currency">
               <MappingFragment StoreEntitySet="i_Currency">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name_currency" ColumnName="name_currency" />
@@ -738,7 +496,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="i_IDX">
-            <EntityTypeMapping TypeName="C45A0_SmithModel.i_IDX">
+            <EntityTypeMapping TypeName="C47A0_JDMaskModel.i_IDX">
               <MappingFragment StoreEntitySet="i_IDX">
                 <ScalarProperty Name="table_name" ColumnName="table_name" />
                 <ScalarProperty Name="IDX" ColumnName="IDX" />
@@ -746,7 +504,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="i_Lang">
-            <EntityTypeMapping TypeName="C45A0_SmithModel.i_Lang">
+            <EntityTypeMapping TypeName="C47A0_JDMaskModel.i_Lang">
               <MappingFragment StoreEntitySet="i_Lang">
                 <ScalarProperty Name="lang" ColumnName="lang" />
                 <ScalarProperty Name="area" ColumnName="area" />
@@ -757,7 +515,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="i_Parm">
-            <EntityTypeMapping TypeName="C45A0_SmithModel.i_Parm">
+            <EntityTypeMapping TypeName="C47A0_JDMaskModel.i_Parm">
               <MappingFragment StoreEntitySet="i_Parm">
                 <ScalarProperty Name="ParmName" ColumnName="ParmName" />
                 <ScalarProperty Name="ParmType" ColumnName="ParmType" />
@@ -771,7 +529,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="i_SN">
-            <EntityTypeMapping TypeName="C45A0_SmithModel.i_SN">
+            <EntityTypeMapping TypeName="C47A0_JDMaskModel.i_SN">
               <MappingFragment StoreEntitySet="i_SN">
                 <ScalarProperty Name="sn_type" ColumnName="sn_type" />
                 <ScalarProperty Name="y" ColumnName="y" />
@@ -783,7 +541,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="i_UserLoginLog">
-            <EntityTypeMapping TypeName="C45A0_SmithModel.i_UserLoginLog">
+            <EntityTypeMapping TypeName="C47A0_JDMaskModel.i_UserLoginLog">
               <MappingFragment StoreEntitySet="i_UserLoginLog">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="ip" ColumnName="ip" />
@@ -794,7 +552,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Menu">
-            <EntityTypeMapping TypeName="C45A0_SmithModel.Menu">
+            <EntityTypeMapping TypeName="C47A0_JDMaskModel.Menu">
               <MappingFragment StoreEntitySet="Menu">
                 <ScalarProperty Name="menu_id" ColumnName="menu_id" />
                 <ScalarProperty Name="parent_menu_id" ColumnName="parent_menu_id" />
@@ -812,7 +570,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="AspNetUserRoles" TypeName="C45A0_SmithModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="C47A0_JDMaskModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
             <EndProperty Name="AspNetRoles">
               <ScalarProperty Name="Id" ColumnName="RoleId" />
             </EndProperty>
@@ -820,7 +578,7 @@
               <ScalarProperty Name="Id" ColumnName="UserId" />
             </EndProperty>
           </AssociationSetMapping>
-          <AssociationSetMapping Name="MenuRole" TypeName="C45A0_SmithModel.MenuRole" StoreEntitySet="MenuRole">
+          <AssociationSetMapping Name="MenuRole" TypeName="C47A0_JDMaskModel.MenuRole" StoreEntitySet="MenuRole">
             <EndProperty Name="AspNetRoles">
               <ScalarProperty Name="Id" ColumnName="role_id" />
             </EndProperty>
@@ -828,9 +586,9 @@
               <ScalarProperty Name="menu_id" ColumnName="menu_id" />
             </EndProperty>
           </AssociationSetMapping>
-          <EntitySetMapping Name="ProductCategory">
-            <EntityTypeMapping TypeName="C45A0_SmithModel.ProductCategory">
-              <MappingFragment StoreEntitySet="ProductCategory">
+          <EntitySetMapping Name="News">
+            <EntityTypeMapping TypeName="C47A0_JDMaskModel.News">
+              <MappingFragment StoreEntitySet="News">
                 <ScalarProperty Name="i_Lang" ColumnName="i_Lang" />
                 <ScalarProperty Name="i_UpdateDateTime" ColumnName="i_UpdateDateTime" />
                 <ScalarProperty Name="i_UpdateDeptID" ColumnName="i_UpdateDeptID" />
@@ -839,85 +597,10 @@
                 <ScalarProperty Name="i_InsertDeptID" ColumnName="i_InsertDeptID" />
                 <ScalarProperty Name="i_InsertUserID" ColumnName="i_InsertUserID" />
                 <ScalarProperty Name="i_Hide" ColumnName="i_Hide" />
-                <ScalarProperty Name="memo" ColumnName="memo" />
-                <ScalarProperty Name="sort" ColumnName="sort" />
-                <ScalarProperty Name="category_name" ColumnName="category_name" />
-                <ScalarProperty Name="product_category_id" ColumnName="product_category_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Product">
-            <EntityTypeMapping TypeName="C45A0_SmithModel.Product">
-              <MappingFragment StoreEntitySet="Product">
-                <ScalarProperty Name="i_Lang" ColumnName="i_Lang" />
-                <ScalarProperty Name="i_UpdateDateTime" ColumnName="i_UpdateDateTime" />
-                <ScalarProperty Name="i_UpdateDeptID" ColumnName="i_UpdateDeptID" />
-                <ScalarProperty Name="i_UpdateUserID" ColumnName="i_UpdateUserID" />
-                <ScalarProperty Name="i_InsertDateTime" ColumnName="i_InsertDateTime" />
-                <ScalarProperty Name="i_InsertDeptID" ColumnName="i_InsertDeptID" />
-                <ScalarProperty Name="i_InsertUserID" ColumnName="i_InsertUserID" />
-                <ScalarProperty Name="i_Hide" ColumnName="i_Hide" />
-                <ScalarProperty Name="sort" ColumnName="sort" />
-                <ScalarProperty Name="price" ColumnName="price" />
-                <ScalarProperty Name="product_content" ColumnName="product_content" />
-                <ScalarProperty Name="product_name" ColumnName="product_name" />
-                <ScalarProperty Name="category_id" ColumnName="category_id" />
-                <ScalarProperty Name="product_id" ColumnName="product_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Purchase">
-            <EntityTypeMapping TypeName="C45A0_SmithModel.Purchase">
-              <MappingFragment StoreEntitySet="Purchase">
-                <ScalarProperty Name="i_Lang" ColumnName="i_Lang" />
-                <ScalarProperty Name="i_UpdateDateTime" ColumnName="i_UpdateDateTime" />
-                <ScalarProperty Name="i_UpdateDeptID" ColumnName="i_UpdateDeptID" />
-                <ScalarProperty Name="i_UpdateUserID" ColumnName="i_UpdateUserID" />
-                <ScalarProperty Name="i_InsertDateTime" ColumnName="i_InsertDateTime" />
-                <ScalarProperty Name="i_InsertDeptID" ColumnName="i_InsertDeptID" />
-                <ScalarProperty Name="i_InsertUserID" ColumnName="i_InsertUserID" />
-                <ScalarProperty Name="i_Hide" ColumnName="i_Hide" />
-                <ScalarProperty Name="total" ColumnName="total" />
-                <ScalarProperty Name="set_date" ColumnName="set_date" />
-                <ScalarProperty Name="purchase_id" ColumnName="purchase_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Issue">
-            <EntityTypeMapping TypeName="C45A0_SmithModel.Issue">
-              <MappingFragment StoreEntitySet="Issue">
-                <ScalarProperty Name="i_Lang" ColumnName="i_Lang" />
-                <ScalarProperty Name="i_UpdateDateTime" ColumnName="i_UpdateDateTime" />
-                <ScalarProperty Name="i_UpdateDeptID" ColumnName="i_UpdateDeptID" />
-                <ScalarProperty Name="i_UpdateUserID" ColumnName="i_UpdateUserID" />
-                <ScalarProperty Name="i_InsertDateTime" ColumnName="i_InsertDateTime" />
-                <ScalarProperty Name="i_InsertDeptID" ColumnName="i_InsertDeptID" />
-                <ScalarProperty Name="i_InsertUserID" ColumnName="i_InsertUserID" />
-                <ScalarProperty Name="i_Hide" ColumnName="i_Hide" />
-                <ScalarProperty Name="issue_ans" ColumnName="issue_ans" />
-                <ScalarProperty Name="issue_date" ColumnName="issue_date" />
-                <ScalarProperty Name="issue_content" ColumnName="issue_content" />
-                <ScalarProperty Name="issue_title" ColumnName="issue_title" />
-                <ScalarProperty Name="issue_category_id" ColumnName="issue_category_id" />
-                <ScalarProperty Name="issue_id" ColumnName="issue_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="IssueCategory">
-            <EntityTypeMapping TypeName="C45A0_SmithModel.IssueCategory">
-              <MappingFragment StoreEntitySet="IssueCategory">
-                <ScalarProperty Name="i_Lang" ColumnName="i_Lang" />
-                <ScalarProperty Name="i_UpdateDateTime" ColumnName="i_UpdateDateTime" />
-                <ScalarProperty Name="i_UpdateDeptID" ColumnName="i_UpdateDeptID" />
-                <ScalarProperty Name="i_UpdateUserID" ColumnName="i_UpdateUserID" />
-                <ScalarProperty Name="i_InsertDateTime" ColumnName="i_InsertDateTime" />
-                <ScalarProperty Name="i_InsertDeptID" ColumnName="i_InsertDeptID" />
-                <ScalarProperty Name="i_InsertUserID" ColumnName="i_InsertUserID" />
-                <ScalarProperty Name="i_Hide" ColumnName="i_Hide" />
-                <ScalarProperty Name="memo" ColumnName="memo" />
-                <ScalarProperty Name="sort" ColumnName="sort" />
-                <ScalarProperty Name="category_name" ColumnName="category_name" />
-                <ScalarProperty Name="issue_category_id" ColumnName="issue_category_id" />
+                <ScalarProperty Name="news_date" ColumnName="news_date" />
+                <ScalarProperty Name="news_content" ColumnName="news_content" />
+                <ScalarProperty Name="news_title" ColumnName="news_title" />
+                <ScalarProperty Name="news_id" ColumnName="news_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

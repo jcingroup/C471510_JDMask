@@ -14,7 +14,7 @@ namespace ProcCore.Business
 {
     public enum CodeTable
     {
-        Base, Product, ProductCategory, Issue, IssueCategory, Menu
+        Base, News, Menu
     }
     public enum SNType
     {
@@ -54,9 +54,9 @@ namespace ProcCore.Business.LogicConect
     public class LogicCenter
     {
         private static string db0_connectionstring;
-        protected C45A0_SmithEntities db0;
+        protected C47A0_JDMaskEntities db0;
         protected TransactionScope tx;
-        private const string DatabaseName = "C45A0_Smith";
+        private const string DatabaseName = "C47A0_JDMask";
         public int DepartmentId { get; set; }
         public string Lang { get; set; }
         public string IP { get; set; }
@@ -99,11 +99,11 @@ namespace ProcCore.Business.LogicConect
             db0_connectionstring = LogicCenter.GetDB0EntityString(db0_configstring);
         }
 
-        public static C45A0_SmithEntities getDB0
+        public static C47A0_JDMaskEntities getDB0
         {
             get
             {
-                return new C45A0_SmithEntities(db0_connectionstring);
+                return new C47A0_JDMaskEntities(db0_connectionstring);
             }
         }
         public int GetNewId(ProcCore.Business.CodeTable tab)
