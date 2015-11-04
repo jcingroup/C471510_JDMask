@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace DotWeb.Areas.Active.Controllers
 {
-    public class SalesController : AdminController
+    public class NewsDataController : AdminController
     {
         #region Action and function section
         public ActionResult Main()
@@ -20,13 +20,13 @@ namespace DotWeb.Areas.Active.Controllers
         #endregion
 
         #region ajax call section
+
         public string aj_Init()
         {
+
             using (var db0 = getDB0())
             {
-                return defJSON(new
-                {
-                });
+                return defJSON(new { });
             }
         }
         #endregion

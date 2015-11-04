@@ -50,81 +50,11 @@
         aspNetRoles: server.AspNetRoles[];
         role_array: any;
     }
-
-    interface Product extends BaseEntityTable {
-        product_id?: number;
-        category_id: number;
-        product_name?: string;
-        product_content?: string;
-        price?: number;
-        sort?: number;
+    interface News extends BaseEntityTable {
+        news_id?: number;
+        news_title?: string;
+        news_content?: string;
+        news_date?: Date;
         i_Hide?: boolean;
-        productCategory?: server.ProductCategory;
     }
-    interface ProductCategory extends BaseEntityTable {
-        product_category_id?: number;
-        category_name?: string;
-        sort?: number;
-        memo?: string;
-        i_Hide?: boolean;
-        product?: server.Product[];
-    }
-
-    interface Issue extends BaseEntityTable {
-        issue_id?: number;
-        issue_category_id?: number;
-        issue_title?: string;
-        issue_content?: string;
-        issue_date?: Date;
-        issue_ans?: string;
-        i_Hide?: boolean;
-        issueCategory?: server.IssueCategory;
-    }
-    interface IssueCategory extends BaseEntityTable {
-        issue_category_id?: number;
-        category_name?: string;
-        sort?: number;
-        memo?: string;
-        i_Hide?: boolean;
-        issue?: server.Issue[];
-    }
-    interface Sales extends BaseEntityTable {
-        sales_id?: number;
-        sales_no?: string;
-        sales_name?: string;
-        account?: string;
-        psaaword?: string;
-        address?: string;
-        gender?: boolean;
-        rank?: number;
-        recommend_id?: number;
-        recommend_name?: string; //only client
-        share_id?: number;
-        share_sort?: number;
-        join_date?: Date;
-        sales_state?: number;
-        birthday?: Date;
-    }
-    interface Purchase extends BaseEntityTable {
-        purchase_id?: number;
-        purchase_no?: string;
-        set_date?: Date;
-        sales_id?: number;
-        sales_name?: string;
-        total?: number;
-        state?: number;
-    }
-    interface PurchaseDetail extends BaseEntityTable {
-        purchase_detail_id?: number;
-        purchase_id?: number;
-        item_no?: number;
-        product_name?: string;
-        qty?: number;
-        price?: number;
-        sub_total?: number;
-        product_no?: string;
-        purchase_no?: string
-    }
-
-
 } 
