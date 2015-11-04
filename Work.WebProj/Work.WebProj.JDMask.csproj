@@ -692,8 +692,7 @@
     <Content Include="Scripts\src\jsx\m-Menu.jsx" />
     <Content Include="Views\AboutUs\AboutUs.cshtml" />
     <Content Include="Views\ContactUs\ContactUs.cshtml" />
-    <Content Include="Views\News\News_content.cshtml" />
-    <Content Include="Views\News\News_list.cshtml" />
+    <Content Include="Views\News\News.cshtml" />
     <Content Include="Views\Products\Products_content.cshtml" />
     <Content Include="Views\Products\Products_list.cshtml" />
     <Content Include="Views\Quality\Quality.cshtml" />
