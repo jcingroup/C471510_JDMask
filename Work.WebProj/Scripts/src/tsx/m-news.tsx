@@ -1,24 +1,17 @@
-﻿namespace Issue {
+﻿namespace News {
     interface Rows {
         check_del: boolean,
-        issue_id: string;
-        issue_category_id: number;
-        category_name: string;
-        issue_title: string;
-        issue_date: number;
+        news_id: number;
+        news_title: string;
+        news_date: number;
         i_Hide: boolean;
     }
     interface SearchData {
         //搜尋 參數
         name?: string
     }
-    interface IssueCategory {
-        issue_category_id: number
-        category_name: string
-    }
-    interface IssueState<G, F, S> extends BaseDefine.GirdFormStateBase<G, F, S> {
+    interface NewsState<G, F, S> extends BaseDefine.GirdFormStateBase<G, F, S> {
         //額外擴充 表單 State參數
-        category_option?: Array<IssueCategory>
     }
     interface CallResult extends IResultBase {
         id: string
@@ -48,19 +41,17 @@
                     <td className="text-center">
                         <GridButtonModify modify={this.modify}/>
                         </td>
-                    <td>{this.props.itemData.category_name}</td>
-                    <td>{this.props.itemData.issue_title}</td>
-                    <td>{moment(this.props.itemData.issue_date).format('YYYY/MM/DD')}</td>
+                    <td>{this.props.itemData.news_title}</td>
+                    <td>{moment(this.props.itemData.news_date).format('YYYY/MM/DD') }</td>
                     <td>{this.props.itemData.i_Hide ? <span className="label label-default">隱藏</span> : <span className="label label-primary">顯示</span>}</td>
                 </tr>;
         }
     }
-    export class GirdForm extends React.Component<BaseDefine.GridFormPropsBase, IssueState<Rows, server.News, SearchData>>{
+    export class GirdForm extends React.Component<BaseDefine.GridFormPropsBase, NewsState<Rows, server.News, SearchData>>{
 
         constructor() {
 
             super();
-            this.getInitData = this.getInitData.bind(this);
             this.updateType = this.updateType.bind(this);
             this.noneType = this.noneType.bind(this);
             this.queryGridData = this.queryGridData.bind(this);
@@ -71,31 +62,16 @@
             this.checkAll = this.checkAll.bind(this);
             this.componentDidMount = this.componentDidMount.bind(this);
             this.insertType = this.insertType.bind(this);
-            this.state = { fieldData: null, gridData: { rows: [], page: 1 }, edit_type: 0, category_option: null, searchData: {} }
+            this.state = { fieldData: null, gridData: { rows: [], page: 1 }, edit_type: 0, searchData: {} }
 
         }
         static defaultProps: BaseDefine.GridFormPropsBase = {
             fdName: 'fieldData',
             gdName: 'searchData',
-            apiPath: gb_approot + 'api/Issue',
-            InitPath: gb_approot + 'Active/IssueData/aj_Init'
+            apiPath: gb_approot + 'api/News'
         }
         componentDidMount() {
             this.queryGridData(1);
-            this.getInitData();
-        }
-
-        getInitData() {
-            jqGet(this.props.InitPath, {})
-                .done((data: Array<IssueCategory>, textStatus, jqXHRdata) => {
-                    this.setState({
-                        category_option: data
-                    });
-                })
-                .fail((jqXHR, textStatus, errorThrown) => {
-                    showAjaxError(errorThrown);
-                });
-
         }
         gridData(page: number) {
 
@@ -163,7 +139,7 @@
             var ids = [];
             for (var i in this.state.gridData.rows) {
                 if (this.state.gridData.rows[i].check_del) {
-                    ids.push('ids=' + this.state.gridData.rows[i].issue_id);
+                    ids.push('ids=' + this.state.gridData.rows[i].news_id);
                 }
             }
 
@@ -265,7 +241,7 @@
                 <div className="table-filter">
                     <div className="form-inline">
                         <div className="form-group">
-                            <label>Q & A 標題</label> { }
+                            <label>最新消息標題</label> { }
                             <input type="text" className="form-control"
                                 value={searchData.name}
                                 onChange={this.changeGDValue.bind(this, 'name') }
@@ -285,9 +261,8 @@
                                 </label>
                             </th>
                         <th className="col-xs-1 text-center">修改</th>
-                        <th className="col-xs-2">Q & A 分類</th>
-                        <th className="col-xs-2">Q & A 標題</th>
-                        <th className="col-xs-2">提問日期</th>
+                        <th className="col-xs-2">標題</th>
+                        <th className="col-xs-2">日期</th>
                         <th className="col-xs-2">狀態</th>
                         </tr>
                     </thead>
@@ -297,7 +272,7 @@
                         (itemData, i) =>
                             <GridRow key={i}
                                 ikey={i}
-                                primKey={itemData.issue_id}
+                                primKey={itemData.news_id}
                                 itemData={itemData}
                                 delCheck={this.delCheck}
                                 updateType={this.updateType} />
@@ -334,11 +309,11 @@
 
 
             <div className="form-group">
-                <label className="col-xs-2 control-label text-danger">提問標題</label>
+                <label className="col-xs-2 control-label text-danger">標題</label>
                 <div className="col-xs-4">
                     <input type="text"
                         className="form-control"
-                        onChange={this.changeFDValue.bind(this, 'issue_title') }
+                        onChange={this.changeFDValue.bind(this, 'news_title') }
                         value={fieldData.news_title}
                         maxLength={64}
                         required />
@@ -347,13 +322,13 @@
                 </div>
 
             <div className="form-group">
-                <label className="col-xs-2 control-label">排序</label>
+                <label className="col-xs-2 control-label text-danger">日期</label>
                 <div className="col-xs-4">
                      <span className="has-feedback">
-                       <InputDate id="issue_date"
+                       <InputDate id="news_date"
                            ver={1}
                            onChange={this.changeFDValue.bind(this)}
-                           field_name="issue_date"
+                           field_name="news_date"
                            value={fieldData.news_date}
                            required={true}
                            disabled={false}/>
@@ -390,11 +365,11 @@
                 </div>
 
                 <div className="form-group">
-                     <label className="col-xs-2 control-label">提問內容</label>
+                     <label className="col-xs-2 control-label">內容</label>
                         <div className="col-xs-6">
                             <textarea cols={30} rows={3} className="form-control"
                                 value={fieldData.news_content}
-                                onChange={this.changeFDValue.bind(this, 'issue_content') }
+                                onChange={this.changeFDValue.bind(this, 'news_content') }
                                 maxLength={512}></textarea>
                             </div>
                     </div>
@@ -417,4 +392,4 @@
     }
 }
 var dom = document.getElementById('page_content');
-React.render(<Issue.GirdForm caption={gb_caption} menuName={gb_menuname} iconClass="fa-list-alt" />, dom);
+React.render(<News.GirdForm caption={gb_caption} menuName={gb_menuname} iconClass="fa-list-alt" />, dom);
