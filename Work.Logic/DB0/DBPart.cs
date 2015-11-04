@@ -143,9 +143,9 @@ namespace ProcCore.Business.DB0
     }
     #endregion
 
-    public partial class C45A0_SmithEntities : DbContext
+    public partial class C47A0_JDMaskEntities : DbContext
     {
-        public C45A0_SmithEntities(string connectionstring)
+        public C47A0_JDMaskEntities(string connectionstring)
             : base(connectionstring)
         {
         }

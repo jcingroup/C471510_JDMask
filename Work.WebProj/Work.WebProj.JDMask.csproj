@@ -216,13 +216,10 @@
     <Compile Include="Areas\Base\BaseAreaRegistration.cs" />
     <Content Include="Areas\Base\Views\Login\index.tablet.cshtml" />
     <Compile Include="Controllers\Api\GetActionController.cs" />
-    <Compile Include="Controllers\Api\IssueCategoryController.cs" />
     <Compile Include="Controllers\Api\MenuController.cs" />
     <Compile Include="Controllers\Api\ProductCategoryController.cs" />
-    <Compile Include="Controllers\Api\IssueController.cs" />
     <Compile Include="Controllers\Api\ProductController.cs" />
     <Compile Include="Controllers\Api\RolesController.cs" />
-    <Compile Include="Controllers\Api\PurchaseController.cs" />
     <Compile Include="Controllers\Api\UsersController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Global.asax.cs">

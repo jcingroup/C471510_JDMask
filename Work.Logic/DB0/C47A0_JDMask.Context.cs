@@ -13,10 +13,10 @@ namespace ProcCore.Business.DB0
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class C45A0_SmithEntities : DbContext
+    public partial class C47A0_JDMaskEntities : DbContext
     {
-        public C45A0_SmithEntities()
-            : base("name=C45A0_SmithEntities")
+        public C47A0_JDMaskEntities()
+            : base("name=C47A0_JDMaskEntities")
         {
         }
     
@@ -35,10 +35,6 @@ namespace ProcCore.Business.DB0
         public virtual DbSet<i_SN> i_SN { get; set; }
         public virtual DbSet<i_UserLoginLog> i_UserLoginLog { get; set; }
         public virtual DbSet<Menu> Menu { get; set; }
-        public virtual DbSet<ProductCategory> ProductCategory { get; set; }
-        public virtual DbSet<Product> Product { get; set; }
-        public virtual DbSet<Purchase> Purchase { get; set; }
-        public virtual DbSet<Issue> Issue { get; set; }
-        public virtual DbSet<IssueCategory> IssueCategory { get; set; }
+        public virtual DbSet<News> News { get; set; }
     }
 }
