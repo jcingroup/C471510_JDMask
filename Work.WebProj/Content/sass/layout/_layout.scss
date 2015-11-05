@@ -4,19 +4,17 @@ $wrapper-bg:            #fff;
 $content-spacing:       75px !default;
 
 // header
-$header-height:         112px;
-$logo-img:              'logo.png' !default;
-$logo-size:             235px, 83px !default;
+$header-height:         60px;
 
 $menu-height:           70px;
 $menu-height-sm:        100%;
 $menu-link:             transparent;
-$menu-link-hover:       $brand-secondary;
+$menu-link-hover:       #F5E2B8;
 
 // footer
-$footer-height:         50px !default;
+$footer-height:         300px !default;
 $footer-height-sm:      100px;
-$footer-bg:             #656565;
+$footer-bg:             url(#{$img-path}/bgFooter.gif) no-repeat center top;
 $goTop:                 (bottom 10px), (right 15px) !default;
 
 
@@ -28,7 +26,7 @@ $goTop:                 (bottom 10px), (right 15px) !default;
 }
 
 %center {
-    max-width: wrap-width(xl); // 最大寬度限制 (非滿版才需要)
+    // max-width: wrap-width(xl); // 最大寬度限制 (非滿版才需要)
     margin: 0 auto;
 }
 
@@ -37,9 +35,9 @@ $goTop:                 (bottom 10px), (right 15px) !default;
     @extend %clearfix;
 
     // 最小寬度限制 (無 RWD - 至少 lg 的寬度)
-    @include media(lg-min) {
-        min-width: wrap-width(lg);
-    }
+    // @include media(lg-min) {
+    //     min-width: wrap-width(lg);
+    // }
 
     // 最小寬度限制 (有 RWD - 至少 xxs 的寬度)
     // @include media(md) {
@@ -51,23 +49,21 @@ $goTop:                 (bottom 10px), (right 15px) !default;
 #wrapper {
     @extend %container;
     @extend %center;
-    @if $lte7 {
-        _height: 100%;
-    }
     min-height: 100%;
     padding-bottom: $footer-height + $content-spacing; // 內容與footer間距
-    background: $wrapper-bg;
-
-    @include media(sm) {
-        padding-bottom: $footer-height-sm + $content-spacing;
-    }
 }
 
 .wrap {
     @extend %container;
     @extend %center;
     @extend %clearfix;
-    // @extend .text-left;
+
+    $screens: xl, lg, md, sm, xs;
+    @each $screen in $screens {
+        @include media(#{$screen}) {
+            width: wrap-width(#{$screen});
+        }
+    }
 }
 
 #header, footer, main, section {
@@ -79,152 +75,210 @@ $goTop:                 (bottom 10px), (right 15px) !default;
 // header
 // ----------------------------------------------------------------------
 #header {
+    height:$header-height;
+
     z-index: z(header);
 
-    h1 {
-        cursor: pointer; cursor: hand; // for ie
+    @include media(lg) {background:#000;}
+
+    .logo {
+        height:100%;
+        width:238px;
         z-index: z(logo);
+        font-size: em(16px);
 
-        @include text-pic($logo-img, nth($logo-size,1),  nth($logo-size,2));
-        @include absolute(left cp(70px) top 28px);
+        float:left;
+        padding:10px 0;
 
-        @include media(xs) {
-            top: 15px; left: 10px;
-            background-size: contain;
-            @include size(150px,70px);
+        a {
+            display: block;
+            height:40px;
+            background:url(#{$img-path}/logo.png) left center no-repeat;
+            background-size:auto 100%;
+
+            font-size: em(12px);
+            letter-spacing: 0.258em;
+            color:#C1761E;
+
+            padding-left:115px;
+
+            em {
+                font-size: em(14px, 12px);
+
+                margin-bottom:4px;
+            }
         }
     }
 }
 
-.lan-nav {
-    font-size: em(26px);
-    color: #fff;
-    line-height: 34px;
-    z-index: z(logo)+1;
-    @include absolute(right 116px top 40px);
-    @include media(xs) { font-size: em(14px); right: 100px; top: 15px; }
+.menu-trigger {
+    display:none;
 }
-.top-nav {
-    text-align: right;
-    z-index: z(logo)-1;
 
-    @include absolute(right 20px top 38px);
-    @include media(xs) {
-        font-size: em(12px);
-        right: 10px; top: 12px;
+#menu {
+    text-align: right;
+
+    .toggle {
+        display:none;
     }
 
     a {
         display: inline-block;
-        vertical-align: middle;
-        margin-left: 8px;
+        height: $header-height;
 
-        &.club { @include text-pic('icon_club.png', 35px, 35px, fixed); }
-        &:last-of-type { background-position: -92px 0; }
-    }
-    span {
-        display: block;
-        clear: both;
-        color: #fff;
-        font-size: em(20px);
-        margin-top: 8px;
+        line-height: $header-height;
+        color:#5C5040;
+        letter-spacing: 0.1em;
+
+        padding:0 20px;
+
+        $selector: ();
+
+        @each $item in $pages {
+            $i: index($pages, $item);
+
+            $selector: append($selector, unquote(".#{$item} &:nth-of-type(#{$i})"), comma);
+        }
+
+        &:hover,
+        #{$selector} {
+            background: $menu-link-hover;
+            color:#C1761E;
+        }
     }
 }
 
 
 // footer
 // ----------------------------------------------------------------------
-footer {
+#footer {
     @extend %center;
     background: $footer-bg;
+    border-top: 3px solid #D6B65C;
+
     margin-top: -($footer-height);
     height: $footer-height;
     z-index: z(footer);
 
-    color: #fff;
-    padding: $gutter;
+    color: $brand-primary;
 
     @include media(sm) {
         margin-top: -($footer-height-sm);
         height: $footer-height-sm;
     }
+
+    .logo {
+        width: 265px;
+        height:65px;
+
+        background:url(#{$img-path}/logo2.gif) no-repeat left center;
+        background-size: auto 100%;
+
+        color:#9C5F18;
+        font-size: em(14.35px);
+        text-align: left;
+
+        position: absolute;
+        left:295px; top:40px;
+
+        padding:8px 0 8px 120px;
+
+        em {
+            font-size: em(16.54px,14.35px);
+        }
+    }
 }
 
-.explain {
-    float: right;
+.contact {
+    @extend .list-inline;
 
-    @include media(sm) {
-        float: none;
-        text-align: center;
-        padding-top: 10px;
+    float:right;
+
+    margin-top:28px;
+
+    li {
+        height:80px;
+        float:left;
+
+        margin-left:4px;
+
+        a {
+            @include text-pic('navFooter.gif', 40px, 40px);
+            display: block;
+
+            margin-top:20px;
+
+            &:hover, &:focus {
+                background-position:0 -80px;
+            }
+        }
+
+        &:first-child {margin-right:4px;}
+
+        &:last-child {
+            a {
+                background-position:-51px 0;
+
+                &:hover, &:focus {background-position:-51px -80px;}
+            }
+        }
     }
+}
 
-    a {
-        color: #fff;
-        font-size: em(17px);
+.mit {
+    height:122px;
+    background:url(#{$img-path}/mit.gif) no-repeat 78px 37px;
+
+    font-size: em(22.44px);
+    letter-spacing: 0.243em;
+
+    position: absolute;
+    right:0; top:150px;
+
+    em {
+        display: block;
+        font-style: normal;
+        font-size: em(27.36px,22.44px);
+        font-family:$font-family-slogan;
+        font-weight: 300;
+        letter-spacing: 0;
+
+        margin-top:30px;
+
+        span {margin:0 8px;}
     }
 }
 
 .copyright {
-    float: left;
-    font-size: em(17px);
-    text-align: left;
-}
-.bottom, .goTop {
-    @include media(sm) {
-        @include prefix(transform,scale(0.6) translateX(40%));
-    }
-}
-.bottom {
-    @include fixed(bottom cp(230px) right 0);
-    width: 115px;
-    padding: 15px 3px;
-    background: #fff;
-    border-radius: 15px 0 0 15px;
-    box-shadow: -10px 15px 0 rgba(#CBC9C8, 0.5);
-    z-index: z(goTop)+1;
-    a {
-        display: block;
-        font-size: em(31px);
+    font-size: em(12px);
+    font-family:$font-family-slogan;
+    font-weight: 300;
 
-        &:first-child {
-            @include circle(92px);
-            background: $info;
-            color: #F5F199;
-
-            &:hover, &:active { background: $brand-secondary; }
-        }
-        &:last-child {
-            border-top: 1px solid #878787;
-            line-height: 1.1;
-            padding-top: 12px;
-            margin: 12px 10px 0 10px;
-        }
-    }
+    position: absolute;
+    left:137px; top:210px;
 }
 .goTop {
-    @include fixed(bottom cp(55px) right cp(10px));
-    @include circle(100px);
+    @include fixed(bottom cp(10px) right cp(10px));
+    @include size(40px);
 
-    background: rgba(#fff,0.6);
-    border: 2px solid $info;
-    color: $info;
-    font-size: em(40px);
+    background: #D6B65C;
+    color: #fff;
     line-height: 1.1;
-    padding-top: 37px;
+    padding-top: 19px;
 
     display: none;
     z-index: z(goTop);
+    transition: background 0.3s;
 
     &::before {
-        @include caret(up, 20px, 22px, $info);
-        @include absolute(top 0 left 50%);
+        @include caret(up, 12px, 8px, #fff);
+        @include absolute(top 4px left 50%);
         content: '';
-        margin-left: -10px;
+        margin-left: -6px;
     }
     &:hover, &:active {
         opacity: 1;
-        background: #fff;
-        color: darken($link-color,10%);
+        color:#fff;
+        background: $brand-primary;
     }
 }

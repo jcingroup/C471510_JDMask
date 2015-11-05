@@ -1,17 +1,17 @@
 @charset "UTF-8";
 
-$btn-color:          $link-color !default;
-$btn-hover-color:    $link-hover-color !default;
-$btn-bg-color:       $brand-primary !default;
-$btn-bg-hover:       $brand-secondary;
-$btn-shadow:         0px 2px 2px hsla(0,0,0,0.2);
+$btn-color:          #fff !default;
+$btn-hover-color:    #fff !default;
+$btn-bg-color:       $link-color !default;
+$btn-bg-hover:       $link-hover-color;
+$btn-shadow:         none;
 
-$btn-padding:        7px 35px !default;
-$btn-border:         2px solid $link-color;
-$btn-border-radius:  50px !default;
+$btn-padding:        10px 15px !default;
+$btn-border:         0;
+$btn-border-radius:  0 !default;
 
-$btn-font-size:      25px !default;
-$btn-line-height:    1.01 !default;
+$btn-font-size:      18px !default;
+$btn-line-height:    1 !default;
 
 $btn-disabled:       $gray-light !default;
 $btn-state-color:    #fff !default;
@@ -24,18 +24,17 @@ $btn-state-color:    #fff !default;
     display: inline-block;
     padding: $btn-padding;
 
-    // background: $btn-bg-color;
+    background: $btn-bg-color;
     border-radius: $btn-border-radius;
     border: $btn-border;
-    // box-shadow: $btn-shadow;
 
     color: $btn-color;
-    // font-family: $font-family-base;
     font-size: em($btn-font-size);
-    font-weight: bold;
     line-height: $btn-line-height;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
 
-    transition: all 0.3s;
+    transition: background 0.3s;
 
     &, &:active, &.active {
         &:focus, &.focus {
@@ -43,9 +42,7 @@ $btn-state-color:    #fff !default;
         }
     }
     &:hover, &:active {
-    // &:hover, &:focus, &.focus {
-        background: $btn-state-color;
-        border-color: $btn-hover-color;
+        background: $btn-bg-hover;
         color: $btn-hover-color;
     }
     &:active, &.active {

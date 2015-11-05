@@ -3,6 +3,9 @@
 @import "basic/normalize"; // 重置復位
 @import "basic/print";  // 列印樣式
 
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
+
+
 /*      basic elements
 -----------------------------------------------------------------------*/
 // 自定Reset
@@ -52,16 +55,6 @@ hr {
 
 img {
     vertical-align: middle;
-}
-
-@font-face {
-    font-family: MElleHK;
-    src: url(#{$font-path}/MElleHK.otf) format('opentype');
-}
-
-@font-face {
-    font-family: NeutrafaceDemi;
-    src: url(#{$font-path}/NeutrafaceDemi.otf) format('opentype');
 }
 
 // Headings

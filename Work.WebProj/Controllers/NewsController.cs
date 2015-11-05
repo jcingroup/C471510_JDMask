@@ -14,9 +14,14 @@ namespace DotWeb.Controllers
 {
     public class NewsController : WebUserController
     {
-        public ActionResult index()
+        public ActionResult list()
         {
-            return View("News");
+            return View("News_list");
+        }
+
+        public ActionResult content()
+        {
+            return View("News_content");
         }
     }
 }

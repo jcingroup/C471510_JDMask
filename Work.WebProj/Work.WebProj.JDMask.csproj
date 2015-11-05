@@ -261,12 +261,13 @@
     <Content Include="Content\images\iconFeatured.gif" />
     <Content Include="Content\images\iconHome.gif" />
     <Content Include="Content\images\Index\banner1.jpg" />
+    <Content Include="Content\images\Index\pro.jpg" />
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\logo2.gif" />
     <Content Include="Content\images\mit.gif" />
     <Content Include="Content\images\navFooter.gif" />
     <Content Include="Content\images\Products\banner.jpg" />
-    <Content Include="Content\images\qr.jpg" />
+    <Content Include="Content\images\qr.gif" />
     <Content Include="Content\sass\base\basic\_normalize.scss" />
     <Content Include="Content\sass\base\basic\_print.scss" />
     <Content Include="Content\sass\base\_basic.scss" />
@@ -661,6 +662,7 @@
     <Content Include="Scripts\app\shadowbox\shadowbox.js" />
     <Content Include="Scripts\app\shadowbox\LICENSE" />
     <Content Include="Scripts\app\shadowbox\README" />
+    <Content Include="Views\News\News_content.cshtml" />
     <Content Include="_Code\RPTExcel\DownExcel.xls" />
     <Content Include="_Code\RPTExcel\Equipment.xls" />
     <Content Include="_Code\RPTExcel\Apply.xls" />
@@ -692,10 +694,10 @@
     <Content Include="Scripts\src\jsx\m-Menu.jsx" />
     <Content Include="Views\AboutUs\AboutUs.cshtml" />
     <Content Include="Views\ContactUs\ContactUs.cshtml" />
-    <Content Include="Views\News\News.cshtml" />
     <Content Include="Views\Products\Products_content.cshtml" />
     <Content Include="Views\Products\Products_list.cshtml" />
     <Content Include="Views\Quality\Quality.cshtml" />
+    <Content Include="Views\News\News_list.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

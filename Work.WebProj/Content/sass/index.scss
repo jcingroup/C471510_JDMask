@@ -2,14 +2,14 @@
 
 $img-path2:             '../images/index';
 
+$btn-bg-color:       hsla(43,73%,44%,0.5);
+
 $content-spacing:       0;
 
-$header-height:         560px;
-$banner-bg:             url(#{$img-path2}/banner.png) center 0 no-repeat;
-$banner-height:         600px;
+$banner-height:         800px;
 
 $footer-bg:             #406947;
-$footer-height:         390px;
+$footer-height:         300px;
 $footer-height2:        126px;
 $footer-contact-color:  #D5E8C2;
 
@@ -21,6 +21,7 @@ $footer-contact-color:  #D5E8C2;
 // component   元件
 // layout      布局相關
 //
+@import "helper/function";
 @import "helper/var";
 @import "helper/mixins";
 
@@ -35,28 +36,92 @@ $footer-contact-color:  #D5E8C2;
 // header
 // ----------------------------------------------------------------------
 #header {
-    &::before {
-        height: 165px;
-        opacity: .76;
-    }
-    h1 {
-        background-image: url(#{$img-path2}/logo.png);
-        height: 165px;
-    }
+    background:hsla(0,0,100%,0.5);
 }
 
 #banner {
-    header, h2 {
-        position: relative;
-        left: 50%; top: 250px;
-        margin-left: -500px;
+    height: $banner-height;
+
+    margin-top:-$header-height;
+
+    ul {
+        @extend .list-unstyled;
+        height: 100%;
+
+            @for $i from 1 through 1 {
+            .i#{$i} {
+                height: 100%;
+                background: url(#{$img-path2}/banner#{$i}.jpg) no-repeat center top;
+
+                text-align: left;
+            }
+
+            li {
+                h2 {
+                    color:#fff;
+                    font-size: em(36px);
+                    letter-spacing: 0.2em;
+                    line-height: 140%;
+
+                    position: absolute;
+                    top:152px;
+                    right:40px;
+
+                    text-shadow: 0 0 5px hsla(0,0,0,0.2);
+                }
+
+                .btn {
+                    position: absolute;
+                    top:280px;
+                    right:233px;
+
+                    &:hover, &:focus {
+                        background:darken(rgba(194,148,30,0.5),10%);
+                    }
+                }
+            }
+        }
     }
-    header {
-        @include text-pic('index/slogan.png',523px,157px)
-    }
-    h2 {
-        @include text-pic('index/sub-slogan.png',609px,98px);
-        margin-left: -513px;
+
+    .pro {
+        @extend .wrap;
+        margin-top:-345px;
+
+        a {
+            display: block;
+            width:380px;
+            height:260px;
+            background:hsla(0,0,100%,0.3);
+            border:1px solid #fff;
+
+            position: absolute;
+            right:0;
+
+            padding:10px;
+
+            &::before {
+                content:" ";
+                display: block;
+                width: calc(100% - 18px);
+                height: calc(100% - 18px);
+                position: absolute;
+                left:10px; top:10px;
+
+                background:$brand-primary;
+                opacity: 0;
+                transition: opacity 0.5s;
+            }
+
+            .btn {
+                position: absolute;
+                top:45px; right:8px;
+            }
+
+            &:hover {
+                &::before {opacity:0.25;}
+                .btn {background:darken(rgba(194,148,30,0.5),10%);}
+            }
+        }
     }
 }
 
@@ -66,91 +131,3 @@ $footer-contact-color:  #D5E8C2;
 
 // main
 // ----------------------------------------------------------------------
-.info {
-    @extend %list-inline;
-    @extend .text-center;
-
-    background: url(#{$img-path2}/infoBg.png) center 0 no-repeat;
-    padding-top: 120px;
-    padding-bottom: 50px;
-    margin-top: -60px;
-
-    a {
-        @extend .circle;
-
-        border: 5px solid #fff;
-        box-shadow: 0 3px 7px #8A8141;
-        background: #665A05 url(#{$img-path2}/info-pic.gif) center 0 no-repeat;
-
-        font-size: em(32px);
-        font-weight: bold;
-
-        display: block;
-        width: 280px; height: 280px;
-        padding-top: 190px;
-
-        &:hover {
-            transform: translateY(-10px);
-            opacity: .9
-        }
-    }
-    li {
-        margin: 0 30px;
-
-        &:nth-child(1) a {
-            color: #FDD317;
-        }
-        &:nth-child(2) a {
-            background-color: #43681B;
-            background-image: url(#{$img-path2}/info-pic2.gif);
-            color: #D5E8C2;
-        }
-        &:nth-child(3) a {
-            background-color: #B39F17;
-            background-image: url(#{$img-path2}/info-pic3.gif);
-            color: #254202;
-        }
-    }
-}
-
-.news {
-    background: #94BC1B;
-    padding: 80px 0;
-
-    header {
-        color: #406947;
-        font-size: em(80px);
-        font-family: MElleHK, $font-family-base;
-        line-height: 1;
-        margin-bottom: 45px;
-    }
-    .swiper {
-        &-container {
-            width: 100%;
-            max-width: 1220px;
-            padding: 0 90px;
-            height: 420px;
-            overflow: hidden;
-            margin: auto;
-        }
-        &-wrapper {
-            @extend %list-unstyled;
-        }
-        &-slide {
-            @extend .text-left;
-
-            width: 435px;
-        }
-        &-button-prev {
-            // @include prefix(transform, translateX(-20px));
-        }
-    }
-    .cover {
-        height: 155px;
-        margin: auto;
-        overflow: hidden;
-    }
-    .btn {
-        margin-top: 20px;
-    }
-}
