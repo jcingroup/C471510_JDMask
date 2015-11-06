@@ -21,6 +21,7 @@
 
 // 做三角形
 @mixin caret($direction, $width, $height:$width/2, $color: inherit, $display:inline-block) {
+    content: '';
     display: $display;
     border: $width/2 solid transparent;
 

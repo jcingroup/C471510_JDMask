@@ -40,10 +40,9 @@ $goTop:                 (bottom 10px), (right 15px) !default;
     // }
 
     // 最小寬度限制 (有 RWD - 至少 xxs 的寬度)
-    // @include media(md) {
-    //     min-width: 100%;
-    //     max-width: 100%;
-    // }
+    @include media(xs) {
+        min-width: wrap-width(xxs);
+    }
 }
 
 #wrapper {
@@ -188,8 +187,6 @@ $goTop:                 (bottom 10px), (right 15px) !default;
 }
 
 .contact {
-    @extend .list-inline;
-
     float:right;
 
     margin-top:28px;

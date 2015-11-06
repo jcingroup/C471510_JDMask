@@ -152,12 +152,12 @@ $color: map-merge($state-type, $table-color);
 
 // 中斷點
 $breakpoints: (
-    xs:  320px,     // Extra small screen / phone
+    xs:  320px,   // Extra small screen / phone
     sm:  544px,   // Small screen / phone
     md:  768px,   // Medium screen / tablet
     lg:  992px,   // Large screen / desktop
     lg2: 1280px,  // Large screen / desktop
-    xl:  1400px   // Extra large screen / wide desktop
+    xl:  1440px   // Extra large screen / wide desktop
 );
 
 // 容器寬度
@@ -167,12 +167,12 @@ $wrap-widths: (
     sm:  720px,
     md:  960px,
     lg:  1008px,
-    xl:  1440px
+    xl:  1400px
 );
 
 // media queries
 $medias: (
-    xss:      (max-width: break(xs)),
+    xxs:      (max-width: break(xs)),
     xs:       (max-width: break(sm)),
 
     sm:       (max-width: break(md)),

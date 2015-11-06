@@ -287,6 +287,7 @@ hr {
 
 img {
   vertical-align: middle;
+  max-width: 100%;
 }
 
 h2, h3, h4, h5, h6 {
@@ -436,14 +437,14 @@ address {
   text-align: center;
 }
 
-.list-inline, .breadcrumb, .contact, .list-unstyled, #banner ul {
+.list-inline, .breadcrumb, .list-unstyled, #banner ul {
   list-style: none;
 }
 
-.list-inline, .breadcrumb, .contact {
+.list-inline, .breadcrumb {
   margin-left: -5px;
 }
-.list-inline > li, .breadcrumb > li, .contact > li {
+.list-inline > li, .breadcrumb > li {
   display: inline-block;
   padding-left: 5px;
   padding-right: 5px;
@@ -477,6 +478,10 @@ address {
 .breadcrumb li:first-child a {
   padding-left: 18px;
   background: url(../images/iconHome.gif) no-repeat left center;
+}
+
+.border {
+  border: 1px solid #DBD2CC;
 }
 
 .btn {
@@ -519,17 +524,23 @@ address {
   margin: 0 auto;
 }
 
+@media all and (max-width: 544px) {
+  #header, #footer, #main, #content {
+    min-width: 320px;
+  }
+}
+
 #wrapper {
   min-height: 100%;
   padding-bottom: 300px;
 }
 
-@media all and (min-width: 1400px) {
+@media all and (min-width: 1440px) {
   .wrap, #banner .pro {
-    width: 1440px;
+    width: 1400px;
   }
 }
-@media all and (max-width: 1399px) {
+@media all and (max-width: 1439px) {
   .wrap, #banner .pro {
     width: 1008px;
   }
@@ -709,6 +720,7 @@ address {
   transition: background 0.3s;
 }
 .goTop::before {
+  content: '';
   display: inline-block;
   border: 6px solid transparent;
   width: 0;
