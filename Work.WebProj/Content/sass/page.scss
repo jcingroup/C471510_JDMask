@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+$btn-bg-color:       hsla(43,73%,44%,0.5);
+
+$banner-height:         280px;
+
+
+// import
+// ------------------------------------------------------------
+// helper      non-CSS outputs (mixins,variables) & non-component
+// basic       通用: table,form,classes
+// component   元件
+// layout      布局相關
+//
+@import "helper/function";
+@import "helper/var";
+@import "helper/mixins";
+
+@import "base/basic";
+
+@import "component/classes";
+@import "component/btn";
+
+@import "layout/layout";
+
+
+/*      main
+-----------------------------------------------------------------------*/
+#content {
+    text-align: left;
+}
+
+#banner {
+    height: $banner-height;
+    border-top:1px solid #DBDBDB;
+    border-bottom:1px solid #DBDBDB;
+
+    padding-top:143px;
+    margin-bottom:40px;
+
+    @each $item in $pages {
+        .#{$item} & {
+            background:url(#{$img-path}/#{$item}/banner.jpg) no-repeat center top;
+        }
+    }
+
+    h2.title {
+        @extend .wrap;
+
+        color:#fff;
+        font-size: em(55px);
+        letter-spacing: 0.1em;
+        text-align: right;
+        text-shadow: 0 0 5px hsla(0,0,0,0.2);
+    }
+}
+
+h3.title {
+    color:$brand-secondary;
+    font-size: em(30px);
+    letter-spacing: 0.1em;
+
+    margin-bottom:35px;
+    padding-bottom:23px;
+    border-bottom:1px solid #E0B44E;
+}
+
+
+// news
+// ----------------------------------------------------------------------
+.news-article {
+    h4.title {
+        color:$brand-primary;
+        font-size: em(20px);
+
+        em {
+            font-style: normal;
+            color:lighten($brand-primary,10%);
+
+            margin-right:10px;
+        }
+    }
+    .excerpt {
+        margin-bottom:15px;
+    }
+    .more {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom:1px dashed #C4C2BA;
+    }
+}
+.date {
+    color:desaturate(lighten($brand-secondary,15%),20%);
+    text-align: right;
+    margin-top:-20px;
+}
+.editor {margin-bottom:30px;}

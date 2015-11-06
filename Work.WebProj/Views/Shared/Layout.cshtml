@@ -45,7 +45,25 @@
     </header><!-- header //-->
 
     <main id="main">
-        @RenderBody()
+        @if (ViewBag.IsFirstPage)
+        {
+            @RenderBody()
+        }
+        else {
+            <section id="content">
+                <header id="banner">
+                    <h2 class="title">@ViewBag.Title</h2>
+                </header>
+                <div class="wrap">
+                    <ul class="breadcrumb">
+                        <li><a href="~/Index">HOME</a></li>
+                        @ViewBag.Breadcrumb
+                        <li>@ViewBag.Title</li>
+                    </ul>
+                    @RenderBody()
+                </div>
+            </section>
+        }
     </main>
 
 </div><!-- wrapper //-->

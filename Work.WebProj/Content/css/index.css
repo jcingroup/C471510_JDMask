@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic);
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -259,7 +259,7 @@ html, body {
 
 body {
   background: #fff;
-  color: #3F3F3F;
+  color: #635E5A;
   font-family: "Microsoft Jhenghei", \5FAE\8EDF\6B63\9ED1\9AD4, "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.25;
 }
@@ -377,7 +377,7 @@ address {
   line-height: 1.25;
 }
 
-#header::after, footer::after, main::after, section::after, .wrap::after, #banner .pro::after, .clearfix::after {
+#header::after, #footer::after, #main::after, #content::after, .wrap::after, #banner .pro::after, .clearfix::after {
   content: '';
   display: table;
   clear: both;
@@ -436,14 +436,14 @@ address {
   text-align: center;
 }
 
-.list-inline, .contact, .list-unstyled, #banner ul {
+.list-inline, .breadcrumb, .contact, .list-unstyled, #banner ul {
   list-style: none;
 }
 
-.list-inline, .contact {
+.list-inline, .breadcrumb, .contact {
   margin-left: -5px;
 }
-.list-inline > li, .contact > li {
+.list-inline > li, .breadcrumb > li, .contact > li {
   display: inline-block;
   padding-left: 5px;
   padding-right: 5px;
@@ -458,10 +458,31 @@ address {
   letter-spacing: 0.243em;
 }
 
+.breadcrumb {
+  float: right;
+  margin-top: 15px;
+}
+.breadcrumb li {
+  color: #C1761E;
+  font-size: 0.75em;
+  padding: 0 2px;
+}
+.breadcrumb li a {
+  color: #C4BBB0;
+}
+.breadcrumb li a::after {
+  content: "/";
+  margin-left: 5px;
+}
+.breadcrumb li:first-child a {
+  padding-left: 18px;
+  background: url(../images/iconHome.gif) no-repeat left center;
+}
+
 .btn {
   display: inline-block;
-  padding: 10px 15px;
-  background: rgba(194, 148, 30, 0.5);
+  padding: 8px 15px;
+  background: #E0C98E;
   border-radius: 0;
   border: 0;
   color: #fff;
@@ -477,7 +498,7 @@ address {
   outline-offset: -2px;
 }
 .btn:hover, .btn:active {
-  background: #ab821b;
+  background: #C2AB6F;
   color: #fff;
 }
 .btn:active, .btn.active {
@@ -490,7 +511,7 @@ address {
 
 /*      layout
 -----------------------------------------------------------------------*/
-#wrapper, .wrap, #banner .pro, #header, footer, main, section {
+#wrapper, .wrap, #banner .pro, #header, #footer, #main, #content {
   position: relative;
 }
 
@@ -532,11 +553,6 @@ address {
 #header {
   height: 60px;
   z-index: 2;
-}
-@media all and (max-width: 1399px) {
-  #header {
-    background: #000;
-  }
 }
 #header .logo {
   height: 100%;
@@ -740,8 +756,9 @@ address {
 }
 #banner ul li .btn {
   position: absolute;
-  top: 280px;
+  top: 276px;
   right: 233px;
+  background: rgba(194, 148, 30, 0.5);
 }
 #banner ul li .btn:hover, #banner ul li .btn:focus {
   background: rgba(150, 114, 23, 0.5);
@@ -780,5 +797,5 @@ address {
   opacity: 0.25;
 }
 #banner .pro a:hover .btn {
-  background: rgba(150, 114, 23, 0.5);
+  background: #C2AB6F;
 }

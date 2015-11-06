@@ -254,10 +254,9 @@
     <Content Include="Content\css\toastr.css" />
     <Content Include="Content\fonts\bootstrap\glyphicons-halflings-regular.svg" />
     <Content Include="Content\fonts\fontAwesome\fontawesome-webfont.svg" />
-    <Content Include="Content\font\MElleHK.otf" />
-    <Content Include="Content\font\MElleHK.ttf" />
-    <Content Include="Content\font\MElleHK.woff" />
+    <Content Include="Content\images\AboutUs\banner.jpg" />
     <Content Include="Content\images\bgFooter.gif" />
+    <Content Include="Content\images\ContactUs\banner.jpg" />
     <Content Include="Content\images\iconFeatured.gif" />
     <Content Include="Content\images\iconHome.gif" />
     <Content Include="Content\images\Index\banner1.jpg" />
@@ -266,8 +265,10 @@
     <Content Include="Content\images\logo2.gif" />
     <Content Include="Content\images\mit.gif" />
     <Content Include="Content\images\navFooter.gif" />
+    <Content Include="Content\images\News\banner.jpg" />
     <Content Include="Content\images\Products\banner.jpg" />
     <Content Include="Content\images\qr.gif" />
+    <Content Include="Content\images\Quality\banner.jpg" />
     <Content Include="Content\sass\base\basic\_normalize.scss" />
     <Content Include="Content\sass\base\basic\_print.scss" />
     <Content Include="Content\sass\base\_basic.scss" />
@@ -307,6 +308,7 @@
     <Content Include="Content\sass\helper\mixins\_shape.scss" />
     <Content Include="Content\sass\helper\_function.scss" />
     <Content Include="Content\sass\layout\_grid.scss" />
+    <Content Include="Content\sass\page.scss" />
     <None Include="gulpfile.js" />
     <Content Include="Content\images\noIE\bg.gif" />
     <Content Include="Content\images\noIE\brow.gif" />
@@ -788,10 +790,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Active\Views\Shared\" />
     <Folder Include="Areas\Base\Views\Shared\" />
-    <Folder Include="Content\images\AboutUs\" />
-    <Folder Include="Content\images\ContactUs\" />
-    <Folder Include="Content\images\News\" />
-    <Folder Include="Content\images\Quality\" />
     <Folder Include="Content\sass\vendor\" />
     <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="_Code\CReport\" />

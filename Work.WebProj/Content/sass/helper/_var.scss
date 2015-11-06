@@ -20,7 +20,7 @@ $gray-lighter:          lighten($gray-base, 93.5%);   // #eee
 
 // 抽象色
 $brand-primary:         #C1931E;             // 主色
-$brand-secondary:       #cb9b0c;             // 輔色
+$brand-secondary:       #C1761E;             // 輔色
 $success:               #019740 !default;             // 綠
 $info:                  #0180CC !default;             // 藍
 $warning:               #FABE01 !default;             // 黃
@@ -31,7 +31,7 @@ $error:                 #E60112 !default;             // 紅
 // ----------------------------------------------------------------------
 // <body> 背景 & 文字色
 $body-bg:               #fff !default;
-$text-color:            #3F3F3F !default;
+$text-color:            #635E5A !default;
 
 $link-color:            $brand-primary;             // 文字鏈結色
 $link-hover-color:      darken($link-color, 5%) !default;     // 滑鼠移過色

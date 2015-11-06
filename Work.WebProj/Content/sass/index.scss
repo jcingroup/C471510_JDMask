@@ -2,8 +2,6 @@
 
 $img-path2:             '../images/index';
 
-$btn-bg-color:       hsla(43,73%,44%,0.5);
-
 $content-spacing:       0;
 
 $banner-height:         800px;
@@ -72,8 +70,9 @@ $footer-contact-color:  #D5E8C2;
 
                 .btn {
                     position: absolute;
-                    top:280px;
+                    top:276px;
                     right:233px;
+                    background:hsla(43,73%,44%,0.5);
 
                     &:hover, &:focus {
                         background:darken(rgba(194,148,30,0.5),10%);
@@ -119,7 +118,7 @@ $footer-contact-color:  #D5E8C2;
 
             &:hover {
                 &::before {opacity:0.25;}
-                .btn {background:darken(rgba(194,148,30,0.5),10%);}
+                .btn {background:$btn-bg-hover;}
             }
         }
     }
