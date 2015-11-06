@@ -270,7 +270,7 @@
                                 </label>
                             </th>
                         <th className="col-xs-1 text-center">修改</th>
-                        <th className="col-xs-2">標題</th>
+                        <th className="col-xs-4">標題</th>
                         <th className="col-xs-2">日期</th>
                         <th className="col-xs-2">狀態</th>
                         </tr>
@@ -372,16 +372,7 @@
                        </div>
                     </div>
                 </div>
-                <div className="form-group">
-                     <label className="col-xs-2 control-label">簡介</label>
-                        <div className="col-xs-6">
-                            <textarea cols={30} rows={2} className="form-control"
-                                value={fieldData.news_info}
-                                onChange={this.changeFDValue.bind(this, 'news_info') }
-                                maxLength={256}></textarea>
-                            </div>
-                        <small className="help-inline col-xs-4">最多256個字</small>
-                    </div>
+
                 <div className="form-group">
                      <label className="col-xs-2 control-label">內容</label>
                         <div className="col-xs-6">

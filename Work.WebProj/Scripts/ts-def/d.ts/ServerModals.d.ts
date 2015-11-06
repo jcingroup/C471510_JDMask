@@ -53,7 +53,6 @@
     interface News extends BaseEntityTable {
         news_id?: number;
         news_title?: string;
-        news_info?: string;
         news_content?: string;
         news_date?: Date;
         i_Hide?: boolean;
