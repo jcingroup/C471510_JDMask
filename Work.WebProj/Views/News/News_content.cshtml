@@ -1,18 +1,18 @@
-﻿@{
+﻿@model ProcCore.Business.DB0.News
+@{
     ViewBag.Title = "最新消息";
     ViewBag.BodyClass = "News News_content";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
 <h3 class="title">
-    J+D 官方網站正式營運了～
+    @Model.news_title
 </h3>
 
-<p class="date">2015/11/10</p>
+<p class="date">@Model.news_date.ToString("yyyy/MM/dd")</p>
 
 <article class="editor">
-    <h4>期待已久的 J+D 官方網站正式上線囉</h4>
-    <p>感謝大家支持！</p>
+    @Html.Raw(Model.news_content)
 </article>
 
 <p class="back">

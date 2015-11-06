@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IList<ProcCore.Business.DB0.m_News>
+@{
     ViewBag.Title = "最新消息";
     ViewBag.BodyClass = "News";
     Layout = "~/Views/Shared/Layout.cshtml";
@@ -6,23 +7,23 @@
 
 <h3 class="title">最新消息</h3>
 
-<article class="news-article">
-    <h4 class="title"><em>2015/11/10</em>J+D 官方網站正式營運了～</h4>
-    <p class="excerpt">期待已久的 J+D 官方網站正式上線囉，感謝大家支持！</p>@* 節錄前63個字 *@
-    <p class="more"><a href="~/News/content" class="btn">Read More &gt;&gt;</a></p>
-</article>
-
-<article class="news-article">
-    <h4 class="title"><em>2015/11/10</em>J+D 官方網站正式營運了～</h4>
-    <p class="excerpt">期待已久的 J+D 官方網站正式上線囉，感謝大家支持！</p>@* 節錄前63個字 *@
-    <p class="more"><a href="~/News/content" class="btn">Read More &gt;&gt;</a></p>
-</article>
-
-<article class="news-article">
-    <h4 class="title"><em>2015/11/10</em>J+D 官方網站正式營運了～</h4>
-    <p class="excerpt">期待已久的 J+D 官方網站正式上線囉，感謝大家支持！</p>@* 節錄前63個字 *@
-    <p class="more"><a href="~/News/content" class="btn">Read More &gt;&gt;</a></p>
-</article>
+@foreach (var item in Model)
+{
+    <article class="news-article">
+        <h4 class="title"><em>@item.news_date.ToString("yyyy/MM/dd")</em>@item.news_title</h4>
+        <p class="excerpt">
+            @if (item.news_content.Length>=63)
+            {
+                @item.news_content.Substring(0, 63) 
+            }
+            else
+            {
+               @item.news_content
+            }           
+        </p>@* 節錄前63個字 *@
+        <p class="more"><a href="~/News/content?id=@item.news_id" class="btn">Read More &gt;&gt;</a></p>
+    </article>
+}
 
     @* <ul class="pager">
         <li><a href="">&lt;&lt;<em>第一頁</em></a></li>

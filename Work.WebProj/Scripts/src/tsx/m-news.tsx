@@ -61,6 +61,7 @@
             this.delCheck = this.delCheck.bind(this);
             this.checkAll = this.checkAll.bind(this);
             this.componentDidMount = this.componentDidMount.bind(this);
+            this.componentDidUpdate = this.componentDidUpdate.bind(this);
             this.insertType = this.insertType.bind(this);
             this.state = { fieldData: null, gridData: { rows: [], page: 1 }, edit_type: 0, searchData: {} }
 
@@ -72,6 +73,11 @@
         }
         componentDidMount() {
             this.queryGridData(1);
+        }
+        componentDidUpdate(prevProps, prevState) {
+            if (prevState.edit_type == 0 && this.state.edit_type == 1) {
+                CKEDITOR.replace('editor1', {});
+            }
         }
         gridData(page: number) {
 
@@ -101,6 +107,8 @@
         handleSubmit(e: React.FormEvent) {
 
             e.preventDefault();
+            this.state.fieldData.news_content = CKEDITOR.instances.editor1.getData();//編輯器
+
             if (this.state.edit_type == 1) {
                 jqPost(this.props.apiPath, this.state.fieldData)
                     .done((data: CallResult, textStatus, jqXHRdata) => {
@@ -188,6 +196,7 @@
             jqGet(this.props.apiPath, { id: id })
                 .done((data, textStatus, jqXHRdata) => {
                     this.setState({ edit_type: 2, fieldData: data.data });
+                    CKEDITOR.replace('editor1', {});
                 })
                 .fail((jqXHR, textStatus, errorThrown) => {
                     showAjaxError(errorThrown);
@@ -261,7 +270,7 @@
                                 </label>
                             </th>
                         <th className="col-xs-1 text-center">修改</th>
-                        <th className="col-xs-2">標題</th>
+                        <th className="col-xs-4">標題</th>
                         <th className="col-xs-2">日期</th>
                         <th className="col-xs-2">狀態</th>
                         </tr>
@@ -367,10 +376,9 @@
                 <div className="form-group">
                      <label className="col-xs-2 control-label">內容</label>
                         <div className="col-xs-6">
-                            <textarea cols={30} rows={3} className="form-control"
+                            <textarea cols={30} rows={5} className="form-control" id="editor1"
                                 value={fieldData.news_content}
-                                onChange={this.changeFDValue.bind(this, 'news_content') }
-                                maxLength={512}></textarea>
+                                onChange={this.changeFDValue.bind(this, 'news_content') }></textarea>
                             </div>
                     </div>
 

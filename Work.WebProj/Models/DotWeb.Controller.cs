@@ -18,6 +18,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Transactions;
 using System.Web;
@@ -961,6 +962,20 @@ namespace DotWeb.Controller
                 r.Add(s);
             }
             return r;
+        }
+        /// <summary>
+        /// 移除html tag
+        /// </summary>
+        /// <param name="htmlSource"></param>
+        /// <returns></returns>
+        public static string RemoveHTMLTag(string htmlSource)
+        {
+            //移除  javascript code.
+            //htmlSource = Regex.Replace(htmlSource, @"<script[\d\D]*?>[\d\D]*?</script>", String.Empty);
+
+            //移除html tag.
+            htmlSource = Regex.Replace(htmlSource, @"<[^>]*>", String.Empty);
+            return htmlSource;
         }
     }
     #endregion
