@@ -142,6 +142,7 @@
           </Key>
           <Property Name="news_id" Type="int" Nullable="false" />
           <Property Name="news_title" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="news_info" Type="nvarchar" MaxLength="256" />
           <Property Name="news_content" Type="text" />
           <Property Name="news_date" Type="datetime" Nullable="false" />
           <Property Name="i_Hide" Type="bit" Nullable="false" />
@@ -428,6 +429,7 @@
           </Key>
           <Property Name="news_id" Type="Int32" Nullable="false" />
           <Property Name="news_title" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="news_info" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
           <Property Name="news_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="news_date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="i_Hide" Type="Boolean" Nullable="false" />
@@ -599,6 +601,7 @@
                 <ScalarProperty Name="i_Hide" ColumnName="i_Hide" />
                 <ScalarProperty Name="news_date" ColumnName="news_date" />
                 <ScalarProperty Name="news_content" ColumnName="news_content" />
+                <ScalarProperty Name="news_info" ColumnName="news_info" />
                 <ScalarProperty Name="news_title" ColumnName="news_title" />
                 <ScalarProperty Name="news_id" ColumnName="news_id" />
               </MappingFragment>
