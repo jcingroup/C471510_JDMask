@@ -73,6 +73,7 @@ namespace DotWeb.Api
                 item = await db0.News.FindAsync(md.news_id);
                 item.news_title = md.news_title;
                 item.news_content = md.news_content;
+                item.stereotype = md.stereotype;
                 item.news_date = md.news_date;
                 item.i_Hide = md.i_Hide;
 

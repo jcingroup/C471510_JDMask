@@ -189,7 +189,7 @@
             this.setState(newState);
         }
         insertType() {
-            this.setState({ edit_type: 1, fieldData: { } });
+            this.setState({ edit_type: 1, fieldData: { stereotype: 1 } });
         }
         updateType(id: number | string) {
 
@@ -229,6 +229,11 @@
             } else {
                 obj[name] = input.value;
             }
+            this.setState({ fieldData: obj });
+        }
+        changeStereoType(val, e) {
+            var obj = this.state.fieldData;
+            obj.stereotype = val;
             this.setState({ fieldData: obj });
         }
 
@@ -316,6 +321,63 @@
                 <p><strong className="text-danger">紅色標題</strong> 為必填欄位。</p>
                 </div>
 
+                    <div className="form-group">
+                        <label className="col-xs-1 control-label">代表圖</label>
+                        <div className="col-xs-6">
+                            <MasterImageUpload
+                                FileKind="Photo1"
+                                MainId={fieldData.news_id}
+                                ParentEditType={this.state.edit_type}
+                                url_upload={gb_approot + 'Active/NewsData/axFUpload'}
+                                url_list={gb_approot + 'Active/NewsData/axFList'}
+                                url_delete={gb_approot + 'Active/NewsData/axFDelete'}
+                                url_sort={gb_approot + 'Active/NewsData/axFSort'}
+                                />
+                            </div>
+                        <small className="help-inline col-xs-5 text-danger">限 1 張圖片</small>
+                        </div>
+
+                    <div className="form-group">
+                        <label className="col-xs-2 control-label">選擇版型</label>
+                        <div className="col-xs-10">
+                            <div className="radio-inline">
+                                <label className="thumbnail text-center">
+                                    <input type="checkbox"
+                                        id="stereotype1"
+                                        value={1}
+                                        checked={fieldData.stereotype === 1}
+                                        onChange={this.changeStereoType.bind(this, 1) }
+                                        />
+                                    <span>版型 1 </span>
+                                    <img src="../../_Code/Images/editor_layout1.gif" />
+                                    </label>
+                                </div>
+                            <div className="radio-inline">
+                                <label className="thumbnail text-center">
+                                    <input type="checkbox"
+                                        id="stereotype2"
+                                        value={2}
+                                        checked={fieldData.stereotype === 2}
+                                        onChange={this.changeStereoType.bind(this, 2) }
+                                        />
+                                    <span>版型 2 </span>
+                                    <img src="../../_Code/Images/editor_layout2.gif" />
+                                    </label>
+                                </div>
+                            <div className="radio-inline">
+                                <label className="thumbnail text-center">
+                                    <input type="checkbox"
+                                        id="stereotype1"
+                                        value={1}
+                                        checked={fieldData.stereotype === 3}
+                                        onChange={this.changeStereoType.bind(this, 3) }
+                                        />
+                                    <span>版型 1 </span>
+                                    <img src="../../_Code/Images/editor_layout3.gif" />
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
 
             <div className="form-group">
                 <label className="col-xs-2 control-label text-danger">標題</label>
@@ -336,7 +398,7 @@
                      <span className="has-feedback">
                        <InputDate id="news_date"
                            ver={1}
-                           onChange={this.changeFDValue.bind(this)}
+                           onChange={this.changeFDValue.bind(this) }
                            field_name="news_date"
                            value={fieldData.news_date}
                            required={true}

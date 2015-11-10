@@ -14,19 +14,31 @@ var MasterImageUpload = React.createClass({
 			url_download:null,
 			url_sort:null,
 			FileKind:null,
-			MainId:0
+			MainId:0,
+			uploader:null
 		};
 	},
 	componentDidUpdate:function(prevProps, prevState){
+		if(this.props.ParentEditType==2 && prevProps.ParentEditType==1){
+			if(this.props.uploader==null){
+				this.createFileUpLoadObject();
+			}
+		}
 	},
 	componentDidMount:function(){
-		if(this.props.MainId>0){
+		if(this.props.MainId>0 && this.props.ParentEditType!=1){
 			this.createFileUpLoadObject();
 			this.getFileList();
 		}
 	},
 	componentWillReceiveProps:function(nextProps){
 		
+	},
+	componentWillUnmount:function(){
+		console.log('MasterFileUpload','destroy');
+		if(this.props.uploader!=null){
+			this.props.uploader.destroy();
+		}
 	},
 	deleteFile:function(filename){
 		jqPost(this.props.url_delete,{
@@ -52,7 +64,7 @@ var MasterImageUpload = React.createClass({
 		})			
 		.done(function(data, textStatus, jqXHRdata) {
 			if(data.result){
-				this.setState({filelist:data.filesObject})
+				this.setState({filelist:data.files})
 			}else{
 				alert(data.message);
 			}
@@ -62,10 +74,10 @@ var MasterImageUpload = React.createClass({
 		});
 	},
 	createFileUpLoadObject:function(){
-			var btn = document.getElementById('upload-btn-' + this.props.MainId);
+			var btn = document.getElementById('upload-btn-' + this.props.MainId +'-'+this.props.FileKind);
 			var r_this = this;
 
-		  	var uploader = new ss.SimpleUpload({
+		  	this.props.uploader = new ss.SimpleUpload({
 		        button: btn,
 		        url: this.props.url_upload,
 		        data:{
@@ -111,6 +123,7 @@ var MasterImageUpload = React.createClass({
 	
 				onSizeError: function() {
 					//errBox.innerHTML = 'Files may not exceed 500K.';
+					alert("檔案大小超過5000k!");
 				},
 				onExtError: function() {
 					//errBox.innerHTML = 'Invalid file type. Please select a PNG, JPG, GIF image.';
@@ -119,7 +132,7 @@ var MasterImageUpload = React.createClass({
 		        	if(response.result){ 
 						r_this.getFileList();
 					}else{
-						alert(response.error);
+						alert(response.message);
 					}
 		        }
 			});
@@ -137,7 +150,7 @@ var MasterImageUpload = React.createClass({
 
 			var file_object = 
 			{
-				fileName:item.FileName,
+				fileName:item.fileName,
 				sort:i+1
 			};
 
@@ -167,13 +180,13 @@ var MasterImageUpload = React.createClass({
 		if (this.props.ParentEditType==1) {
 			imgButtonHtml=(
 				<div className="form-control">
-				<input type="file" id={'upload-btn-' + this.props.MainId} accept="image/*" disabled/>
+				<small className="col-xs-8 help-inline">請先按儲存後方可上傳圖片</small>
 				</div>
 				);
 		}else if(this.props.ParentEditType==2){
 			imgButtonHtml=(
 				<div className="form-control">
-				<input type="file" id={'upload-btn-' + this.props.MainId} accept="image/*" />
+				<input type="file" id={'upload-btn-' + this.props.MainId +'-'+this.props.FileKind} accept="image/*" />
 				</div>
 				);
 		};
