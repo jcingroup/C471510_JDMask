@@ -91,3 +91,8 @@
 }
 
 .border {border:1px solid #DBD2CC;}
+
+.thumb {
+    @extend .border;
+    max-width: 100%;
+}

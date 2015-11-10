@@ -260,6 +260,7 @@
     <Content Include="Content\fonts\fontAwesome\fontawesome-webfont.svg" />
     <Content Include="Content\images\AboutUs\banner.jpg" />
     <Content Include="Content\images\AboutUs\pic.jpg" />
+    <Content Include="Content\images\AboutUs\pic2.jpg" />
     <Content Include="Content\images\bgFooter.gif" />
     <Content Include="Content\images\ContactUs\banner.jpg" />
     <Content Include="Content\images\iconApp.gif" />
@@ -720,6 +721,9 @@
     <Content Include="Scripts\app\shadowbox\LICENSE" />
     <Content Include="Scripts\app\shadowbox\README" />
     <Content Include="Views\News\News_content.cshtml" />
+    <Content Include="_Code\Images\editor_layout1.gif" />
+    <Content Include="_Code\Images\editor_layout2.gif" />
+    <Content Include="_Code\Images\editor_layout3.gif" />
     <Content Include="_Code\RPTExcel\DownExcel.xls" />
     <Content Include="_Code\RPTExcel\Equipment.xls" />
     <Content Include="_Code\RPTExcel\Apply.xls" />
@@ -854,7 +858,6 @@
     <Folder Include="Content\sass\vendor\" />
     <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="_Code\CReport\" />
-    <Folder Include="_Code\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -33,7 +33,7 @@ else if (Model.stereotype == 3)
     <article class="editor">
         @if (Model.imgsrc != null & Model.imgsrc != "")
         {
-            <p class="float-l"><img data-src="@Model.imgsrc" alt="" class="thumb" width="800"></p>
+            <p class="float-l"><img data-src="@Model.imgsrc" alt="" class="thumb"></p>
         }
         @Html.Raw(Model.news_content)
     </article>

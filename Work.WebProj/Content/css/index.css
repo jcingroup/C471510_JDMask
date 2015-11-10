@@ -455,8 +455,12 @@ address {
   letter-spacing: 0.243em;
 }
 
-.border {
+.border, .thumb {
   border: 1px solid #DBD2CC;
+}
+
+.thumb {
+  max-width: 100%;
 }
 
 .btn {

@@ -455,8 +455,12 @@ address {
   letter-spacing: 0.243em;
 }
 
-.border, .feature img, .pro a img, .pro-detail .steps li figure, ol.certification li img, .contact-info dt .map {
+.border, .thumb, .feature img, .pro a img, .pro-detail .steps li figure, ol.certification li img, .contact-info dt .map {
   border: 1px solid #DBD2CC;
+}
+
+.thumb {
+  max-width: 100%;
 }
 
 .btn {
