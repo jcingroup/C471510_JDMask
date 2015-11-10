@@ -72,7 +72,8 @@ namespace DotWeb.Api
 
                 item = await db0.News.FindAsync(md.news_id);
                 item.news_title = md.news_title;
-                item.news_content = RemoveScriptTag(md.news_content);
+                if (md.news_content != null)
+                    item.news_content = RemoveScriptTag(md.news_content);
                 item.stereotype = md.stereotype;
                 item.news_date = md.news_date;
                 item.i_Hide = md.i_Hide;
@@ -98,7 +99,8 @@ namespace DotWeb.Api
         public async Task<IHttpActionResult> Post([FromBody]News md)
         {
             md.news_id = GetNewId(CodeTable.News);
-            md.news_content = RemoveScriptTag(md.news_content);
+            if (md.news_content != null)
+                md.news_content = RemoveScriptTag(md.news_content);
             md.i_Hide = false;
             md.i_InsertDateTime = DateTime.Now;
             md.i_InsertDeptID = this.departmentId;
