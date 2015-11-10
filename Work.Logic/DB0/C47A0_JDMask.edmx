@@ -141,6 +141,7 @@
             <PropertyRef Name="news_id" />
           </Key>
           <Property Name="news_id" Type="int" Nullable="false" />
+          <Property Name="stereotype" Type="int" Nullable="false" />
           <Property Name="news_title" Type="nvarchar" MaxLength="64" Nullable="false" />
           <Property Name="news_content" Type="text" />
           <Property Name="news_date" Type="datetime" Nullable="false" />
@@ -427,6 +428,7 @@
             <PropertyRef Name="news_id" />
           </Key>
           <Property Name="news_id" Type="Int32" Nullable="false" />
+          <Property Name="stereotype" Type="Int32" Nullable="false" />
           <Property Name="news_title" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
           <Property Name="news_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="news_date" Type="DateTime" Nullable="false" Precision="3" />
@@ -600,6 +602,7 @@
                 <ScalarProperty Name="news_date" ColumnName="news_date" />
                 <ScalarProperty Name="news_content" ColumnName="news_content" />
                 <ScalarProperty Name="news_title" ColumnName="news_title" />
+                <ScalarProperty Name="stereotype" ColumnName="stereotype" />
                 <ScalarProperty Name="news_id" ColumnName="news_id" />
               </MappingFragment>
             </EntityTypeMapping>

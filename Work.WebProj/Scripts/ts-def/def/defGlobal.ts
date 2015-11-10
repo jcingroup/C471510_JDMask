@@ -5,3 +5,4 @@ var gb_caption: string //目前執行的系統標題
 var gb_menuname: string //目前執行的系統選單名稱
 var ReactBootstrap: any;
 var CKEDITOR: any;//編輯器套件
+var ss: any;//圖片上傳套件

@@ -50,9 +50,10 @@ namespace DotWeb.Controllers
                 else
                 {
                     item = db0.News.Find(id);
+                    item.imgsrc = GetImg(item.news_id, "Photo1", "NewsData", "Photo");//顯示圖片
                 }
             }
-            return View("News_content",item);
+            return View("News_content", item);
         }
     }
 }

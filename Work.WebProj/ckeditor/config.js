@@ -7,13 +7,11 @@ CKEDITOR.editorConfig = function (config) {
     // Define changes to default configuration here. For example:
     config.language = 'zh';
     // config.uiColor = '#AADC6E';
-    config.extraPlugins = 'imgur';
-    // Get your client-id from https://api.imgur.com/oauth2/addclient
-    config.imgurClientId = '4548ca9d27ed6e6';
+    config.contentsCss = ['../Content/css/editor.css'];
     config.toolbar = [
         {
             name: "basicstyles",
-            items: ["FontSize", "Bold", "Italic", "-", "JustifyLeft", "JustifyCenter", "JustifyRight", 'Font']
+            items: ["FontSize", "Bold", "Italic", "-", "JustifyLeft", "JustifyCenter", "JustifyRight"]
         },
         {
             name: "paragraph",
@@ -22,22 +20,21 @@ CKEDITOR.editorConfig = function (config) {
             name: "tools",
             items: ["Maximize", "-"]
         }, {
-            name: "styles",
-            items: ["Styles"]
-        }, {
             name: "links",
-            items: ["Link", "Unlink", "Anchor"]
+            items: ["Link", "Unlink"]
         }, {
             name: 'insert',
-            items: ['Image', 'Imgur', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe']
+            items: ['Image', 'Table', 'Smiley', 'Iframe']
         }, {
             name: "colors",
             items: ["TextColor", "BGColor"]
-        }, { name: "editing" }, {
-            name: "document",
-            items: ["Source", "-", "DocProps"]
         }, {
             name: "clipboard",
-            items: ["Cut", "Copy", "Paste", "PasteText", "PasteFromWord", "Undo", "Redo"]
+            items: ["Cut", "Copy", "Paste", "Undo", "Redo", "-", "Source"]
         }];
+
+    config.filebrowserBrowseUrl = "../ckfinder/ckfinder.html";
+    config.filebrowserImageBrowseUrl = "../ckfinder/ckfinder.html?type=Images";
+    config.filebrowserImageUploadUrl = "../ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Images";
+    config.autoUpdateElement = true;
 };

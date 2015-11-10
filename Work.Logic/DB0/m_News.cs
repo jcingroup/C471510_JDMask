@@ -13,6 +13,7 @@ namespace ProcCore.Business.DB0
     using System.Collections.Generic;
     public partial class m_News :BaseEntityTable {
     public int news_id { get; set; }
+    public int stereotype { get; set; }
     public string news_title { get; set; }
     public string news_content { get; set; }
     public System.DateTime news_date { get; set; }

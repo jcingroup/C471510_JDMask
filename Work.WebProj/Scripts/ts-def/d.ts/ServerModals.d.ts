@@ -56,5 +56,6 @@
         news_content?: string;
         news_date?: Date;
         i_Hide?: boolean;
+        stereotype?: number;
     }
 } 

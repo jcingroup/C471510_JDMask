@@ -197,6 +197,10 @@ namespace ProcCore.Business.DB0
 
     }
     #region Model Expand
+    public partial class News : BaseEntityTable
+    {
+        public string imgsrc { get; set; }
+    }
     public partial class Menu : BaseEntityTable
     {
 
