@@ -599,6 +599,7 @@
     <Content Include="Scripts\app\toastr.min.js" />
     <Content Include="Scripts\build\comminc.js" />
     <Content Include="Scripts\build\func\c-comm.js" />
+    <Content Include="Scripts\build\func\c-imgFileSort.js" />
     <Content Include="Scripts\build\func\inc\c-Comm.js" />
     <Content Include="Scripts\build\func\inc\c-ImgFileSort.js" />
     <Content Include="Scripts\build\func\m-ChangePassword.js" />
@@ -756,6 +757,7 @@
     <Content Include="Views\Shared\DisplayTemplates\MenuHelperModel.cshtml" />
     <TypeScriptCompile Include="Scripts\es6ts.ts" />
     <TypeScriptCompile Include="Scripts\src\tsx\c-comm.tsx" />
+    <TypeScriptCompile Include="Scripts\src\tsx\c-imgFileSort.tsx" />
     <TypeScriptCompile Include="Scripts\src\tsx\m-news.tsx" />
     <TypeScriptCompile Include="Scripts\ts-def\commfunc.ts" />
     <TypeScriptCompile Include="Scripts\ts-def\commupload.ts" />

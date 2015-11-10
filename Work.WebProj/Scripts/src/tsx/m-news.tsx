@@ -322,22 +322,6 @@
                 </div>
 
                     <div className="form-group">
-                        <label className="col-xs-1 control-label">代表圖</label>
-                        <div className="col-xs-6">
-                            <MasterImageUpload
-                                FileKind="Photo1"
-                                MainId={fieldData.news_id}
-                                ParentEditType={this.state.edit_type}
-                                url_upload={gb_approot + 'Active/NewsData/axFUpload'}
-                                url_list={gb_approot + 'Active/NewsData/axFList'}
-                                url_delete={gb_approot + 'Active/NewsData/axFDelete'}
-                                url_sort={gb_approot + 'Active/NewsData/axFSort'}
-                                />
-                            </div>
-                        <small className="help-inline col-xs-5 text-danger">限 1 張圖片</small>
-                        </div>
-
-                    <div className="form-group">
                         <label className="col-xs-2 control-label">選擇版型</label>
                         <div className="col-xs-10">
                             <div className="radio-inline">
@@ -377,6 +361,22 @@
                                     </label>
                                 </div>
                             </div>
+                        </div>
+
+                    <div className="form-group">
+                        <label className="col-xs-2 control-label">代表圖</label>
+                        <div className="col-xs-4">
+                            <MasterImageUpload
+                                FileKind="Photo1"
+                                MainId={fieldData.news_id}
+                                ParentEditType={this.state.edit_type}
+                                url_upload={gb_approot + 'Active/NewsData/axFUpload'}
+                                url_list={gb_approot + 'Active/NewsData/axFList'}
+                                url_delete={gb_approot + 'Active/NewsData/axFDelete'}
+                                url_sort={gb_approot + 'Active/NewsData/axFSort'}
+                                />
+                            </div>
+                        <small className="help-inline col-xs-4 text-danger">限 1 張圖片，檔案大小不可超過4.8MB</small>
                         </div>
 
             <div className="form-group">
