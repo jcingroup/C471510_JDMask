@@ -23,5 +23,25 @@ namespace DotWeb.Controllers
         {
             return View("Products_content");
         }
+
+        public ActionResult content2()
+        {
+            return View("Products_content2");
+        }
+
+        public ActionResult content3()
+        {
+            return View("Products_content3");
+        }
+
+        public ActionResult content4()
+        {
+            return View("Products_content4");
+        }
+
+        public ActionResult content5()
+        {
+            return View("Products_content5");
+        }
     }
 }

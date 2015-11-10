@@ -38,7 +38,7 @@ h3.title {
 }
 
 h4.title {
-    color:$brand-primary;
+    color:#8C5616;
     font-size:em(20px);
     letter-spacing: 0.1em;
 }
@@ -48,6 +48,27 @@ h5.title {
     font-weight: bold;
     font-size: em(20px);
     letter-spacing: 0.1em;
+}
+
+
+.list-dashed {
+    li {
+        border-bottom:1px dashed #C4C2BA;
+
+        margin-bottom: 5px;
+        padding-bottom: 5px;
+    }
+}
+.list-arrow {
+    @extend .list-unstyled;
+
+    li {
+
+        &::before {
+            @include caret(right, 10px, 8px, #E3C97D);
+            margin-right:10px;
+        }
+    }
 }
 
 
@@ -125,12 +146,19 @@ h5.title {
     }
 }
 
+.feature {
+    img {
+        @extend .border;
+        display: block;
+    }
+}
+
 .info {
+    @extend .list-dashed;
+
     margin-top:10px;
 
     li {
-        border-bottom:1px dashed #C4C2BA;
-
         padding-left:5.6em;
         text-indent: -5.6em;
 
@@ -165,6 +193,11 @@ h5.title {
     }
 }
 
+// about us
+// ----------------------------------------------------------------------
+ol.pic {
+    margin-bottom:30px;
+}
 
 
 // news
@@ -266,7 +299,6 @@ h5.title {
     h4.title {
         display: inline-block;
 
-        color:#8C5616;
         letter-spacing: 0.243em;
 
         margin-bottom:0;
@@ -373,6 +405,7 @@ h5.title {
             border-top:1px dashed #C4C2BA;
             border-bottom:1px dashed #C4C2BA;
 
+            margin-bottom: 15px;
             padding:10px 0;
 
             li {
@@ -385,6 +418,10 @@ h5.title {
                 margin-bottom:5px;
                 padding-left: 18px;
             }
+        }
+        .feature {
+            text-align: center;
+            img {margin:0 auto 10px auto;}
         }
     }
 }
@@ -421,6 +458,24 @@ h5.title {
                 display: block;
                 font-style: normal;
                 padding:0 8px;
+            }
+        }
+    }
+
+    .feature {
+        margin-top:15px;
+
+        h6.title {
+            color:#693C0D;
+            font-size: em(18px);
+        }
+
+        figure {
+            @extend %clearfix;
+
+            img {
+                float:left;
+                margin-right: 10px;
             }
         }
     }
