@@ -40,7 +40,7 @@ namespace DotWeb.Areas.Active.Controllers
             try
             {
                 if (filekind == "Photo1")
-                    handleImageSave(filename, id, ImageFileUpParm.ProductIndex, filekind, "ProductData", "Photo");
+                    handleImageSave(filename, id, ImageFileUpParm.ProductIndex, filekind, "NewsData", "Photo");
 
                 r.result = true;
                 r.file_name = filename;
@@ -64,7 +64,7 @@ namespace DotWeb.Areas.Active.Controllers
         {
             SerializeFileList r = new SerializeFileList();
 
-            r.files = listImgFiles(id, filekind, "ProductData", "Photo");
+            r.files = listImgFiles(id, filekind, "NewsData", "Photo");
             r.result = true;
             return defJSON(r);
         }
@@ -73,7 +73,7 @@ namespace DotWeb.Areas.Active.Controllers
         {
             ResultInfo r = new ResultInfo();
 
-            rewriteJsonFile(id, filekind, "ProductData", "Photo", file_object);
+            rewriteJsonFile(id, filekind, "NewsData", "Photo", file_object);
 
             r.result = true;
             return defJSON(r);
@@ -82,7 +82,7 @@ namespace DotWeb.Areas.Active.Controllers
         public string axFDelete(int id, string filekind, string filename)
         {
             ResultInfo r = new ResultInfo();
-            DeleteSysFile(id, filekind, filename, ImageFileUpParm.NewsBasicSingle, "ProductData", "Photo");
+            DeleteSysFile(id, filekind, filename, ImageFileUpParm.NewsBasicSingle, "NewsData", "Photo");
             r.result = true;
             return defJSON(r);
         }
@@ -91,7 +91,7 @@ namespace DotWeb.Areas.Active.Controllers
         [HttpGet]
         public FileResult axFDown(int id, string filekind, string filename)
         {
-            string path_tpl = string.Format(upload_path_tpl_o, "ProductData", "Photo", id, filekind, filename);
+            string path_tpl = string.Format(upload_path_tpl_o, "NewsData", "Photo", id, filekind, filename);
             string server_path = Server.MapPath(path_tpl);
             FileInfo file_info = new FileInfo(server_path);
             FileStream file_stream = new FileStream(server_path, FileMode.Open, FileAccess.Read);

@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity.Validation;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Transactions;
 using System.Web;
 using System.Web.Http;
@@ -157,6 +158,17 @@ namespace DotWeb.Api
                 }
             }
             return m;
+        }
+        /// <summary>
+        /// 移除Script tag
+        /// </summary>
+        /// <param name="htmlSource"></param>
+        /// <returns></returns>
+        public static string RemoveScriptTag(string htmlSource)
+        {
+            //移除  javascript code.
+            htmlSource = Regex.Replace(htmlSource, @"<script[\d\D]*?>[\d\D]*?</script>", String.Empty);
+            return htmlSource;
         }
     }
 

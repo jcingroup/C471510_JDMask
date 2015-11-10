@@ -977,6 +977,77 @@ namespace DotWeb.Controller
             htmlSource = Regex.Replace(htmlSource, @"<[^>]*>", String.Empty);
             return htmlSource;
         }
+        /// <summary>
+        /// 移除Script tag
+        /// </summary>
+        /// <param name="htmlSource"></param>
+        /// <returns></returns>
+        public static string RemoveScriptTag(string htmlSource)
+        {
+            //移除  javascript code.
+            htmlSource = Regex.Replace(htmlSource, @"<script[\d\D]*?>[\d\D]*?</script>", String.Empty);
+
+            //移除html tag.
+            //htmlSource = Regex.Replace(htmlSource, @"<[^>]*>", String.Empty);
+            return htmlSource;
+        }
+        public string GetImg(int id, string file_kind, string category1, string category2)
+        {
+            string tpl_path = "~/_Code/SysUpFiles/" + category1 + "/" + category2 + "/" + id + "/" + file_kind;
+            string img_folder = Server.MapPath(tpl_path);
+
+            if (Directory.Exists(img_folder))
+            {
+                var get_files = Directory.EnumerateFiles(img_folder)
+                    .Where(x => x.EndsWith("jpg") || x.EndsWith("jpeg") || x.EndsWith("png") || x.EndsWith("gif") || x.EndsWith("JPG") || x.EndsWith("JPEG") || x.EndsWith("PNG") || x.EndsWith("GIF"))
+                    .FirstOrDefault();
+
+                if (get_files != null)
+                {
+                    FileInfo file_info = new FileInfo(get_files);
+                    return Url.Content(tpl_path + "\\" + file_info.Name);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public string[] GetImgs(int id, string file_kind, string category1, string category2)
+        {
+            string tpl_path = "~/_Code/SysUpFiles/" + category1 + "/" + category2 + "/" + id + "/" + file_kind;
+            string web_folder = Url.Content(tpl_path);
+            string server_folder = System.Web.HttpContext.Current.Server.MapPath(tpl_path);
+            string file_json_server_path = server_folder + "//file.json";
+
+            if (System.IO.File.Exists(file_json_server_path))
+            {
+                var read_json = System.IO.File.ReadAllText(file_json_server_path);
+                var f = JsonConvert.DeserializeObject<IList<JsonFileInfo>>(read_json).OrderBy(x => x.sort);
+                IList<string> image_path = new List<string>();
+                foreach (var fobj in f)
+                {
+                    image_path.Add(web_folder + "//" + fobj.fileName);
+                }
+                if (image_path.Count() > 0)
+                {
+                    return image_path.ToArray();
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
     #endregion
 
