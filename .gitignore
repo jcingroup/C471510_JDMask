@@ -216,3 +216,6 @@ Scripts/src/ts-controller/*.js
 Work.WebProj/Scripts/es6ts.js
 Work.WebProj/Scripts/src/tsx/*.js
 Work.WebProj/Scripts/ts-def/*.js
+
+Work.WebProj/ckfinder/*
+Work.WebProj/_Code/SysUpFiles/*
