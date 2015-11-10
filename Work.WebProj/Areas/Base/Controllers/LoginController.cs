@@ -170,6 +170,7 @@ namespace DotWeb.Areas.Base.Controllers
                     .Single();
 
                 ViewData["lang"] = item_lang.area;
+                Session["IsAuthorized"] = true;//ckfinder用
                 db.Dispose();
             }
             catch (Exception ex)
@@ -209,6 +210,7 @@ namespace DotWeb.Areas.Base.Controllers
             getLoginFlag = getCookie == null ? "Y" :
                 EncryptString.desDecryptBase64(Server.UrlDecode(getCookie.Value)); //Value:N
 
+            Session.Remove("IsAuthorized");//ckfinder用
             removeCookie("user_id");
             removeCookie("user_name");
             removeCookie("user_login");

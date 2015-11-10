@@ -49,6 +49,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CKFinder">
+      <HintPath>ckfinder\bin\Release\CKFinder.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -247,10 +250,6 @@
     <Compile Include="_Code\Ashx\ValidateCode.ashx.cs">
       <DependentUpon>ValidateCode.ashx</DependentUpon>
     </Compile>
-    <Content Include="ckeditor\plugins\imgur\images\icon.png" />
-    <Content Include="ckeditor\plugins\imgur\lang\en.js" />
-    <Content Include="ckeditor\plugins\imgur\lang\zh.js" />
-    <Content Include="ckeditor\plugins\imgur\plugin.js" />
     <Content Include="Content\css\backstage_page.css" />
     <Content Include="Content\css\bootstrap-datetimepicker-build.css" />
     <Content Include="Content\css\index.css" />
@@ -749,6 +748,7 @@
     <Content Include="_Code\Maindoor\body\images\login_out.gif" />
     <Content Include="_Code\Maindoor\body\images\topBg.gif" />
     <Content Include="_Code\SysDoc\Doc.xml" />
+    <Content Include="_Code\SysUpFiles\CKfinderUpload\memo.txt" />
     <Content Include="_Code\SysUpFiles\memo.txt" />
     <Content Include="Views\Shared\DisplayTemplates\SiteMapPathHelperModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModelList.cshtml" />
