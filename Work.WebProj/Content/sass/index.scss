@@ -5,6 +5,7 @@ $img-path2:             '../images/index';
 $content-spacing:       0;
 
 $banner-height:         800px;
+$banner-height-xs:      320px;
 
 $footer-bg:             #406947;
 $footer-height:         300px;
@@ -50,6 +51,7 @@ $footer-contact-color:  #D5E8C2;
             .i#{$i} {
                 height: 100%;
                 background: url(#{$img-path2}/banner#{$i}.jpg) no-repeat center top;
+                background-size:cover;
 
                 text-align: left;
             }
@@ -120,6 +122,35 @@ $footer-contact-color:  #D5E8C2;
                 &::before {opacity:0.25;}
                 .btn {background:$btn-bg-hover;}
             }
+        }
+    }
+
+    @include media(xs) {
+        height:auto;
+        clear:both;
+
+        ul {
+            height: $banner-height-xs;
+            
+            li {
+                .btn {
+                    position: static;
+                }
+
+                h2 {
+                    width:170px;
+                    font-size: em(26px);
+                    letter-spacing: 0.1em;
+
+                    top: 80px; right:0;
+
+                    text-shadow: 0 0 30px hsla(0,0,0,0.5);
+                }
+            }
+        }
+
+        .pro {
+            margin:0;
         }
     }
 }

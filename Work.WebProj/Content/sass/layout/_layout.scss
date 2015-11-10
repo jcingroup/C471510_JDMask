@@ -57,11 +57,15 @@ $goTop:                 (bottom 10px), (right 15px) !default;
     @extend %center;
     @extend %clearfix;
 
-    $screens: xl, lg, md, sm, xs;
+    $screens: xl, lg, md, sm;
     @each $screen in $screens {
         @include media(#{$screen}) {
             width: wrap-width(#{$screen});
         }
+    }
+    @include media(xs) {
+        width:100%;
+        padding:0 10px;
     }
 }
 
@@ -110,14 +114,20 @@ $goTop:                 (bottom 10px), (right 15px) !default;
 
 .menu-trigger {
     display:none;
+    width:50px;
+    height:50px;
+    text-indent:-9999px;
+
+    background:url(#{$img-path}/iconMenuBar.gif) no-repeat center center #C49534;
+    border:0;
+
+    float:right;
+
+    @include media(xs) {display:block;}
 }
 
 #menu {
     text-align: right;
-
-    .toggle {
-        display:none;
-    }
 
     a {
         display: inline-block;
@@ -132,18 +142,73 @@ $goTop:                 (bottom 10px), (right 15px) !default;
         transition: background 0.3s;
 
         $selector: ();
-
         @each $item in $pages {
             $i: index($pages, $item);
 
             $selector: append($selector, unquote(".#{$item} &:nth-of-type(#{$i})"), comma);
         }
-
         &:hover,
         #{$selector} {
             background: $menu-link-hover;
             color:darken($brand-primary,5%);
             font-weight: bold;
+        }
+    }
+
+    @include media(xs) {
+        display: none;
+        background:#C49534;
+        
+        width:calc(100% - 20px);
+        text-align: left;
+
+        position: absolute;
+        left:10px; top:$header-height;
+        // top:$header-height+20px;
+
+        // opacity: 0;
+        // transition: opacity 0.3s, top 0.3s;
+
+        // &.toggled {
+        //     display: block;
+        //     opacity: 1;
+        //     top:$header-height;
+        // }
+
+        a {
+            display: block;
+            height: auto;
+
+            color:#fff;
+            line-height: 1;
+
+            position: relative;
+            
+            padding:$gutter;
+
+            &::after {
+                @include caret(right,8px,6px,darken($brand-primary,10%));
+                display: block;
+                content:" ";
+
+                position: absolute;
+                right:$gutter;
+                top:50%;
+                transform: translateY(-50%);
+            }
+
+            $selector: ();
+            @each $item in $pages {
+                $i: index($pages, $item);
+
+                $selector: append($selector, unquote(".#{$item} &:nth-of-type(#{$i})"), comma);
+            }
+            &:hover,
+            #{$selector} {
+                background: lighten(#C49534,15%);
+                color:#fff;
+                font-weight: normal;
+            }
         }
     }
 }

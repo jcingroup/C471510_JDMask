@@ -295,6 +295,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   查詢類似 J+D 醫學美容級專業面膜:潔芙丹妮生物科技有限公司 的當地語系化字串。
+        /// </summary>
+        internal static string Company_Name {
+            get {
+                return ResourceManager.GetString("Company_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查詢類似 NT$ 的當地語系化字串。
         /// </summary>
         internal static string CurrencySign {
@@ -727,7 +736,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   查詢類似 J+D面膜 管理系統 的當地語系化字串。
+        ///   查詢類似 J+D 醫學美容級專業面膜 管理系統 的當地語系化字串。
         /// </summary>
         internal static string System_Name {
             get {

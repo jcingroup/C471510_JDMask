@@ -112,6 +112,10 @@ h5.title {
 
         margin-top:-160px;
     }
+
+    @include media(xs) {
+        clear:both;
+    }
 }
 
 .breadcrumb {

@@ -7,7 +7,7 @@
     <meta name="keywords" content="積層晶片電感, 積層晶片變壓器, 積層晶片濾波器, 積層電阻式電感, 電子組件製造, 電子組件加工, 桃園, 楊梅, 倡譽, 倡譽興業">
     <meta name="description" content="倡譽興業有限公司公司於民國97年成立於桃園縣，經營項目包括：各種電子組件之製造加工及買賣、積層晶片電感、積層晶片變壓器、 積層晶片濾波器之製造加工及買賣、積層電阻式電感之製造加工及買賣、前項產品之買賣及進出口貿易。">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title:@Resources.Res.System_Name</title>
+    <title>@ViewBag.Title:@Resources.Res.Company_Name</title>
     <script src="~/Scripts/BrowerInfo.js"></script>
     <script>
         var gb_approot = '@Url.Content("~")';
@@ -30,9 +30,9 @@
     <header id="header">
         <div class="wrap">
             <h1 class="logo"><a href="~/Index" title="回首頁"><em>醫美級專業面膜</em>潔芙丹妮有限公司</a></h1>
-            <button class="menu-trigger"></button>
+            <button class="menu-trigger">MENU</button>
             <nav id="menu">
-                <header class="toggle">
+                <header class="hidden">
                     <h2>MENU</h2>
                 </header>
                 <a href="~/AboutUs">品牌故事</a>
@@ -107,13 +107,8 @@
 
     // 行動裝置的主選單
     $(".menu-trigger").click(function (event){
-        $("body").toggleClass("toggled");
-        event.preventDefault();
-    });
-
-    // 行動裝置的產品左選單
-    $(".submenu-trigger .btn").click(function (event){
-        $("#sidebar").slideToggle();
+        $("#menu").fadeToggle();
+        // $("#menu").toggleClass("toggled");
         event.preventDefault();
     });
 </script>

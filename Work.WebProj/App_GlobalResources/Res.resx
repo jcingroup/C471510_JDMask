@@ -218,7 +218,7 @@
     <value>開始上傳圖片</value>
   </data>
   <data name="System_Name" xml:space="preserve">
-    <value>J+D面膜 管理系統</value>
+    <value>J+D 醫學美容級專業面膜 管理系統</value>
   </data>
   <data name="CurrencySign" xml:space="preserve">
     <value>NT$</value>
@@ -351,5 +351,8 @@
   </data>
   <data name="Log_Err_Delete_Close" xml:space="preserve">
     <value>此筆資料已結案!無法刪除!!</value>
+  </data>
+  <data name="Company_Name" xml:space="preserve">
+    <value>J+D 醫學美容級專業面膜:潔芙丹妮生物科技有限公司</value>
   </data>
 </root>
