@@ -1,75 +1,25 @@
 ﻿@{
-    ViewBag.Title = "首頁";
-    ViewBag.IsFirstPage = true;
-    ViewBag.BodyClass = "index";
+    ViewBag.Title = "聯絡我們";
+    ViewBag.Title2 = @ViewBag.Title;
+    ViewBag.BodyClass = "ContactUs";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
-@section Scripts {
-<script>
-    var swiper = new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination',
-        slidesPerView: 2,
-        paginationClickable: true,
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
-        spaceBetween: 70,
-        autoplay: 2500
-    });
-</script>
-}
+<h3 class="title">
+    歡迎您透過下列方式與我們聯絡，我們將竭誠為您服務。
+</h3>
 
-<ul class="info wrap">
-    <li><a href="~/Products">專業接著劑</a></li>
-    <li><a href="~/Products">環保綠材</a></li>
-    <li><a href="~/Products">高分子材料</a></li>
-</ul>
-
-<section class="news">
-    <header>NEWS & EVENTS</header>
-    <div class="swiper-container">
-
-        <ol class="swiper-wrapper">
-            <li class="swiper-slide">
-                <div class="cover"><img src="~/Content/images/News/pic.jpg" alt="NEWS圖"></div>
-                <h3>敬邀 2014 第十七屆中國國際膠黏劑及密封劑展</h3>
-                <p>今年富利源推出新綠色節能概念之環保膠水 - 一液型水性PU膠, 水性硫化膠, 水性CR膠及生質TPU樹脂,現場將會展示新產品樣品及應用產品, 包括: 品牌運動...</p>
-                <a href="~/News/content" class="btn">READ MORE</a>
-            </li>
-            <li class="swiper-slide">
-                <div class="cover"><img src="~/Content/images/News/pic2.jpg" alt="NEWS圖"></div>
-                <h3>敬邀 2014 第十七屆中國國際膠黏劑及密封劑展</h3>
-                <p>今年富利源推出新綠色節能概念之環保膠水 - 一液型水性PU膠, 水性硫化膠, 水性CR膠及生質TPU樹脂,現場將會展示新產品樣品及應用產品, 包括: 品牌運動...</p>
-                <a href="~/News/content" class="btn">READ MORE</a>
-            </li>
-            <li class="swiper-slide">
-                <div class="cover"><img src="~/Content/images/News/pic.jpg" alt="NEWS圖"></div>
-                <h3>testtset</h3>
-                <p>今年富利源推出新綠色節能概念之環保膠水 - 一液型水性PU膠, 水性硫化膠, 水性CR膠及生質TPU樹脂,現場將會展示新產品樣品及應用產品, 包括: 品牌運動...</p>
-                <a href="~/News/content" class="btn">READ MORE</a>
-            </li>
-            <li class="swiper-slide">
-                <div class="cover"><img src="~/Content/images/News/pic2.jpg" alt="NEWS圖"></div>
-                <h3>testtset</h3>
-                <p>今年富利源推出新綠色節能概念之環保膠水 - 一液型水性PU膠, 水性硫化膠, 水性CR膠及生質TPU樹脂,現場將會展示新產品樣品及應用產品, 包括: 品牌運動...</p>
-                <a href="~/News/content" class="btn">READ MORE</a>
-            </li>
-            <li class="swiper-slide">
-                <div class="cover"><img src="~/Content/images/News/pic.jpg" alt="NEWS圖"></div>
-                <h3>aaaaa</h3>
-                <p>今年富利源推出新綠色節能概念之環保膠水 - 一液型水性PU膠, 水性硫化膠, 水性CR膠及生質TPU樹脂,現場將會展示新產品樣品及應用產品, 包括: 品牌運動...</p>
-                <a href="~/News/content" class="btn">READ MORE</a>
-            </li>
-            <li class="swiper-slide">
-                <div class="cover"><img src="~/Content/images/News/pic2.jpg" alt="NEWS圖"></div>
-                <h3>bbb</h3>
-                <p>今年富利源推出新綠色節能概念之環保膠水 - 一液型水性PU膠, 水性硫化膠, 水性CR膠及生質TPU樹脂,現場將會展示新產品樣品及應用產品, 包括: 品牌運動...</p>
-                <a href="~/News/content" class="btn">READ MORE</a>
-            </li>
-        </ol>
-        <div class="swiper-pagination"></div>
-        <!-- Add Arrows -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-    </div>
-</section>
+<dl class="contact-info row">
+    <dt class="col-5">
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d697.2651117532727!2d121.24651940801147!3d24.96734256461481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468221bec316d91%3A0x9e9f8265110f8e80!2zMzIw5qGD5ZyS5biC5Lit5aOi5Y2A5Lit6I-v6Lev5LiA5q61ODA15be3!5e0!3m2!1szh-TW!2stw!4v1447128568083" allowfullscreen></iframe>
+    </dt>
+    <dd class="col-7">
+        <h4 class="title">潔芙丹妮生物科技有限公司</h4>
+        <ul class="list-unstyled">
+            <li><em>地址</em>桃園市中壢區中華路一段805巷28弄6號</li>
+            <li><em>電話</em>0930-125613 (台灣) / 187-8292-0323 (中國)</li>
+            <li><em>App</em><span class="wechat">微信 ID: swag612923</span><span class="line">LINE ID: swag612923</span></li>
+            <li><em>Facebook</em><a href="https://www.facebook.com/909374702484023/" target="new">J+D 醫學美容級專業面膜</a></li>
+        </ul>
+    </dd>
+</dl>

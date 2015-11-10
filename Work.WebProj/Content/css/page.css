@@ -368,17 +368,13 @@ dt, dd {
   line-height: 1.25;
 }
 
-dt {
-  font-weight: bold;
-}
-
 address {
   margin-bottom: 20px;
   font-style: normal;
   line-height: 1.25;
 }
 
-.row::after, #header::after, #footer::after, #main::after, #content::after, .wrap::after, #banner h2.title::after, #banner p::after, .clearfix::after {
+.row::after, .pro-detail .sell-info::after, #header::after, #footer::after, #main::after, #content::after, .wrap::after, #banner h2.title::after, #banner p::after, .clearfix::after {
   content: '';
   display: table;
   clear: both;
@@ -459,28 +455,7 @@ address {
   letter-spacing: 0.243em;
 }
 
-.breadcrumb {
-  float: right;
-  margin-top: 15px;
-}
-.breadcrumb li {
-  color: #C1761E;
-  font-size: 0.75em;
-  padding: 0 2px;
-}
-.breadcrumb li a {
-  color: #C4BBB0;
-}
-.breadcrumb li a::after {
-  content: "/";
-  margin-left: 5px;
-}
-.breadcrumb li:first-child a {
-  padding-left: 18px;
-  background: url(../images/iconHome.gif) no-repeat left center;
-}
-
-.border, .pro a img {
+.border, .pro a img, .pro-detail .steps li figure, ol.certification li img, .contact-info dt .map {
   border: 1px solid #DBD2CC;
 }
 
@@ -514,7 +489,7 @@ address {
   opacity: .65;
 }
 
-.row {
+.row, .pro-detail .sell-info {
   margin-left: -7.5px;
   margin-right: -7.5px;
 }
@@ -533,7 +508,7 @@ address {
   padding-right: 7.5px;
 }
 
-.col-3 {
+.col-3, .pro-detail .sell-info dt {
   width: 25%;
   float: left;
   padding-left: 7.5px;
@@ -554,7 +529,7 @@ address {
   padding-right: 7.5px;
 }
 
-.col-6 {
+.col-6, .pro-intro dt, .pro-intro dd {
   width: 50%;
   float: left;
   padding-left: 7.5px;
@@ -575,7 +550,7 @@ address {
   padding-right: 7.5px;
 }
 
-.col-9 {
+.col-9, .pro-detail .sell-info dd {
   width: 75%;
   float: left;
   padding-left: 7.5px;
@@ -1298,10 +1273,12 @@ address {
   color: #5C5040;
   letter-spacing: 0.1em;
   padding: 0 20px;
+  transition: background 0.3s;
 }
 #menu a:hover, .AboutUs #menu a:nth-of-type(1), .News #menu a:nth-of-type(2), .Products #menu a:nth-of-type(3), .Quality #menu a:nth-of-type(4), .ContactUs #menu a:nth-of-type(5) {
-  background: #F5E2B8;
-  color: #C1761E;
+  background: #F6EFCB;
+  color: #ab821b;
+  font-weight: bold;
 }
 
 #footer {
@@ -1435,6 +1412,28 @@ address {
 
 /*      main
 -----------------------------------------------------------------------*/
+h3.title {
+  color: #C1761E;
+  font-size: 1.875em;
+  letter-spacing: 0.1em;
+  margin-bottom: 35px;
+  padding-bottom: 23px;
+  border-bottom: 1px solid #E0B44E;
+}
+
+h4.title {
+  color: #C1931E;
+  font-size: 1.25em;
+  letter-spacing: 0.1em;
+}
+
+h5.title {
+  color: #B0452F;
+  font-weight: bold;
+  font-size: 1.25em;
+  letter-spacing: 0.1em;
+}
+
 #content {
   text-align: left;
 }
@@ -1476,23 +1475,76 @@ address {
   margin-top: -160px;
 }
 
-h3.title {
+.breadcrumb {
+  float: right;
+  margin-top: 15px;
+}
+.breadcrumb li {
   color: #C1761E;
-  font-size: 1.875em;
-  letter-spacing: 0.1em;
-  margin-bottom: 35px;
-  padding-bottom: 23px;
-  border-bottom: 1px solid #E0B44E;
+  font-size: 0.75em;
+  padding: 0 2px;
+}
+.breadcrumb li a {
+  color: #C4BBB0;
+}
+.breadcrumb li a::after {
+  content: "/";
+  margin-left: 5px;
+}
+.breadcrumb li a:hover {
+  color: #a39584;
+}
+.breadcrumb li:first-child a {
+  padding-left: 18px;
+  background: url(../images/iconHome.gif) no-repeat left center;
 }
 
-.news-article h4.title {
-  color: #C1931E;
-  font-size: 1.25em;
+.info, .pro-detail .sell-info dd ul, .contact-info dd ul {
+  margin-top: 10px;
 }
-.news-article h4.title em {
+.info li, .pro-detail .sell-info dd ul li, .contact-info dd ul li {
+  border-bottom: 1px dashed #C4C2BA;
+  padding-left: 5.6em;
+  text-indent: -5.6em;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+.info li em, .pro-detail .sell-info dd ul li em, .contact-info dd ul li em {
+  font-weight: bold;
   font-style: normal;
+  color: #693C0D;
+}
+.info li em::after, .pro-detail .sell-info dd ul li em::after, .contact-info dd ul li em::after {
+  content: '';
+  display: inline-block;
+  border: 5px solid transparent;
+  width: 0;
+  height: 0;
+  border-left-color: #E3C97D;
+  border-left-width: 8px;
+  border-right-width: 2px;
+  margin: 0 10px;
+}
+.info li span, .pro-detail .sell-info dd ul li span, .contact-info dd ul li span {
+  display: inline-block;
+  min-height: 25px;
+  background: url(../images/iconApp.gif) no-repeat;
+  padding-left: 120px;
+}
+.info li span.wechat, .pro-detail .sell-info dd ul li span.wechat, .contact-info dd ul li span.wechat {
+  background-position: 0 -54px;
+}
+.info li strong, .pro-detail .sell-info dd ul li strong, .contact-info dd ul li strong {
+  color: #B0452F;
+  letter-spacing: 0.1em;
+}
+
+.news-article h4.title em {
+  display: block;
+  font-style: normal;
+  font-size: 0.7em;
   color: #dfaf33;
-  margin-right: 10px;
+  margin-bottom: 5px;
 }
 .news-article .excerpt {
   margin-bottom: 15px;
@@ -1550,7 +1602,7 @@ h3.title {
   opacity: 0;
   position: absolute;
   left: 50%;
-  top: -50%;
+  top: 30%;
   transform: translate(-50%, -50%);
   z-index: 90;
   transition: top 0.5s, opacity 0.3s;
@@ -1565,7 +1617,6 @@ h3.title {
 .pro h4.title {
   display: inline-block;
   color: #8C5616;
-  font-size: 1.25em;
   letter-spacing: 0.243em;
   margin-bottom: 0;
 }
@@ -1630,4 +1681,114 @@ h3.title {
   content: " ";
   display: inline-block;
   margin-right: 9px;
+}
+
+.pro-intro {
+  margin-bottom: 35px;
+}
+.pro-intro dt {
+  position: relative;
+}
+.pro-intro dt .point {
+  width: 222px;
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+}
+.pro-intro dt .point h5.title {
+  font-size: 1.125em;
+}
+.pro-intro dt .point p {
+  line-height: 120%;
+  font-size: 0.875em;
+  margin-bottom: 0;
+}
+.pro-intro dd h5.title {
+  font-size: 1.125em;
+  font-weight: normal;
+  color: #693C0D;
+}
+.pro-intro dd ul.ingredient {
+  border-top: 1px dashed #C4C2BA;
+  border-bottom: 1px dashed #C4C2BA;
+  padding: 10px 0;
+}
+.pro-intro dd ul.ingredient li {
+  text-indent: -18px;
+  margin-bottom: 5px;
+  padding-left: 18px;
+}
+.pro-intro dd ul.ingredient li::before {
+  content: '';
+  display: inline-block;
+  border: 5px solid transparent;
+  width: 0;
+  height: 0;
+  border-left-color: #E3C97D;
+  border-left-width: 8px;
+  border-right-width: 2px;
+  margin-right: 10px;
+}
+
+.pro-detail h4.title {
+  color: #E0B44E;
+  font-size: 2.125em;
+  font-family: "Open Sans", "Microsoft Jhenghei", \5FAE\8EDF\6B63\9ED1\9AD4, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0;
+  border-bottom: 1px solid;
+}
+.pro-detail h5.title {
+  margin-top: 35px;
+}
+.pro-detail .steps li {
+  font-size: 0.875em;
+}
+.pro-detail .steps li figure {
+  text-align: center;
+  margin-bottom: 8px;
+}
+.pro-detail .steps li em {
+  display: block;
+  font-style: normal;
+  padding: 0 8px;
+}
+.pro-detail .sell-info dd ul li:first-child em {
+  letter-spacing: 2em;
+}
+.pro-detail .sell-info dd ul li:first-child em::after {
+  margin-left: -1.5em;
+}
+
+ol.certification {
+  margin-bottom: 20px;
+}
+ol.certification li {
+  height: 200px;
+  margin-bottom: 15px;
+}
+ol.certification li img {
+  max-height: 100%;
+}
+
+.contact-info dt .map {
+  width: 100%;
+  height: 250px;
+}
+.contact-info dd h4.title {
+  padding-left: 5.5em;
+}
+.contact-info dd ul li {
+  padding-left: 0;
+  text-indent: 0;
+}
+.contact-info dd ul li em {
+  display: inline-block;
+  width: 7em;
+  text-align: right;
+}
+.contact-info dd ul li span {
+  margin-right: 10px;
+  padding-left: 30px;
 }

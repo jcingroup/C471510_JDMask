@@ -52,7 +52,7 @@
         else {
             <section id="content">
                 <header id="banner">
-                    <h2 class="title">@ViewBag.Title</h2>
+                    <h2 class="title">@ViewBag.Title2</h2>
                     <p>
                         Sticking to natural ingredients,<br>
                         we have been devoted to developing and provide skin-care products<br>
@@ -62,7 +62,7 @@
                 <div class="wrap">
                     <ul class="breadcrumb">
                         <li><a href="~/Index">HOME</a></li>
-                        @ViewBag.Breadcrumb
+                        @RenderSection("breadcrumb", false)
                         <li>@ViewBag.Title</li>
                     </ul>
                     @RenderBody()

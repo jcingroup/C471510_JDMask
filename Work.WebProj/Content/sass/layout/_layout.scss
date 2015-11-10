@@ -9,7 +9,7 @@ $header-height:         60px;
 $menu-height:           70px;
 $menu-height-sm:        100%;
 $menu-link:             transparent;
-$menu-link-hover:       #F5E2B8;
+$menu-link-hover:       #F6EFCB;
 
 // footer
 $footer-height:         300px !default;
@@ -129,6 +129,8 @@ $goTop:                 (bottom 10px), (right 15px) !default;
 
         padding:0 20px;
 
+        transition: background 0.3s;
+
         $selector: ();
 
         @each $item in $pages {
@@ -140,7 +142,8 @@ $goTop:                 (bottom 10px), (right 15px) !default;
         &:hover,
         #{$selector} {
             background: $menu-link-hover;
-            color:$brand-secondary;
+            color:darken($brand-primary,5%);
+            font-weight: bold;
         }
     }
 }

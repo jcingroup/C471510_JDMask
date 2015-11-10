@@ -27,6 +27,30 @@ $banner-height:         280px;
 
 /*      main
 -----------------------------------------------------------------------*/
+h3.title {
+    color:$brand-secondary;
+    font-size: em(30px);
+    letter-spacing: 0.1em;
+
+    margin-bottom:35px;
+    padding-bottom:23px;
+    border-bottom:1px solid #E0B44E;
+}
+
+h4.title {
+    color:$brand-primary;
+    font-size:em(20px);
+    letter-spacing: 0.1em;
+}
+
+h5.title {
+    color:#B0452F;
+    font-weight: bold;
+    font-size: em(20px);
+    letter-spacing: 0.1em;
+}
+
+
 #content {
     text-align: left;
 }
@@ -69,29 +93,93 @@ $banner-height:         280px;
     }
 }
 
-h3.title {
-    color:$brand-secondary;
-    font-size: em(30px);
-    letter-spacing: 0.1em;
+.breadcrumb {
+    @extend .list-inline;
+    float:right;
 
-    margin-bottom:35px;
-    padding-bottom:23px;
-    border-bottom:1px solid #E0B44E;
+    margin-top:15px;
+
+    li {
+        color:$brand-secondary;
+        font-size: em(12px);
+
+        padding:0 2px;
+
+        a {
+            color:#C4BBB0;
+
+            &::after {
+                content:"/";
+                margin-left:5px;
+            }
+
+            &:hover {color:darken(#C4BBB0,15%);}
+        }
+
+        &:first-child {
+            a {
+                padding-left:18px;
+                background: url(#{$img-path}/iconHome.gif) no-repeat left center;
+            }
+        }
+    }
 }
+
+.info {
+    margin-top:10px;
+
+    li {
+        border-bottom:1px dashed #C4C2BA;
+
+        padding-left:5.6em;
+        text-indent: -5.6em;
+
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+
+        em {
+            font-weight: bold;
+            font-style: normal;
+            color:#693C0D;
+
+            &::after {
+                @include caret(right, 10px, 8px, #E3C97D);
+                margin:0 10px;
+            }
+        }
+
+        span {
+            display: inline-block;
+            min-height: 25px;
+            background:url(#{$img-path}/iconApp.gif) no-repeat;
+
+            padding-left:120px;
+
+            &.wechat {background-position:0 -54px;}
+        }
+
+        strong {
+            color:#B0452F;
+            letter-spacing: 0.1em;
+        }
+    }
+}
+
 
 
 // news
 // ----------------------------------------------------------------------
 .news-article {
     h4.title {
-        color:$brand-primary;
-        font-size: em(20px);
 
         em {
+            display: block;
+
             font-style: normal;
+            font-size: em(14px,20px);
             color:lighten($brand-primary,10%);
 
-            margin-right:10px;
+            margin-bottom:5px;
         }
     }
     .excerpt {
@@ -161,7 +249,7 @@ h3.title {
             opacity: 0;
 
             position: absolute;
-            left:50%; top:-50%;
+            left:50%; top:30%;
             transform: translate(-50%,-50%);
 
             z-index: z(tooltip);
@@ -179,7 +267,6 @@ h3.title {
         display: inline-block;
 
         color:#8C5616;
-        font-size:em(20px);
         letter-spacing: 0.243em;
 
         margin-bottom:0;
@@ -247,6 +334,177 @@ h3.title {
                 display: inline-block;
 
                 margin-right:9px;
+            }
+        }
+    }
+}
+.pro-intro {
+    margin-bottom:35px;
+
+    dt, dd {@extend .col-6;}
+
+    dt {
+        position: relative;
+
+        .point {
+            width:222px;
+
+            position: absolute;
+            right:$gutter;
+            bottom:$gutter;
+
+            h5.title {font-size:em(18px);}
+
+            p {
+                line-height: 120%;
+                font-size: em(14px);
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    dd {
+        h5.title {
+            font-size:em(18px);
+            font-weight: normal;
+            color:#693C0D;
+        }
+        ul.ingredient {
+            border-top:1px dashed #C4C2BA;
+            border-bottom:1px dashed #C4C2BA;
+
+            padding:10px 0;
+
+            li {
+                &::before {
+                    @include caret(right, 10px, 8px, #E3C97D);
+                    margin-right:10px;
+                }
+
+                text-indent: -18px;
+                margin-bottom:5px;
+                padding-left: 18px;
+            }
+        }
+    }
+}
+.pro-detail {
+
+    h4.title {
+        color:#E0B44E;
+        font-size: em(34px);
+        font-family: $font-family-slogan;
+        font-weight: 300;
+        font-style: italic;
+        letter-spacing: 0;
+
+        border-bottom:1px solid;
+    }
+
+    h5.title {
+        margin-top:35px;
+    }
+
+    .steps {
+        
+        li {
+            font-size: em(14px);
+
+            figure {
+                @extend .border;
+                text-align: center;
+
+                margin-bottom:8px;
+            }
+
+            em {
+                display: block;
+                font-style: normal;
+                padding:0 8px;
+            }
+        }
+    }
+
+    .sell-info {
+        @extend .row;
+
+        dt {
+            @extend .col-3;
+        }
+
+        dd {
+            @extend .col-9;
+
+            ul {
+                @extend .info;
+
+                li {
+                    &:first-child {
+                        em {
+                            letter-spacing: 2em;
+
+                            &::after {margin-left:-1.5em;}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// quality
+// ----------------------------------------------------------------------
+ol.certification {
+    margin-bottom:20px;
+
+    li {
+        height:200px;
+        margin-bottom:$gutter;
+
+        img {
+            @extend .border;
+
+            max-height: 100%;
+        }
+    }
+}
+
+
+// contact
+// ----------------------------------------------------------------------
+.contact-info {
+
+    dt {
+        .map {
+            @extend .border;
+
+            width: 100%;
+            height:250px;
+        }
+    }
+
+    dd {
+
+        h4.title {padding-left:5.5em;}
+
+        ul {
+            @extend .info;
+
+            li {
+                padding-left:0;
+                text-indent: 0;
+
+                em {
+                    display: inline-block;
+                    width:7em;
+                    text-align: right;
+                }
+
+                span {
+                    margin-right:10px;
+                    padding-left:30px;
+                }
             }
         }
     }

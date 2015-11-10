@@ -368,10 +368,6 @@ dt, dd {
   line-height: 1.25;
 }
 
-dt {
-  font-weight: bold;
-}
-
 address {
   margin-bottom: 20px;
   font-style: normal;
@@ -437,14 +433,14 @@ address {
   text-align: center;
 }
 
-.list-inline, .breadcrumb, .list-unstyled, #banner ul {
+.list-inline, .list-unstyled, #banner ul {
   list-style: none;
 }
 
-.list-inline, .breadcrumb {
+.list-inline {
   margin-left: -5px;
 }
-.list-inline > li, .breadcrumb > li {
+.list-inline > li {
   display: inline-block;
   padding-left: 5px;
   padding-right: 5px;
@@ -457,27 +453,6 @@ address {
   display: block;
   font-style: normal;
   letter-spacing: 0.243em;
-}
-
-.breadcrumb {
-  float: right;
-  margin-top: 15px;
-}
-.breadcrumb li {
-  color: #C1761E;
-  font-size: 0.75em;
-  padding: 0 2px;
-}
-.breadcrumb li a {
-  color: #C4BBB0;
-}
-.breadcrumb li a::after {
-  content: "/";
-  margin-left: 5px;
-}
-.breadcrumb li:first-child a {
-  padding-left: 18px;
-  background: url(../images/iconHome.gif) no-repeat left center;
 }
 
 .border {
@@ -605,10 +580,12 @@ address {
   color: #5C5040;
   letter-spacing: 0.1em;
   padding: 0 20px;
+  transition: background 0.3s;
 }
 #menu a:hover, .AboutUs #menu a:nth-of-type(1), .News #menu a:nth-of-type(2), .Products #menu a:nth-of-type(3), .Quality #menu a:nth-of-type(4), .ContactUs #menu a:nth-of-type(5) {
-  background: #F5E2B8;
-  color: #C1761E;
+  background: #F6EFCB;
+  color: #ab821b;
+  font-weight: bold;
 }
 
 #footer {
@@ -762,13 +739,13 @@ address {
   letter-spacing: 0.2em;
   line-height: 140%;
   position: absolute;
-  top: 152px;
+  top: 222px;
   right: 40px;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 #banner ul li .btn {
   position: absolute;
-  top: 276px;
+  top: 346px;
   right: 233px;
   background: rgba(194, 148, 30, 0.5);
 }

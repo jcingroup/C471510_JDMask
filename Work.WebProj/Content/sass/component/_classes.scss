@@ -90,36 +90,4 @@
     }
 }
 
-.breadcrumb {
-    @extend .list-inline;
-    float:right;
-
-    margin-top:15px;
-
-    li {
-        color:$brand-secondary;
-        font-size: em(12px);
-
-        padding:0 2px;
-
-        a {
-            color:#C4BBB0;
-
-            &::after {
-                content:"/";
-                margin-left:5px;
-            }
-        }
-
-        &:first-child {
-            a {
-                padding-left:18px;
-                background: url(#{$img-path}/iconHome.gif) no-repeat left center;
-            }
-        }
-    }
-}
-
-.border {
-    border:1px solid #DBD2CC;
-}
+.border {border:1px solid #DBD2CC;}

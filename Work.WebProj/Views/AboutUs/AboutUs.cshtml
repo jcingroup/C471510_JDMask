@@ -1,5 +1,6 @@
 ﻿@{
     ViewBag.Title = "品牌故事";
+    ViewBag.Title2 = @ViewBag.Title;
     ViewBag.BodyClass = "AboutUs";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
@@ -8,16 +9,13 @@
     來自台灣的美麗神話
 </h3>
 
-<article class="editor row">
-    <div class="col-8">
-        <p>
-            J+D 醫學美容級專業面膜，是台灣潔芙丹妮生物科技有限公司創始人、生物醫學博士、醫學美容專科醫師鄭博士為愛美的太太研發，是充滿愛心、體貼呵護的面膜。現在，J+D 秉持著當時的初衷，希望也能讓您體會到我們的用心與貼心。
-        </p>
+<article class="editor">
+    <div>
+        <p>J+D 醫學美容級專業面膜，由台灣潔芙丹妮生物科技有限公司所研發，台灣佳旭國際有限公司負責生產。J+D 醫學美容級專業面膜，是台灣潔芙丹妮生物科技有限公司創始人、生物醫學博士、醫學美容專科醫師鄭博士為愛美的太太研發，是充滿愛心、體貼呵護的面膜。現在，J+D 秉持著當時的初衷，希望也能讓您體會到我們的用心與貼心。</p>
         <p>我們的面膜是由鄭博士親自為心愛的妻子所研發，因此省下高額的研發費用。另外，我們沒有大量的宣傳與行銷手法，只在親朋好友的口耳相傳之間廣受好評。J+D 醫學美容級專業面膜將這些省下來的費用回饋給消費者，希望能讓更多人使用到平價又優質的保養品。</p>
     </div>
-    <div class="col-4">
-        <p>
-            <img src="~/Content/images/AboutUs/pic.jpg" alt="">
-        </p>
+    <div class="row">
+        <p class="col-8"><img class="border" src="~/Content/images/Quality/pic2-1.jpg" alt=""></p>
+        <p class="col-4"><img class="border" src="~/Content/images/AboutUs/pic.jpg" alt=""></p>
     </div>
 </article>

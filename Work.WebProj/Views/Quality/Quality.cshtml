@@ -1,75 +1,71 @@
 ﻿@{
-    ViewBag.Title = "首頁";
-    ViewBag.IsFirstPage = true;
-    ViewBag.BodyClass = "index";
+    ViewBag.Title = "優良品質";
+    ViewBag.Title2 = @ViewBag.Title;
+    ViewBag.BodyClass = "Quality";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
-@section Scripts {
-<script>
-    var swiper = new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination',
-        slidesPerView: 2,
-        paginationClickable: true,
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
-        spaceBetween: 70,
-        autoplay: 2500
-    });
-</script>
-}
+<h3 class="title">
+    業界無可比擬的高品質
+</h3>
 
-<ul class="info wrap">
-    <li><a href="~/Products">專業接著劑</a></li>
-    <li><a href="~/Products">環保綠材</a></li>
-    <li><a href="~/Products">高分子材料</a></li>
-</ul>
+<h4 class="title">生物醫學博士、美容醫學專科醫師－鄭博士</h4>
+<ol class="certification list-inline">
+    <li>
+        <a href="~/Content/images/Quality/pic2-1.jpg" target="new"><img src="~/Content/images/Quality/pic2-1.jpg" alt=""></a>
+    </li>
+    <li>
+        <a href="~/Content/images/Quality/pic2-2.jpg" target="new"><img src="~/Content/images/Quality/pic2-2.jpg" alt=""></a>
+    </li>
+    <li>
+        <a href="~/Content/images/Quality/pic2-3.jpg" target="new"><img src="~/Content/images/Quality/pic2-3.jpg" alt=""></a>
+    </li>
+    <li>
+        <a href="~/Content/images/Quality/pic2-4.jpg" target="new"><img src="~/Content/images/Quality/pic2-4.jpg" alt=""></a>
+    </li>
+    <li>
+        <a href="~/Content/images/Quality/pic2-5.jpg" target="new"><img src="~/Content/images/Quality/pic2-5.jpg" alt=""></a>
+    </li>
+    <li>
+        <a href="~/Content/images/Quality/pic2-6.jpg" target="new"><img src="~/Content/images/Quality/pic2-6.jpg" alt=""></a>
+    </li>
+    <li>
+        <a href="~/Content/images/Quality/pic2-7.jpg" target="new"><img src="~/Content/images/Quality/pic2-6.jpg" alt=""></a>
+    </li>
+</ol>
 
-<section class="news">
-    <header>NEWS & EVENTS</header>
-    <div class="swiper-container">
+<h4 class="title">ISO 9001 國際標準組織認證技術</h4>
+<ol class="certification list-inline">
+    <li>
+        <a href="~/Content/images/Quality/pic1-1.jpg" target="new"><img src="~/Content/images/Quality/pic1-1.jpg" alt=""></a>
+    </li>
+    <li>
+        <a href="~/Content/images/Quality/pic1-2.jpg" target="new"><img src="~/Content/images/Quality/pic1-2.jpg" alt=""></a>
+    </li>
+</ol>
 
-        <ol class="swiper-wrapper">
-            <li class="swiper-slide">
-                <div class="cover"><img src="~/Content/images/News/pic.jpg" alt="NEWS圖"></div>
-                <h3>敬邀 2014 第十七屆中國國際膠黏劑及密封劑展</h3>
-                <p>今年富利源推出新綠色節能概念之環保膠水 - 一液型水性PU膠, 水性硫化膠, 水性CR膠及生質TPU樹脂,現場將會展示新產品樣品及應用產品, 包括: 品牌運動...</p>
-                <a href="~/News/content" class="btn">READ MORE</a>
-            </li>
-            <li class="swiper-slide">
-                <div class="cover"><img src="~/Content/images/News/pic2.jpg" alt="NEWS圖"></div>
-                <h3>敬邀 2014 第十七屆中國國際膠黏劑及密封劑展</h3>
-                <p>今年富利源推出新綠色節能概念之環保膠水 - 一液型水性PU膠, 水性硫化膠, 水性CR膠及生質TPU樹脂,現場將會展示新產品樣品及應用產品, 包括: 品牌運動...</p>
-                <a href="~/News/content" class="btn">READ MORE</a>
-            </li>
-            <li class="swiper-slide">
-                <div class="cover"><img src="~/Content/images/News/pic.jpg" alt="NEWS圖"></div>
-                <h3>testtset</h3>
-                <p>今年富利源推出新綠色節能概念之環保膠水 - 一液型水性PU膠, 水性硫化膠, 水性CR膠及生質TPU樹脂,現場將會展示新產品樣品及應用產品, 包括: 品牌運動...</p>
-                <a href="~/News/content" class="btn">READ MORE</a>
-            </li>
-            <li class="swiper-slide">
-                <div class="cover"><img src="~/Content/images/News/pic2.jpg" alt="NEWS圖"></div>
-                <h3>testtset</h3>
-                <p>今年富利源推出新綠色節能概念之環保膠水 - 一液型水性PU膠, 水性硫化膠, 水性CR膠及生質TPU樹脂,現場將會展示新產品樣品及應用產品, 包括: 品牌運動...</p>
-                <a href="~/News/content" class="btn">READ MORE</a>
-            </li>
-            <li class="swiper-slide">
-                <div class="cover"><img src="~/Content/images/News/pic.jpg" alt="NEWS圖"></div>
-                <h3>aaaaa</h3>
-                <p>今年富利源推出新綠色節能概念之環保膠水 - 一液型水性PU膠, 水性硫化膠, 水性CR膠及生質TPU樹脂,現場將會展示新產品樣品及應用產品, 包括: 品牌運動...</p>
-                <a href="~/News/content" class="btn">READ MORE</a>
-            </li>
-            <li class="swiper-slide">
-                <div class="cover"><img src="~/Content/images/News/pic2.jpg" alt="NEWS圖"></div>
-                <h3>bbb</h3>
-                <p>今年富利源推出新綠色節能概念之環保膠水 - 一液型水性PU膠, 水性硫化膠, 水性CR膠及生質TPU樹脂,現場將會展示新產品樣品及應用產品, 包括: 品牌運動...</p>
-                <a href="~/News/content" class="btn">READ MORE</a>
-            </li>
-        </ol>
-        <div class="swiper-pagination"></div>
-        <!-- Add Arrows -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-    </div>
-</section>
+<h4 class="title">檢驗報告</h4>
+<ol class="certification list-inline">
+    <li>
+        <a href="~/Content/images/Quality/pic3-1.jpg" target="new"><img src="~/Content/images/Quality/pic3-1.jpg" alt=""></a>
+    </li>
+    <li>
+        <a href="~/Content/images/Quality/pic3-2.jpg" target="new"><img src="~/Content/images/Quality/pic3-2.jpg" alt=""></a>
+    </li>
+    <li>
+        <a href="~/Content/images/Quality/pic3-3.jpg" target="new"><img src="~/Content/images/Quality/pic3-3.jpg" alt=""></a>
+    </li>
+    <li>
+        <a href="~/Content/images/Quality/pic3-4.jpg" target="new"><img src="~/Content/images/Quality/pic3-4.jpg" alt=""></a>
+    </li>
+    <li>
+        <a href="~/Content/images/Quality/pic3-5.jpg" target="new"><img src="~/Content/images/Quality/pic3-5.jpg" alt=""></a>
+    </li>
+</ol>
+
+<h4 class="title">投保產品責任險</h4>
+<ol class="certification list-inline">
+    <li>
+        <a href="~/Content/images/Quality/pic4-1.jpg" target="new"><img src="~/Content/images/Quality/pic4-1.jpg" alt=""></a>
+    </li>
+</ol>
