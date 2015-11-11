@@ -54,7 +54,7 @@
         news_id?: number;
         news_title?: string;
         news_content?: string;
-        news_date?: Date;
+        news_date?: any;
         i_Hide?: boolean;
         stereotype?: number;
     }

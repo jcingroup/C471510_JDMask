@@ -189,7 +189,7 @@
             this.setState(newState);
         }
         insertType() {
-            this.setState({ edit_type: 1, fieldData: { stereotype: 1 } });
+            this.setState({ edit_type: 1, fieldData: { stereotype: 1, i_Hide: false, news_date: format_Date(getNowDate()) } });
         }
         updateType(id: number | string) {
 
