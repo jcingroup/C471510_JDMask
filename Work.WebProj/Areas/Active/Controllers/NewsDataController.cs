@@ -82,7 +82,7 @@ namespace DotWeb.Areas.Active.Controllers
         public string axFDelete(int id, string filekind, string filename)
         {
             ResultInfo r = new ResultInfo();
-            DeleteSysFile(id, filekind, filename, ImageFileUpParm.NewsBasicSingle, "NewsData", "Photo");
+            DeleteSysFile(id, filekind, filename, ImageFileUpParm.ProductIndex, "NewsData", "Photo");
             r.result = true;
             return defJSON(r);
         }

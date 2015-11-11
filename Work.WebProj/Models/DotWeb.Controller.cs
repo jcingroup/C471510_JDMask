@@ -359,8 +359,20 @@ namespace DotWeb.Controller
             smr.Dispose();
 
             //依據參數進行裁圖
-            if (fp.Parm.Count() > 0)
+            if (fp.Parm.Count() > 1)//存兩種以上圖片大小
             {
+                foreach (ImageSizeParm imSize in fp.Parm)
+                {
+                    string web_path_parm = string.Format(upload_path_tpl_o, category1, category2, id, file_kind, imSize.folderName);
+                    string server_path_parm = Server.MapPath(web_path_parm);
+                    if (!System.IO.Directory.Exists(server_path_parm)) { System.IO.Directory.CreateDirectory(server_path_parm); }//找不到路徑
+                    MemoryStream sm = resizeImage(upload_file, imSize.width, imSize.heigh);
+                    System.IO.File.WriteAllBytes(server_path_parm + "\\" + Path.GetFileName(file_name), sm.ToArray());
+                    sm.Dispose();
+                }
+            }
+            else if (fp.Parm.Count() > 0)
+            {//只存一種
                 string web_path_parm = string.Format(upload_path_tpl_s, category1, category2, id, file_kind);
                 string server_path_parm = Server.MapPath(web_path_parm);
                 foreach (ImageSizeParm imSize in fp.Parm)
@@ -732,6 +744,7 @@ namespace DotWeb.Controller
         //protected readonly string sessionShoppingString = "CestLaVie.Shopping";
         //protected readonly string sessionMemberLoginString = "CestLaVie.loginMail";
         private readonly string sysUpFilePathTpl = "~/_Code/SysUpFiles/{0}.{1}/{2}/{3}/{4}";
+        private string getImg_path_tpl = "~/_Code/SysUpFiles/{0}/{1}/{2}/{3}";
         protected WebInfo wi;
 
         protected WebUserController()
@@ -991,9 +1004,35 @@ namespace DotWeb.Controller
             //htmlSource = Regex.Replace(htmlSource, @"<[^>]*>", String.Empty);
             return htmlSource;
         }
-        public string GetImg(int id, string file_kind, string category1, string category2)
+        #region 前台抓取圖片
+        public string[] GetImgs(int id, string file_kind, string category1, string category2, string size)
         {
-            string tpl_path = "~/_Code/SysUpFiles/" + category1 + "/" + category2 + "/" + id + "/" + file_kind;
+            string tpl_path = string.Format(getImg_path_tpl, category1, category2, id, file_kind);
+            string web_folder = Url.Content(tpl_path);
+            if (size != null) { web_folder = Url.Content(tpl_path + "/" + size); }
+            string server_folder = Server.MapPath(tpl_path);
+            string file_json_server_path = server_folder + "//file.json";
+            string[] imgs = { };
+            if (System.IO.File.Exists(file_json_server_path))
+            {
+                var read_json = System.IO.File.ReadAllText(file_json_server_path);
+                var f = JsonConvert.DeserializeObject<IList<JsonFileInfo>>(read_json).OrderBy(x => x.sort);
+                IList<string> image_path = new List<string>();
+                foreach (var fobj in f)
+                {
+                    image_path.Add(web_folder + "//" + fobj.fileName);
+                }
+                return image_path.ToArray();
+            }
+            else
+            {
+                return imgs;
+            }
+        }
+        public string GetImg(int id, string file_kind, string category1, string category2, string size)
+        {
+            string tpl_path = string.Format(getImg_path_tpl, category1, category2, id, file_kind);
+            if (size != null) { tpl_path = tpl_path + "/" + size; }//有size才增加資料夾目錄
             string img_folder = Server.MapPath(tpl_path);
 
             if (Directory.Exists(img_folder))
@@ -1017,37 +1056,7 @@ namespace DotWeb.Controller
                 return null;
             }
         }
-        public string[] GetImgs(int id, string file_kind, string category1, string category2)
-        {
-            string tpl_path = "~/_Code/SysUpFiles/" + category1 + "/" + category2 + "/" + id + "/" + file_kind;
-            string web_folder = Url.Content(tpl_path);
-            string server_folder = System.Web.HttpContext.Current.Server.MapPath(tpl_path);
-            string file_json_server_path = server_folder + "//file.json";
-
-            if (System.IO.File.Exists(file_json_server_path))
-            {
-                var read_json = System.IO.File.ReadAllText(file_json_server_path);
-                var f = JsonConvert.DeserializeObject<IList<JsonFileInfo>>(read_json).OrderBy(x => x.sort);
-                IList<string> image_path = new List<string>();
-                foreach (var fobj in f)
-                {
-                    image_path.Add(web_folder + "//" + fobj.fileName);
-                }
-                if (image_path.Count() > 0)
-                {
-                    return image_path.ToArray();
-                }
-                else
-                {
-                    return null;
-                }
-
-            }
-            else
-            {
-                return null;
-            }
-        }
+        #endregion
     }
     #endregion
 
