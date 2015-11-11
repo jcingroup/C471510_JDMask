@@ -667,9 +667,8 @@
     <Content Include="Scripts\build\ts\ConsoleIe8.js" />
     <Content Include="Scripts\build\ts\d.ts\EToasterType.js" />
     <Content Include="Scripts\build\ts\d.ts\IExcelHandle.js" />
-    <Content Include="Scripts\build\ts\dynScript\defData.js" />
-    <Content Include="Scripts\build\ts\dynScript\defGlobal.js" />
-    <Content Include="Scripts\build\ts\index.js" />
+    <Content Include="Scripts\build\ts\def\defData.js" />
+    <Content Include="Scripts\build\ts\def\defGlobal.js" />
     <Content Include="Scripts\es6.js" />
     <Content Include="Scripts\GoogleAnalytics.js" />
     <Content Include="Scripts\app\jquery.flexslider-min.js" />
@@ -857,7 +856,6 @@
     <Folder Include="Areas\Base\Views\Shared\" />
     <Folder Include="Content\sass\vendor\" />
     <Folder Include="Properties\PublishProfiles\" />
-    <Folder Include="Scripts\build\ts\dynScript\" />
     <Folder Include="_Code\CReport\" />
   </ItemGroup>
   <ItemGroup>
