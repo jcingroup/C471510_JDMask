@@ -649,6 +649,7 @@
     <Content Include="Scripts\app\swipe.js" />
     <Content Include="Scripts\app\toastr.min.js" />
     <Content Include="Scripts\build\comminc.js" />
+    <Content Include="Scripts\build\commincx.js" />
     <Content Include="Scripts\build\func\c-comm.js" />
     <Content Include="Scripts\build\func\c-imgFileSort.js" />
     <Content Include="Scripts\build\func\inc\c-Comm.js" />
@@ -667,8 +668,8 @@
     <Content Include="Scripts\build\ts\ConsoleIe8.js" />
     <Content Include="Scripts\build\ts\d.ts\EToasterType.js" />
     <Content Include="Scripts\build\ts\d.ts\IExcelHandle.js" />
-    <Content Include="Scripts\build\ts\dynScript\defData.js" />
-    <Content Include="Scripts\build\ts\dynScript\defGlobal.js" />
+    <Content Include="Scripts\build\ts\def\defData.js" />
+    <Content Include="Scripts\build\ts\def\defGlobal.js" />
     <Content Include="Scripts\build\ts\index.js" />
     <Content Include="Scripts\es6.js" />
     <Content Include="Scripts\GoogleAnalytics.js" />
