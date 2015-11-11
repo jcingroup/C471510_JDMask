@@ -63,7 +63,11 @@ function obj_prop_date(obj: any) {
 }
 function stand_date(getDateStr: string) {
     var d = new Date(getDateStr);
-    var r = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate;
+    var r = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
+    return r;
+}
+function format_Date(date: Date): string {
+    var r: string = date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + date.getDate();
     return r;
 }
 function getNowDate(): Date {
