@@ -2,7 +2,9 @@
 
 $btn-bg-color:       hsla(43,73%,44%,0.5);
 
-$banner-height:         280px;
+$banner-height:      280px;
+$banner-height-xxs:  180px;
+
 
 
 // import
@@ -35,6 +37,11 @@ h3.title {
     margin-bottom:35px;
     padding-bottom:23px;
     border-bottom:1px solid #E0B44E;
+
+    @include media(xxs) {
+        margin-bottom: 20px;
+        padding-bottom:15px;
+    }
 }
 
 h4.title {
@@ -63,6 +70,8 @@ h5.title {
     @extend .list-unstyled;
 
     li {
+        margin-left: 20px;
+        text-indent: -20px;
 
         &::before {
             @include caret(right, 10px, 8px, #E3C97D);
@@ -84,13 +93,18 @@ h5.title {
     color:#fff;
     text-align: right;
 
-    padding-top:143px;
     margin-bottom:40px;
 
     @each $item in $pages {
         .#{$item} & {
             background:url(#{$img-path}/#{$item}/banner.jpg) no-repeat center top;
         }
+    }
+
+    @include media(xs) {clear:both;}
+    @include media(xxs) {
+        height: $banner-height-xxs;
+        margin-bottom:0;
     }
 
     h2.title {
@@ -100,6 +114,13 @@ h5.title {
         letter-spacing: 0.1em;
         
         text-shadow: 0 0 5px hsla(0,0,0,0.2);
+
+        margin-top:143px;
+
+        @include media(xxs) {
+            font-size: em(50px);
+            margin-top:100px;
+        }
     }
 
     p {
@@ -111,10 +132,14 @@ h5.title {
         font-weight: 300;
 
         margin-top:-160px;
-    }
 
-    @include media(xs) {
-        clear:both;
+        @include media(xxs) {
+            font-size: em(14px);
+            letter-spacing: 0;
+            opacity: 0.5;
+
+            margin-top:-145px;
+        }
     }
 }
 
@@ -123,6 +148,10 @@ h5.title {
     float:right;
 
     margin-top:15px;
+
+    @include media(xxs) {
+        float:none;
+    }
 
     li {
         color:$brand-secondary;
@@ -200,7 +229,9 @@ h5.title {
 // about us
 // ----------------------------------------------------------------------
 ol.pic {
-    margin-bottom:30px;
+    margin-bottom:15px;
+
+    @include media(xxs) {margin-bottom:5px;}
 }
 
 
@@ -505,6 +536,8 @@ ol.pic {
                             &::after {margin-left:-1.5em;}
                         }
                     }
+
+                    strong {margin-right:5px;}
                 }
             }
         }

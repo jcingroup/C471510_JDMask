@@ -29,6 +29,8 @@ body {
     color: $text-color;
     font-family: $font-family-base;
     line-height: $line-height-base;
+
+    @include media(xs) {background:$body-bg-xs;}
 }
 
 a {

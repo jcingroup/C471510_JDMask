@@ -9,10 +9,14 @@
 
 .full, %full         { width: 100%; max-width: 100%; }
 .half, %half         { width: 46.9% }
+
 // .float-l, %float-l,
 // .float-r, %float-r   { margin: 0 0 20px 0; position: relative; }
-.float-l, %float-l   { float: left; }
-.float-r, %float-r   { float: right; }
+
+.float-l, %float-l     { float: left !important; }  // 預設: md
+.float-r, %float-r     { float: right !important; } // 預設: md
+
+
 .valign-t, %valign-t { vertical-align: top; }
 .valign-m, %valign-m { vertical-align: middle; }
 .valign-b, %valign-m { vertical-align: bottom; }

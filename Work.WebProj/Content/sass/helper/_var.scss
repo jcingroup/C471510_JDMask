@@ -31,6 +31,7 @@ $error:                 #E60112 !default;             // 紅
 // ----------------------------------------------------------------------
 // <body> 背景 & 文字色
 $body-bg:               #fff !default;
+$body-bg-xs:            #D6B65C !default;
 $text-color:            #635E5A !default;
 
 $link-color:            $brand-primary;             // 文字鏈結色
@@ -152,11 +153,11 @@ $color: map-merge($state-type, $table-color);
 
 // 中斷點
 $breakpoints: (
-    xs:  320px,   // Extra small screen / phone
-    sm:  544px,   // Small screen / phone
-    md:  768px,   // Medium screen / tablet
-    lg:  992px,   // Large screen / desktop
-    lg2: 1280px,  // Large screen / desktop
+    xxs: 480px,   // Extra small screen / phone
+    xs:  544px,   // Extra small screen / phone
+    sm:  768px,   // Small screen / phone
+    md:  992px,   // Medium screen / tablet / desktop
+    lg:  1040px,   // Medium screen / tablet / desktop
     xl:  1440px   // Extra large screen / wide desktop
 );
 
@@ -172,10 +173,12 @@ $wrap-widths: (
 
 // media queries
 $medias: (
-    xxs:      (max-width: break(xs)),
-    xs:       (max-width: break(sm)),
+    xxs:      (max-width: break(xs)-1),
 
-    sm:       (max-width: break(md)),
+    xs:       (max-width: break(sm)-1),
+    xs-min:   (min-width: break(xs)),
+
+    sm:       (max-width: break(md)-1),
     sm-min:   (min-width: break(sm)),
 
     md:       (max-width: break(lg)-1),
@@ -184,9 +187,7 @@ $medias: (
     lg:       (max-width: break(xl)-1),
     lg-min:   (min-width: break(lg)),
 
-    xl:       (min-width: break(xl)),
-
-    md2:      (max-width: break(lg2)-1),
+    xl-min:   (min-width: break(xl))
 );
 
 

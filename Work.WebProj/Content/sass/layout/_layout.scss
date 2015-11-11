@@ -1,20 +1,23 @@
 @charset "UTF-8";
+
 // wrapper
-$wrapper-bg:            #fff;
+$wrapper-bg:            #fff !default;
 $content-spacing:       75px !default;
+$content-spacing-sm:    30px !default;
 
 // header
-$header-height:         60px;
+$header-height:         60px !default;
 
-$menu-height:           70px;
-$menu-height-sm:        100%;
-$menu-link:             transparent;
-$menu-link-hover:       #F6EFCB;
+$menu-height:           70px !default;
+$menu-height-sm:        100% !default;
+$menu-link:             transparent !default;
+$menu-link-hover:       #F6EFCB !default;
 
 // footer
 $footer-height:         300px !default;
-$footer-height-sm:      100px;
-$footer-bg:             url(#{$img-path}/bgFooter.gif) no-repeat center top;
+$footer-height-xs:      238px !default;
+$footer-height-xxs:     378px !default;
+$footer-bg:             url(#{$img-path}/bgFooter.gif) no-repeat center top !default;
 $goTop:                 (bottom 10px), (right 15px) !default;
 
 
@@ -40,9 +43,7 @@ $goTop:                 (bottom 10px), (right 15px) !default;
     // }
 
     // 最小寬度限制 (有 RWD - 至少 xxs 的寬度)
-    @include media(xs) {
-        min-width: wrap-width(xxs);
-    }
+    min-width: wrap-width(xxs);
 }
 
 #wrapper {
@@ -50,6 +51,14 @@ $goTop:                 (bottom 10px), (right 15px) !default;
     @extend %center;
     min-height: 100%;
     padding-bottom: $footer-height + $content-spacing; // 內容與footer間距
+
+    @include media(xs) {
+        min-height: auto;
+        background:#fff;
+
+        padding-bottom: $footer-height-xs + $content-spacing-sm;
+    }
+    @include media(xxs) {padding-bottom: $footer-height-xxs + $content-spacing-sm;}
 }
 
 .wrap {
@@ -57,9 +66,9 @@ $goTop:                 (bottom 10px), (right 15px) !default;
     @extend %center;
     @extend %clearfix;
 
-    $screens: xl, lg, md, sm;
+    $screens: sm, md, lg, xl;
     @each $screen in $screens {
-        @include media(#{$screen}) {
+        @include media(#{$screen}-min) {
             width: wrap-width(#{$screen});
         }
     }
@@ -155,12 +164,16 @@ $goTop:                 (bottom 10px), (right 15px) !default;
         }
     }
 
+    @include media(sm) {
+        a {padding:0 10px;}
+    }
+
     @include media(xs) {
         display: none;
         background:#C49534;
         
         width:calc(100% - 20px);
-        text-align: left;
+        text-align: center;
 
         position: absolute;
         left:10px; top:$header-height;
@@ -176,7 +189,6 @@ $goTop:                 (bottom 10px), (right 15px) !default;
         // }
 
         a {
-            display: block;
             height: auto;
 
             color:#fff;
@@ -185,17 +197,6 @@ $goTop:                 (bottom 10px), (right 15px) !default;
             position: relative;
             
             padding:$gutter;
-
-            &::after {
-                @include caret(right,8px,6px,darken($brand-primary,10%));
-                display: block;
-                content:" ";
-
-                position: absolute;
-                right:$gutter;
-                top:50%;
-                transform: translateY(-50%);
-            }
 
             $selector: ();
             @each $item in $pages {
@@ -208,6 +209,25 @@ $goTop:                 (bottom 10px), (right 15px) !default;
                 background: lighten(#C49534,15%);
                 color:#fff;
                 font-weight: normal;
+            }
+        }
+    }
+
+    @include media(xxs) {
+        text-align: left;
+
+        a {
+            display: block;
+
+            &::after {
+                @include caret(right,8px,6px,darken($brand-primary,10%));
+                display: block;
+                content:" ";
+
+                position: absolute;
+                right:$gutter;
+                top:50%;
+                transform: translateY(-50%);
             }
         }
     }
@@ -227,9 +247,32 @@ $goTop:                 (bottom 10px), (right 15px) !default;
 
     color: $brand-primary;
 
-    @include media(sm) {
-        margin-top: -($footer-height-sm);
-        height: $footer-height-sm;
+    @include media(xl-min) {background-position:-210px 0;}
+
+    @include media-only(sm) {
+        &::after {
+            content:" ";
+            display: block;
+
+            background:hsla(0,0,100%,0.4);
+            width:100%; height:100%;
+
+            position: absolute;
+            left:0; top:0;
+            z-index: -1;
+        }
+    }
+
+    @include media(xs) {
+        height: $footer-height-xs;
+        background:none;
+
+        margin-top: -($footer-height-xs);
+        padding:$gutter 0;
+    }
+    @include media(xxs) {
+        height: $footer-height-xxs;
+        margin-top: -($footer-height-xxs);
     }
 
     .logo {
@@ -251,10 +294,25 @@ $goTop:                 (bottom 10px), (right 15px) !default;
         em {
             font-size: em(16.54px,14.35px);
         }
+
+        @include media(xl-min) {left:300px;}
+        @include media(md) {left:265px;}
+        @include media(sm) {left:140px;}
+
+        @include media(xs) {
+            position: static;
+            float:right;
+        }
+
+        @include media(xxs) {
+            float:none;
+            margin:0 auto;
+        }
     }
 }
 
 .contact {
+    width: 296px;
     float:right;
 
     margin-top:28px;
@@ -276,8 +334,6 @@ $goTop:                 (bottom 10px), (right 15px) !default;
             }
         }
 
-        &:first-child {margin-right:4px;}
-
         &:last-child {
             a {
                 background-position:-51px 0;
@@ -286,9 +342,25 @@ $goTop:                 (bottom 10px), (right 15px) !default;
             }
         }
     }
+
+    @include media(xs) {
+        width: 272px;
+        margin-top:10px;
+        clear:both;
+
+        li {padding:0 2px;}
+    }
+
+    @include media(xxs) {
+        width: 296px;
+        float:none;
+
+        margin:$gutter auto 0 auto;
+    }
 }
 
 .mit {
+    width:221px;
     height:122px;
     background:url(#{$img-path}/mit.gif) no-repeat 78px 37px;
 
@@ -310,15 +382,55 @@ $goTop:                 (bottom 10px), (right 15px) !default;
 
         span {margin:0 8px;}
     }
+
+    @include media(xl-min) {right:30px;}
+
+    @include media(xs) {
+        position: static;
+        float:left;
+
+        margin-top:-60px;
+    }
+
+    @include media(xxs) {
+        height:140px;
+
+        position: absolute;
+        top:180px; left:50%;
+        margin-top:0;
+
+        transform: translateX(-50%);
+    }
 }
 
 .copyright {
+    width:140px;
     font-size: em(12px);
     font-family:$font-family-slogan;
     font-weight: 300;
 
     position: absolute;
     left:137px; top:210px;
+
+    @include media(xl-min) {left:90px;}
+    @include media(md) {left:70px;}
+    @include media(sm) {left:0; top:200px;}
+
+    @include media(xs) {
+        width:100%;
+        height:40px;
+        background:#D6B65C;
+
+        color:#fff;
+        text-align: left;
+
+        left:0;
+        top:180px;
+
+        padding:10px;
+    }
+
+    @include media(xxs) {top:320px;}
 }
 .goTop {
     @include fixed(bottom cp(10px) right cp(10px));
@@ -343,5 +455,12 @@ $goTop:                 (bottom 10px), (right 15px) !default;
         opacity: 1;
         color:#fff;
         background: $brand-primary;
+    }
+
+    @include media(xs) {
+        bottom:0;
+        opacity: 0.7;
+
+        &:hover, &:active {opacity:1;}
     }
 }

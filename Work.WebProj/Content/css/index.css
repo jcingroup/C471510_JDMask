@@ -263,6 +263,11 @@ body {
   font-family: "Microsoft Jhenghei", \5FAE\8EDF\6B63\9ED1\9AD4, "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.25;
 }
+@media all and (max-width: 767px) {
+  body {
+    background: #D6B65C;
+  }
+}
 
 a {
   color: #C1931E;
@@ -390,11 +395,11 @@ address {
 }
 
 .float-l {
-  float: left;
+  float: left !important;
 }
 
 .float-r {
-  float: right;
+  float: right !important;
 }
 
 .valign-t {
@@ -503,38 +508,48 @@ address {
   margin: 0 auto;
 }
 
-@media all and (max-width: 544px) {
-  #header, #footer, #main, #content {
-    min-width: 320px;
-  }
+#header, #footer, #main, #content {
+  min-width: 320px;
 }
 
 #wrapper {
   min-height: 100%;
   padding-bottom: 300px;
 }
+@media all and (max-width: 767px) {
+  #wrapper {
+    min-height: auto;
+    background: #fff;
+    padding-bottom: 248px;
+  }
+}
+@media all and (max-width: 543px) {
+  #wrapper {
+    padding-bottom: 388px;
+  }
+}
 
+@media all and (min-width: 768px) {
+  .wrap, #banner .pro {
+    width: 720px;
+  }
+}
+@media all and (min-width: 992px) {
+  .wrap, #banner .pro {
+    width: 960px;
+  }
+}
+@media all and (min-width: 1040px) {
+  .wrap, #banner .pro {
+    width: 1008px;
+  }
+}
 @media all and (min-width: 1440px) {
   .wrap, #banner .pro {
     width: 1400px;
   }
 }
-@media all and (max-width: 1439px) {
-  .wrap, #banner .pro {
-    width: 1008px;
-  }
-}
-@media all and (max-width: 991px) {
-  .wrap, #banner .pro {
-    width: 960px;
-  }
-}
-@media all and (max-width: 768px) {
-  .wrap, #banner .pro {
-    width: 720px;
-  }
-}
-@media all and (max-width: 544px) {
+@media all and (max-width: 767px) {
   .wrap, #banner .pro {
     width: 100%;
     padding: 0 10px;
@@ -577,7 +592,7 @@ address {
   border: 0;
   float: right;
 }
-@media all and (max-width: 544px) {
+@media all and (max-width: 767px) {
   .menu-trigger {
     display: block;
   }
@@ -600,23 +615,40 @@ address {
   color: #ab821b;
   font-weight: bold;
 }
-@media all and (max-width: 544px) {
+@media all and (max-width: 991px) {
+  #menu a {
+    padding: 0 10px;
+  }
+}
+@media all and (max-width: 767px) {
   #menu {
     display: none;
     background: #C49534;
     width: calc(100% - 20px);
-    text-align: left;
+    text-align: center;
     position: absolute;
     left: 10px;
     top: 60px;
   }
   #menu a {
-    display: block;
     height: auto;
     color: #fff;
     line-height: 1;
     position: relative;
     padding: 15px;
+  }
+  #menu a:hover, .AboutUs #menu a:nth-of-type(1), .News #menu a:nth-of-type(2), .Products #menu a:nth-of-type(3), .Quality #menu a:nth-of-type(4), .ContactUs #menu a:nth-of-type(5) {
+    background: #d8b56c;
+    color: #fff;
+    font-weight: normal;
+  }
+}
+@media all and (max-width: 543px) {
+  #menu {
+    text-align: left;
+  }
+  #menu a {
+    display: block;
   }
   #menu a::after {
     content: '';
@@ -634,11 +666,6 @@ address {
     top: 50%;
     transform: translateY(-50%);
   }
-  #menu a:hover, .AboutUs #menu a:nth-of-type(1), .News #menu a:nth-of-type(2), .Products #menu a:nth-of-type(3), .Quality #menu a:nth-of-type(4), .ContactUs #menu a:nth-of-type(5) {
-    background: #d8b56c;
-    color: #fff;
-    font-weight: normal;
-  }
 }
 
 #footer {
@@ -649,10 +676,37 @@ address {
   z-index: 3;
   color: #C1931E;
 }
-@media all and (max-width: 768px) {
+@media all and (min-width: 1440px) {
   #footer {
-    margin-top: -100px;
-    height: 100px;
+    background-position: -210px 0;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 991px) {
+  #footer::after {
+    content: " ";
+    display: block;
+    background: rgba(255, 255, 255, 0.4);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
+}
+
+@media all and (max-width: 767px) {
+  #footer {
+    height: 238px;
+    background: none;
+    margin-top: -238px;
+    padding: 15px 0;
+  }
+}
+@media all and (max-width: 543px) {
+  #footer {
+    height: 378px;
+    margin-top: -378px;
   }
 }
 #footer .logo {
@@ -671,8 +725,36 @@ address {
 #footer .logo em {
   font-size: 1.15261em;
 }
+@media all and (min-width: 1440px) {
+  #footer .logo {
+    left: 300px;
+  }
+}
+@media all and (max-width: 1039px) {
+  #footer .logo {
+    left: 265px;
+  }
+}
+@media all and (max-width: 991px) {
+  #footer .logo {
+    left: 140px;
+  }
+}
+@media all and (max-width: 767px) {
+  #footer .logo {
+    position: static;
+    float: right;
+  }
+}
+@media all and (max-width: 543px) {
+  #footer .logo {
+    float: none;
+    margin: 0 auto;
+  }
+}
 
 .contact {
+  width: 296px;
   float: right;
   margin-top: 28px;
 }
@@ -694,17 +776,32 @@ address {
 .contact li a:hover, .contact li a:focus {
   background-position: 0 -80px;
 }
-.contact li:first-child {
-  margin-right: 4px;
-}
 .contact li:last-child a {
   background-position: -51px 0;
 }
 .contact li:last-child a:hover, .contact li:last-child a:focus {
   background-position: -51px -80px;
 }
+@media all and (max-width: 767px) {
+  .contact {
+    width: 272px;
+    margin-top: 10px;
+    clear: both;
+  }
+  .contact li {
+    padding: 0 2px;
+  }
+}
+@media all and (max-width: 543px) {
+  .contact {
+    width: 296px;
+    float: none;
+    margin: 15px auto 0 auto;
+  }
+}
 
 .mit {
+  width: 221px;
   height: 122px;
   background: url(../images/mit.gif) no-repeat 78px 37px;
   font-size: 1.4025em;
@@ -725,14 +822,70 @@ address {
 .mit em span {
   margin: 0 8px;
 }
+@media all and (min-width: 1440px) {
+  .mit {
+    right: 30px;
+  }
+}
+@media all and (max-width: 767px) {
+  .mit {
+    position: static;
+    float: left;
+    margin-top: -60px;
+  }
+}
+@media all and (max-width: 543px) {
+  .mit {
+    height: 140px;
+    position: absolute;
+    top: 180px;
+    left: 50%;
+    margin-top: 0;
+    transform: translateX(-50%);
+  }
+}
 
 .copyright {
+  width: 140px;
   font-size: 0.75em;
   font-family: "Open Sans", "Microsoft Jhenghei", \5FAE\8EDF\6B63\9ED1\9AD4, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   position: absolute;
   left: 137px;
   top: 210px;
+}
+@media all and (min-width: 1440px) {
+  .copyright {
+    left: 90px;
+  }
+}
+@media all and (max-width: 1039px) {
+  .copyright {
+    left: 70px;
+  }
+}
+@media all and (max-width: 991px) {
+  .copyright {
+    left: 0;
+    top: 200px;
+  }
+}
+@media all and (max-width: 767px) {
+  .copyright {
+    width: 100%;
+    height: 40px;
+    background: #D6B65C;
+    color: #fff;
+    text-align: left;
+    left: 0;
+    top: 180px;
+    padding: 10px;
+  }
+}
+@media all and (max-width: 543px) {
+  .copyright {
+    top: 320px;
+  }
 }
 
 .goTop {
@@ -769,17 +922,50 @@ address {
   color: #fff;
   background: #C1931E;
 }
+@media all and (max-width: 767px) {
+  .goTop {
+    bottom: 0;
+    opacity: 0.7;
+  }
+  .goTop:hover, .goTop:active {
+    opacity: 1;
+  }
+}
 
 #header {
   background: rgba(255, 255, 255, 0.5);
 }
 
 #banner {
-  height: 800px;
+  min-height: 800px;
   margin-top: -60px;
 }
+@media all and (max-width: 991px) {
+  #banner {
+    min-height: 420px;
+  }
+}
+@media all and (max-width: 767px) {
+  #banner {
+    height: auto;
+    clear: both;
+    min-height: 320px;
+  }
+}
 #banner ul {
-  height: 100%;
+  height: 800px;
+}
+@media all and (max-width: 991px) {
+  #banner ul {
+    height: 420px;
+    border-bottom: 3px solid #D6B65C;
+  }
+}
+@media all and (max-width: 767px) {
+  #banner ul {
+    height: 320px;
+    border-bottom: 0;
+  }
 }
 #banner ul .i1 {
   height: 100%;
@@ -794,17 +980,54 @@ address {
   line-height: 140%;
   position: absolute;
   top: 222px;
-  right: 40px;
+  right: 0;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+@media all and (max-width: 991px) {
+  #banner ul li h2 {
+    top: 130px;
+  }
+}
+@media all and (max-width: 767px) {
+  #banner ul li h2 {
+    font-size: 1.625em;
+    letter-spacing: 0.1em;
+    top: 70px;
+  }
+}
+@media all and (max-width: 543px) {
+  #banner ul li h2 {
+    width: 170px;
+    top: 70px;
+    right: 0;
+    text-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  }
 }
 #banner ul li .btn {
   position: absolute;
   top: 346px;
-  right: 233px;
+  right: 195px;
   background: rgba(194, 148, 30, 0.5);
 }
 #banner ul li .btn:hover, #banner ul li .btn:focus {
   background: rgba(150, 114, 23, 0.5);
+}
+@media all and (max-width: 991px) {
+  #banner ul li .btn {
+    top: 250px;
+  }
+}
+@media all and (max-width: 767px) {
+  #banner ul li .btn {
+    top: 155px;
+    right: 50px;
+  }
+}
+@media all and (max-width: 543px) {
+  #banner ul li .btn {
+    top: 195px;
+    right: 0;
+  }
 }
 #banner .pro {
   margin-top: -345px;
@@ -816,7 +1039,7 @@ address {
   background: rgba(255, 255, 255, 0.3);
   border: 1px solid #fff;
   position: absolute;
-  right: 0;
+  right: 50px;
   padding: 10px;
 }
 #banner .pro a::before {
@@ -842,26 +1065,79 @@ address {
 #banner .pro a:hover .btn {
   background: #C2AB6F;
 }
-@media all and (max-width: 544px) {
-  #banner {
-    height: auto;
-    clear: both;
-  }
-  #banner ul {
-    height: 320px;
-  }
-  #banner ul li .btn {
-    position: static;
-  }
-  #banner ul li h2 {
-    width: 170px;
-    font-size: 1.625em;
-    letter-spacing: 0.1em;
-    top: 80px;
-    right: 0;
-    text-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-  }
+@media all and (min-width: 768px) and (max-width: 991px) {
   #banner .pro {
-    margin: 0;
+    margin-top: 15px;
+  }
+  #banner .pro a {
+    width: 100%;
+    text-align: left;
+    position: static;
+    padding: 0;
+  }
+  #banner .pro a::before {
+    display: none;
+  }
+  #banner .pro a img {
+    border: 1px solid #C1931E;
+    transition: opacity 0.4s;
+  }
+  #banner .pro a .btn {
+    background: none;
+    font-family: "Open Sans", "Microsoft Jhenghei", \5FAE\8EDF\6B63\9ED1\9AD4, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.875em;
+    font-style: italic;
+    font-weight: 300;
+    color: #C1931E;
+    position: relative;
+    top: -40px;
+    left: 20px;
+    padding: 0;
+  }
+  #banner .pro a .btn::after {
+    content: "Read more";
+    display: block;
+    width: 330px;
+    border-top: 1px solid #C1931E;
+    font-size: 0.46667em;
+    font-style: normal;
+    color: #635E5A;
+    letter-spacing: 5px;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    padding-top: 20px;
+    transition: letter-spacing 0.4s;
+  }
+  #banner .pro a:hover img {
+    opacity: 0.7;
+  }
+  #banner .pro a:hover .btn {
+    background: none;
+  }
+  #banner .pro a:hover .btn::after {
+    letter-spacing: 10px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  #banner .pro {
+    margin-top: 0;
+  }
+  #banner .pro a {
+    width: 100%;
+    height: 185px;
+    text-align: center;
+    border-color: #C1931E;
+    position: relative;
+    right: 0;
+  }
+  #banner .pro a .btn {
+    font-size: 0.875em;
+    top: 30px;
+    right: 8px;
+  }
+  #banner .pro a img {
+    max-height: 100%;
   }
 }

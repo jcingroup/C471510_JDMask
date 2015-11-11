@@ -317,13 +317,10 @@
     <h3 className="title" dangerouslySetInnerHTML={{ __html: this.props.caption + ' 基本資料維護' }}></h3>
     <form className="form-horizontal" onSubmit={this.handleSubmit}>
         <div className="col-xs-12">
-            <div className="alert alert-warning">
-                <p><strong className="text-danger">紅色標題</strong> 為必填欄位。</p>
-                </div>
 
                     <div className="form-group">
-                        <label className="col-xs-2 control-label">選擇版型</label>
-                        <div className="col-xs-10">
+                        <label className="col-xs-1 control-label">選擇版型</label>
+                        <div className="col-xs-11">
                             <div className="radio-inline">
                                 <label className="thumbnail text-center">
                                     <input type="checkbox"
@@ -364,7 +361,7 @@
                         </div>
 
                     <div className="form-group">
-                        <label className="col-xs-2 control-label">代表圖</label>
+                        <label className="col-xs-1 control-label">代表圖</label>
                         <div className="col-xs-4">
                             <MasterImageUpload
                                 FileKind="Photo1"
@@ -376,11 +373,11 @@
                                 url_sort={gb_approot + 'Active/NewsData/axFSort'}
                                 />
                             </div>
-                        <small className="help-inline col-xs-4 text-danger">限 1 張圖片，檔案大小不可超過4.8MB</small>
+                        <small className="help-inline col-xs-7 text-danger">限 1 張圖片，檔案大小不可超過4.8MB (版型一不會顯示圖片)</small>
                         </div>
 
             <div className="form-group">
-                <label className="col-xs-2 control-label text-danger">標題</label>
+                <label className="col-xs-1 control-label text-danger">標題</label>
                 <div className="col-xs-4">
                     <input type="text"
                         className="form-control"
@@ -389,13 +386,13 @@
                         maxLength={64}
                         required />
                     </div>
-                    <small className="help-inline col-xs-6">最多64個字<span className="text-danger">(必填) </span></small>
+                    <small className="help-inline col-xs-7">最多64個字<span className="text-danger"> (必填)</span></small>
                 </div>
 
             <div className="form-group">
-                <label className="col-xs-2 control-label text-danger">日期</label>
+                <label className="col-xs-1 control-label text-danger">日期</label>
                 <div className="col-xs-4">
-                     <span className="has-feedback">
+                    <span className="has-feedback">
                        <InputDate id="news_date"
                            ver={1}
                            onChange={this.changeFDValue.bind(this) }
@@ -403,12 +400,13 @@
                            value={fieldData.news_date}
                            required={true}
                            disabled={false}/>
-                         </span>
-                    </div>
+                    </span>
                 </div>
+                <small className="help-inline col-xs-7"><span className="text-danger">(必填)</span></small>
+            </div>
 
             <div className="form-group">
-                <label className="col-xs-2 control-label">狀態</label>
+                <label className="col-xs-1 control-label">狀態</label>
                 <div className="col-xs-4">
                    <div className="radio-inline">
                        <label>
@@ -436,8 +434,8 @@
                 </div>
 
                 <div className="form-group">
-                     <label className="col-xs-2 control-label">內容</label>
-                        <div className="col-xs-6">
+                     <label className="col-xs-1 control-label">內容</label>
+                        <div className="col-xs-8">
                             <textarea cols={30} rows={5} className="form-control" id="editor1"
                                 value={fieldData.news_content}
                                 onChange={this.changeFDValue.bind(this, 'news_content') }></textarea>
@@ -445,8 +443,8 @@
                     </div>
 
 
-            <div className="form-action text-right">
-                <div className="col-xs-5">
+            <div className="form-action">
+                <div className="col-xs-offset-2">
                     <button type="submit" className="btn-primary"><i className="fa-check"></i> 儲存</button> { }
                     <button type="button" onClick={this.noneType}><i className="fa-times"></i> 回前頁</button>
                     </div>

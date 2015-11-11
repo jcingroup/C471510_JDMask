@@ -3,14 +3,11 @@
 $img-path2:             '../images/index';
 
 $content-spacing:       0;
+$content-spacing-sm:   10px;
 
 $banner-height:         800px;
+$banner-height-sm:      420px;
 $banner-height-xs:      320px;
-
-$footer-bg:             #406947;
-$footer-height:         300px;
-$footer-height2:        126px;
-$footer-contact-color:  #D5E8C2;
 
 
 // import
@@ -39,15 +36,34 @@ $footer-contact-color:  #D5E8C2;
 }
 
 #banner {
-    height: $banner-height;
+    min-height: $banner-height;
 
     margin-top:-$header-height;
 
+    @include media(sm) {min-height: $banner-height-sm;}
+
+    @include media(xs) {
+        height:auto;
+        clear:both;
+
+        min-height: $banner-height-xs;
+    }
+
     ul {
         @extend .list-unstyled;
-        height: 100%;
+        height: $banner-height;
 
-            @for $i from 1 through 1 {
+        @include media(sm) {
+            height: $banner-height-sm;
+            border-bottom:3px solid #D6B65C;
+        }
+
+        @include media(xs) {
+            height: $banner-height-xs;
+            border-bottom:0;
+        }
+
+        @for $i from 1 through 1 {
             .i#{$i} {
                 height: 100%;
                 background: url(#{$img-path2}/banner#{$i}.jpg) no-repeat center top;
@@ -55,31 +71,51 @@ $footer-contact-color:  #D5E8C2;
 
                 text-align: left;
             }
+        }
 
-            li {
-                h2 {
-                    color:#fff;
-                    font-size: em(36px);
-                    letter-spacing: 0.2em;
-                    line-height: 140%;
+        li {
+            h2 {
+                color:#fff;
+                font-size: em(36px);
+                letter-spacing: 0.2em;
+                line-height: 140%;
 
-                    position: absolute;
-                    top:222px;
-                    right:40px;
+                position: absolute;
+                top:222px;
+                right:0;
 
-                    text-shadow: 0 0 5px hsla(0,0,0,0.2);
+                text-shadow: 0 0 5px hsla(0,0,0,0.2);
+
+                @include media(sm) {top:130px;}
+
+                @include media(xs) {
+                    font-size: em(26px);
+                    letter-spacing: 0.1em;
+
+                    top: 70px;
                 }
 
-                .btn {
-                    position: absolute;
-                    top:346px;
-                    right:233px;
-                    background:hsla(43,73%,44%,0.5);
+                @include media(xxs) {
+                    width:170px;
 
-                    &:hover, &:focus {
-                        background:darken(rgba(194,148,30,0.5),10%);
-                    }
+                    top: 70px; right:0;
+
+                    text-shadow: 0 0 30px hsla(0,0,0,0.5);
                 }
+            }
+            .btn {
+                position: absolute;
+                top:346px;
+                right:195px;
+                background:hsla(43,73%,44%,0.5);
+
+                &:hover, &:focus {
+                    background:darken(rgba(194,148,30,0.5),10%);
+                }
+
+                @include media(sm) {top: 250px;}
+                @include media(xs) {top: 155px; right:50px;}
+                @include media(xxs) {top: 195px; right:0;}
             }
         }
     }
@@ -96,7 +132,7 @@ $footer-contact-color:  #D5E8C2;
             border:1px solid #fff;
 
             position: absolute;
-            right:0;
+            right:50px;
 
             padding:10px;
 
@@ -123,34 +159,89 @@ $footer-contact-color:  #D5E8C2;
                 .btn {background:$btn-bg-hover;}
             }
         }
-    }
 
-    @include media(xs) {
-        height:auto;
-        clear:both;
+        @include media-only(sm) {
+            margin-top:15px;
 
-        ul {
-            height: $banner-height-xs;
-            
-            li {
-                .btn {
-                    position: static;
+            a {
+                width:100%;
+                text-align: left;
+                position: static;
+
+                padding:0;
+
+                &::before {display:none;}
+
+                img {
+                    border:1px solid $brand-primary;
+                    transition: opacity 0.4s;
                 }
 
-                h2 {
-                    width:170px;
-                    font-size: em(26px);
-                    letter-spacing: 0.1em;
+                .btn {
+                    background:none;
 
-                    top: 80px; right:0;
+                    font-family: $font-family-slogan;
+                    font-size: em(30px);
+                    font-style: italic;
+                    font-weight: 300;
+                    color:$brand-primary;
 
-                    text-shadow: 0 0 30px hsla(0,0,0,0.5);
+                    position: relative;
+                    top:-40px; left:20px;
+
+                    padding:0;
+
+                    &::after {
+                        content:"Read more";
+                        display: block;
+                        width:330px;
+
+                        border-top:1px solid $brand-primary;
+
+                        font-size: em(14px, 30px);
+                        font-style: normal;
+                        color:$text-color;
+                        letter-spacing: 5px;
+                        
+                        position: absolute;
+                        top: 40px; left:0;
+
+                        padding-top:20px;
+
+                        transition: letter-spacing 0.4s;
+                    }
+                }
+
+                &:hover {
+                    img {opacity: 0.7;}
+
+                    .btn {
+                        background:none;
+                        &::after {letter-spacing:10px;}
+                    }
                 }
             }
         }
 
-        .pro {
-            margin:0;
+        @include media(xs) {
+            margin-top:0;
+
+            a {
+                width:100%;
+                height:185px;
+                text-align: center;
+                border-color:$brand-primary;
+
+                position: relative;
+                right:0;
+
+                .btn {
+                    font-size: em(14px);
+                    top:30px; right:8px;
+                }
+
+                img {max-height:100%;}
+            }
         }
     }
 }
