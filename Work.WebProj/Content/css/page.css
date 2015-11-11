@@ -1076,7 +1076,7 @@ address {
     padding-right: 7.5px;
   }
 
-  .col-xxs-12 {
+  .col-xxs-12, .prolist li {
     width: 100%;
     float: left;
     margin-bottom: 15px;
@@ -2069,6 +2069,11 @@ ol.pic {
   display: inline-block;
   margin-right: -3px;
   margin-bottom: 30px;
+}
+@media all and (max-width: 543px) {
+  .prolist li {
+    display: block;
+  }
 }
 
 .pro {

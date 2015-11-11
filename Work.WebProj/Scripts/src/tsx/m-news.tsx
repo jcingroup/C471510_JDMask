@@ -319,7 +319,7 @@
         <div className="col-xs-12">
 
                     <div className="form-group">
-                        <label className="col-xs-1 control-label">選擇版型</label>
+                        <label className="col-xs-1 control-label">版型</label>
                         <div className="col-xs-11">
                             <div className="radio-inline">
                                 <label className="thumbnail text-center">
@@ -330,7 +330,7 @@
                                         onChange={this.changeStereoType.bind(this, 1) }
                                         />
                                     <span>版型 1 </span>
-                                    <img src="../../_Code/Images/editor_layout1.gif" />
+                                    <img width="190" src="../../_Code/Images/editor_layout1.gif" />
                                     </label>
                                 </div>
                             <div className="radio-inline">
@@ -342,7 +342,7 @@
                                         onChange={this.changeStereoType.bind(this, 2) }
                                         />
                                     <span>版型 2 </span>
-                                    <img src="../../_Code/Images/editor_layout2.gif" />
+                                    <img width="190" src="../../_Code/Images/editor_layout2.gif" />
                                     </label>
                                 </div>
                             <div className="radio-inline">
@@ -354,7 +354,7 @@
                                         onChange={this.changeStereoType.bind(this, 3) }
                                         />
                                     <span>版型 1 </span>
-                                    <img src="../../_Code/Images/editor_layout3.gif" />
+                                    <img width="190" src="../../_Code/Images/editor_layout3.gif" />
                                     </label>
                                 </div>
                             </div>
@@ -373,7 +373,7 @@
                                 url_sort={gb_approot + 'Active/NewsData/axFSort'}
                                 />
                             </div>
-                        <small className="help-inline col-xs-7 text-danger">限 1 張圖片，檔案大小不可超過4.8MB (版型一不會顯示圖片)</small>
+                        <small className="help-inline col-xs-7 text-danger">限 1 張圖片，檔案大小不可超過4.8MB (版型1不會顯示圖片)</small>
                         </div>
 
             <div className="form-group">
@@ -435,7 +435,7 @@
 
                 <div className="form-group">
                      <label className="col-xs-1 control-label">內容</label>
-                        <div className="col-xs-8">
+                        <div className="col-xs-9">
                             <textarea cols={30} rows={5} className="form-control" id="editor1"
                                 value={fieldData.news_content}
                                 onChange={this.changeFDValue.bind(this, 'news_content') }></textarea>
@@ -444,7 +444,7 @@
 
 
             <div className="form-action">
-                <div className="col-xs-offset-2">
+                <div className="col-xs-offset-1">
                     <button type="submit" className="btn-primary"><i className="fa-check"></i> 儲存</button> { }
                     <button type="button" onClick={this.noneType}><i className="fa-times"></i> 回前頁</button>
                     </div>

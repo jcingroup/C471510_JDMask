@@ -277,12 +277,17 @@ ol.pic {
 
     li {
         @extend .col-4;
+        @extend .col-xxs-12;
 
         float:none;
         display: inline-block;
 
         margin-right:-3px; // fix for space of inline elements
         margin-bottom:$gutter*2;
+
+        @include media(xxs) {
+            display: block;
+        }
     }
 }
 .pro {
