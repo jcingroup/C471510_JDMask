@@ -209,11 +209,15 @@ h5.title {
         }
 
         span {
-            display: inline-block;
+            display: block;
             min-height: 25px;
+            text-indent: 0;
             background:url(#{$img-path}/iconApp.gif) no-repeat;
 
-            padding-left:120px;
+            margin-top:5px;
+            padding-left:30px;
+
+            &:nth-of-type(1) {margin-top:-20px;}
 
             &.wechat {background-position:0 -54px;}
         }
@@ -597,12 +601,14 @@ ol.pic {
 
         dt {
             @extend .col-3;
+            @extend .col-xl-2;
 
             @include media(xxs) {display:none;}
         }
 
         dd {
             @extend .col-9;
+            @extend .col-xl-10;
             @extend .col-xxs-12;
 
             @include media(xxs) {margin-bottom:0;}
@@ -682,12 +688,13 @@ ol.certification {
                 }
 
                 span {
-                    margin-right:10px;
-                    padding-left:140px;
+                    display: inline-block;
+                    margin:0 10px 5px 0;
 
                     @include media(xxs) {
+                        display: block;
                         background:none;
-                        padding-left:112px;
+                        padding:0;
                     }
                 }
             }

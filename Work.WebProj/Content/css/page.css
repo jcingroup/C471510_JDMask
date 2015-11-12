@@ -630,7 +630,7 @@ address {
     padding-right: 7.5px;
   }
 
-  .col-xl-2 {
+  .col-xl-2, .pro-detail .sell-info dt {
     width: 16.66667%;
     float: left;
     margin-bottom: 15px;
@@ -694,7 +694,7 @@ address {
     padding-right: 7.5px;
   }
 
-  .col-xl-10 {
+  .col-xl-10, .pro-detail .sell-info dd {
     width: 83.33333%;
     float: left;
     margin-bottom: 15px;
@@ -2044,10 +2044,15 @@ h5.title {
   margin: 0 10px;
 }
 .info li span, .pro-detail .sell-info dd ul li span, .contact-info dd ul li span {
-  display: inline-block;
+  display: block;
   min-height: 25px;
+  text-indent: 0;
   background: url(../images/iconApp.gif) no-repeat;
-  padding-left: 120px;
+  margin-top: 5px;
+  padding-left: 30px;
+}
+.info li span:nth-of-type(1), .pro-detail .sell-info dd ul li span:nth-of-type(1), .contact-info dd ul li span:nth-of-type(1) {
+  margin-top: -20px;
 }
 .info li span.wechat, .pro-detail .sell-info dd ul li span.wechat, .contact-info dd ul li span.wechat {
   background-position: 0 -54px;
@@ -2450,12 +2455,13 @@ ol.certification li img {
   text-align: right;
 }
 .contact-info dd ul li span {
-  margin-right: 10px;
-  padding-left: 140px;
+  display: inline-block;
+  margin: 0 10px 5px 0;
 }
 @media all and (max-width: 543px) {
   .contact-info dd ul li span {
+    display: block;
     background: none;
-    padding-left: 112px;
+    padding: 0;
   }
 }
