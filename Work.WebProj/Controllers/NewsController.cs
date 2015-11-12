@@ -21,7 +21,7 @@ namespace DotWeb.Controllers
             List<m_News> items = new List<m_News>();
             using (var db0 = getDB0())
             {
-                items = db0.News.Where(x => !x.i_Hide).OrderByDescending(x => x.news_date)
+                items = db0.News.Where(x => !x.i_Hide).OrderByDescending(x => new { x.news_date, x.news_id })
                                                .Select(x => new m_News()
                                                {
                                                    news_id = x.news_id,
@@ -50,7 +50,7 @@ namespace DotWeb.Controllers
                 else
                 {
                     item = db0.News.Find(id);
-                    item.imgsrc = GetImg(item.news_id, "Photo1", "NewsData", "Photo",null);//顯示圖片
+                    item.imgsrc = GetImg(item.news_id, "Photo1", "NewsData", "Photo", null);//顯示圖片
                 }
             }
             return View("News_content", item);
