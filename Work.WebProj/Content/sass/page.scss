@@ -22,6 +22,7 @@ $banner-height-xxs:  180px;
 
 @import "component/classes";
 @import "component/btn";
+@import "component/editor";
 
 @import "layout/grid";
 @import "layout/layout";
@@ -149,7 +150,7 @@ h5.title {
 
     margin-top:15px;
 
-    @include media(xs) {float:none;}
+    @include media(sm) {float:none;}
 
     li {
         color:$brand-secondary;
@@ -412,7 +413,7 @@ ol.pic {
     }
 }
 .pro-intro {
-    margin-bottom:35px;
+    margin-bottom: 0;
 
     dt, dd {
         @extend .col-6;
@@ -422,18 +423,38 @@ ol.pic {
     dt {
         position: relative;
 
+        .detail {
+            position: absolute;
+            top:37px; right:5px;
+
+            @include media-only(md) {
+                right:0;
+                width:300px;
+            }
+
+            @include media-only(sm) {right:140px;}
+
+            @include media(xxs) {
+                position: static;
+                margin-top:10px;
+            }
+        }
+
         .point {
-            width:222px;
+            width:200px;
 
             position: absolute;
             right:$gutter;
             bottom:$gutter;
 
             @include media(sm) {
+                width:420px;
                 border:1px solid $gray-lighter;
-
                 padding:10px;
             }
+
+            @include media(xs) {width:25
+                0px;}
 
             @include media(xxs) {
                 width:100%;
@@ -474,19 +495,23 @@ ol.pic {
                 text-indent: -18px;
                 margin-bottom:5px;
                 padding-left: 18px;
-
-                @include media(xxs) {
-                    figure {
-                        margin-left:-$gutter/2;
-                        margin-right:-$gutter/2;
-                    }
-                }
-
-                img, figcaption {@extend .col-xxs-6;}
             }
         }
         .feature {
             text-align: center;
+
+            @include media(xxs) {
+                figure {
+                    text-align: left;
+
+                    margin-left:-$gutter/2;
+                    margin-right:-$gutter/2;
+
+                    img {border:0;}
+                }
+            }
+
+            img, figcaption {@extend .col-xxs-6;}
             img {margin:0 auto 10px auto;}
         }
     }
@@ -508,26 +533,6 @@ ol.pic {
         margin-top:35px;
     }
 
-    .steps {
-        
-        li {
-            font-size: em(14px);
-
-            figure {
-                @extend .border;
-                text-align: center;
-
-                margin-bottom:8px;
-            }
-
-            em {
-                display: block;
-                font-style: normal;
-                padding:0 8px;
-            }
-        }
-    }
-
     .feature {
         margin-top:15px;
 
@@ -542,6 +547,41 @@ ol.pic {
             img {
                 float:left;
                 margin-right: 10px;
+
+                @include media(xxs) {
+                    float:none;
+                    display:block;
+                    margin-bottom:10px;
+                }
+            }
+        }
+    }
+
+    .steps {
+        
+        li {
+            font-size: em(14px);
+            margin-bottom:5px;
+
+            figure {
+                @extend .border;
+                text-align: center;
+
+                margin-bottom:8px;
+            }
+
+            em {
+                display: block;
+                font-style: normal;
+                padding:0 8px;
+            }
+
+            @include media(xs) {
+                clear:both;
+
+                figure, em {width:49%;}
+                figure {float:left;}
+                em {float:right;}
             }
         }
     }
@@ -549,12 +589,19 @@ ol.pic {
     .sell-info {
         @extend .row;
 
+        @include media(xxs) {margin-bottom:0;}
+
         dt {
             @extend .col-3;
+
+            @include media(xxs) {display:none;}
         }
 
         dd {
             @extend .col-9;
+            @extend .col-xxs-12;
+
+            @include media(xxs) {margin-bottom:0;}
 
             ul {
                 @extend .info;

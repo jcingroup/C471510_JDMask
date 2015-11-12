@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+.editor {
+
+// pic
+// ------------------------------------------------------------
+img {max-width:100%;}
+
+[class*="float-"]  {
+    max-width:46%;
+
+    &.float-l {margin:0 $gutter $gutter 0;}
+    &.float-r {margin:0 0 $gutter $gutter;}
+
+    @include media(xxs) {
+        max-width: none;
+        width: 100%;
+        &.float-l, &.float-r {margin:0 0 10px 0;}
+    }
+}
+
+}

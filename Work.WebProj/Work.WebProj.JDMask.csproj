@@ -284,11 +284,13 @@
     <Content Include="Content\images\Products\banner.jpg" />
     <Content Include="Content\images\Products\pro1.jpg" />
     <Content Include="Content\images\Products\pro1\pic.jpg" />
+    <Content Include="Content\images\Products\pro1\pic1-2.png" />
     <Content Include="Content\images\Products\pro1\pic2.jpg" />
     <Content Include="Content\images\Products\pro1\pic3.jpg" />
     <Content Include="Content\images\Products\pro1\pic4.jpg" />
     <Content Include="Content\images\Products\pro2.jpg" />
     <Content Include="Content\images\Products\pro2\pic.jpg" />
+    <Content Include="Content\images\Products\pro2\pic1-2.png" />
     <Content Include="Content\images\Products\pro2\pic2.jpg" />
     <Content Include="Content\images\Products\pro2\pic3.jpg" />
     <Content Include="Content\images\Products\pro2\pic4.jpg" />
@@ -307,10 +309,14 @@
     <Content Include="Content\images\Products\pro5\pic2.jpg" />
     <Content Include="Content\images\Products\pro5\pic3.jpg" />
     <Content Include="Content\images\Products\pro5\pic4.jpg" />
+    <Content Include="Content\images\Products\pro6.jpg" />
+    <Content Include="Content\images\Products\pro6\pic.jpg" />
+    <Content Include="Content\images\Products\pro6\pic2.jpg" />
     <Content Include="Content\images\Products\qr-line.jpg" />
     <Content Include="Content\images\Products\qr-wechat.jpg" />
     <Content Include="Content\images\Products\step1.jpg" />
     <Content Include="Content\images\Products\step2.jpg" />
+    <Content Include="Content\images\Products\step2_2.jpg" />
     <Content Include="Content\images\Products\step3.jpg" />
     <Content Include="Content\images\Products\step4.jpg" />
     <Content Include="Content\images\qr.gif" />
@@ -475,6 +481,7 @@
     <Content Include="Content\backstage_sass\sass\_modules.scss" />
     <Content Include="Content\backstage_sass\sass\_scripts.scss" />
     <Content Include="Content\backstage_sass\sass\_variables.scss" />
+    <Content Include="Content\sass\component\_editor.scss" />
     <None Include="gulpfile.js" />
     <Content Include="Content\images\noIE\bg.gif" />
     <Content Include="Content\images\noIE\brow.gif" />

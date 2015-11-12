@@ -498,6 +498,28 @@ address {
   opacity: .65;
 }
 
+.editor img {
+  max-width: 100%;
+}
+.editor [class*="float-"] {
+  max-width: 46%;
+}
+.editor [class*="float-"].float-l {
+  margin: 0 15px 15px 0;
+}
+.editor [class*="float-"].float-r {
+  margin: 0 0 15px 15px;
+}
+@media all and (max-width: 543px) {
+  .editor [class*="float-"] {
+    max-width: none;
+    width: 100%;
+  }
+  .editor [class*="float-"].float-l, .editor [class*="float-"].float-r {
+    margin: 0 0 10px 0;
+  }
+}
+
 .row, .pro-detail .sell-info {
   margin-left: -7.5px;
   margin-right: -7.5px;
@@ -1028,7 +1050,7 @@ address {
     padding-right: 7.5px;
   }
 
-  .col-xxs-6, .pro-intro dd ul.ingredient li img, .pro-intro dd ul.ingredient li figcaption {
+  .col-xxs-6, .pro-intro dd .feature img, .pro-intro dd .feature figcaption {
     width: 50%;
     float: left;
     margin-bottom: 15px;
@@ -1076,7 +1098,7 @@ address {
     padding-right: 7.5px;
   }
 
-  .col-xxs-12, .prolist li {
+  .col-xxs-12, .prolist li, .pro-detail .sell-info dd {
     width: 100%;
     float: left;
     margin-bottom: 15px;
@@ -1957,7 +1979,7 @@ h5.title {
   float: right;
   margin-top: 15px;
 }
-@media all and (max-width: 767px) {
+@media all and (max-width: 991px) {
   .breadcrumb {
     float: none;
   }
@@ -2188,21 +2210,51 @@ ol.pic {
 }
 
 .pro-intro {
-  margin-bottom: 35px;
+  margin-bottom: 0;
 }
 .pro-intro dt {
   position: relative;
 }
+.pro-intro dt .detail {
+  position: absolute;
+  top: 37px;
+  right: 5px;
+}
+@media all and (min-width: 992px) and (max-width: 1039px) {
+  .pro-intro dt .detail {
+    right: 0;
+    width: 300px;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+  .pro-intro dt .detail {
+    right: 140px;
+  }
+}
+
+@media all and (max-width: 543px) {
+  .pro-intro dt .detail {
+    position: static;
+    margin-top: 10px;
+  }
+}
 .pro-intro dt .point {
-  width: 222px;
+  width: 200px;
   position: absolute;
   right: 15px;
   bottom: 15px;
 }
 @media all and (max-width: 991px) {
   .pro-intro dt .point {
+    width: 420px;
     border: 1px solid #eeeeee;
     padding: 10px;
+  }
+}
+@media all and (max-width: 767px) {
+  .pro-intro dt .point {
+    width: 25 0px;
   }
 }
 @media all and (max-width: 543px) {
@@ -2247,14 +2299,18 @@ ol.pic {
   border-right-width: 2px;
   margin-right: 10px;
 }
+.pro-intro dd .feature {
+  text-align: center;
+}
 @media all and (max-width: 543px) {
-  .pro-intro dd ul.ingredient li figure {
+  .pro-intro dd .feature figure {
+    text-align: left;
     margin-left: -7.5px;
     margin-right: -7.5px;
   }
-}
-.pro-intro dd .feature {
-  text-align: center;
+  .pro-intro dd .feature figure img {
+    border: 0;
+  }
 }
 .pro-intro dd .feature img {
   margin: 0 auto 10px auto;
@@ -2272,18 +2328,6 @@ ol.pic {
 .pro-detail h5.title {
   margin-top: 35px;
 }
-.pro-detail .steps li {
-  font-size: 0.875em;
-}
-.pro-detail .steps li figure {
-  text-align: center;
-  margin-bottom: 8px;
-}
-.pro-detail .steps li em {
-  display: block;
-  font-style: normal;
-  padding: 0 8px;
-}
 .pro-detail .feature {
   margin-top: 15px;
 }
@@ -2294,6 +2338,55 @@ ol.pic {
 .pro-detail .feature figure img {
   float: left;
   margin-right: 10px;
+}
+@media all and (max-width: 543px) {
+  .pro-detail .feature figure img {
+    float: none;
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+.pro-detail .steps li {
+  font-size: 0.875em;
+  margin-bottom: 5px;
+}
+.pro-detail .steps li figure {
+  text-align: center;
+  margin-bottom: 8px;
+}
+.pro-detail .steps li em {
+  display: block;
+  font-style: normal;
+  padding: 0 8px;
+}
+@media all and (max-width: 767px) {
+  .pro-detail .steps li {
+    clear: both;
+  }
+  .pro-detail .steps li figure, .pro-detail .steps li em {
+    width: 49%;
+  }
+  .pro-detail .steps li figure {
+    float: left;
+  }
+  .pro-detail .steps li em {
+    float: right;
+  }
+}
+@media all and (max-width: 543px) {
+  .pro-detail .sell-info {
+    margin-bottom: 0;
+  }
+}
+@media all and (max-width: 543px) {
+  .pro-detail .sell-info dt {
+    display: none;
+  }
+}
+@media all and (max-width: 543px) {
+  .pro-detail .sell-info dd {
+    margin-bottom: 0;
+  }
 }
 .pro-detail .sell-info dd ul li:first-child em {
   letter-spacing: 2em;

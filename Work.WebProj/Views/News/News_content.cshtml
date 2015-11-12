@@ -20,22 +20,22 @@
 }
 else if (Model.stereotype == 2)
 {
-    <article class="editor row">
-        <div class="col-8 col-xs-7 col-xxs-12">@Html.Raw(Model.news_content)</div>
+    <article class="editor clearfix">
         @if (Model.imgsrc != null & Model.imgsrc != "")
         {
-            <p class="col-4 col-xs-5 col-xxs-12"><img src="@Model.imgsrc" alt="" class="thumb"></p>
+            <p class="float-r"><img src="@Model.imgsrc" alt="" class="thumb"></p>
         }
+        @Html.Raw(Model.news_content)
     </article>
 }
 else if (Model.stereotype == 3)
 {
-    <article class="editor row">
+    <article class="editor clearfix">
         @if (Model.imgsrc != null & Model.imgsrc != "")
         {
-            <p class="col-4 col-xs-5 col-xxs-12"><img src="@Model.imgsrc" alt="" class="thumb"></p>
+            <p class="float-l"><img src="@Model.imgsrc" alt="" class="thumb"></p>
         }
-        <div class="col-8 col-xs-7 col-xxs-12">@Html.Raw(Model.news_content)</div>
+        @Html.Raw(Model.news_content)
     </article>
 }
 
