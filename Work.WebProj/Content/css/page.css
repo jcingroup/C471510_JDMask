@@ -1485,13 +1485,23 @@ address {
   height: 60px;
   z-index: 2;
 }
+#header .wrap, #header #banner h2.title, #banner #header h2.title, #header #banner p, #banner #header p {
+  position: relative;
+}
 #header .logo {
   height: 100%;
   width: 238px;
-  z-index: 50;
   font-size: 1em;
-  float: left;
+  position: absolute;
+  left: 0;
+  top: 0;
   padding: 10px 0;
+  z-index: 50;
+}
+@media all and (max-width: 767px) {
+  #header .logo {
+    left: 10px;
+  }
 }
 #header .logo a {
   display: block;

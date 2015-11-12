@@ -275,6 +275,7 @@
     <Content Include="Content\images\iconHome.gif" />
     <Content Include="Content\images\iconMenuBar.gif" />
     <Content Include="Content\images\Index\banner1.jpg" />
+    <Content Include="Content\images\Index\banner2.jpg" />
     <Content Include="Content\images\Index\pro.jpg" />
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\logo2.gif" />
