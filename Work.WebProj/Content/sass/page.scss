@@ -421,11 +421,14 @@ ol.pic {
     }
 
     dt {
+        @extend .col-xl-5;
         position: relative;
 
         .detail {
             position: absolute;
             top:37px; right:5px;
+
+            @include media(xl-min) {right:30px;}
 
             @include media-only(md) {
                 right:0;
@@ -453,8 +456,7 @@ ol.pic {
                 padding:10px;
             }
 
-            @include media(xs) {width:25
-                0px;}
+            @include media(xs) {width:250px;}
 
             @include media(xxs) {
                 width:100%;
@@ -474,6 +476,8 @@ ol.pic {
     }
 
     dd {
+        @extend .col-xl-7;
+
         h5.title {
             font-size:em(18px);
             font-weight: normal;
@@ -668,8 +672,8 @@ ol.certification {
             @extend .info;
 
             li {
-                padding-left:0;
-                text-indent: 0;
+                padding-left:7em;
+                text-indent: -7em;
 
                 em {
                     display: inline-block;
@@ -679,7 +683,12 @@ ol.certification {
 
                 span {
                     margin-right:10px;
-                    padding-left:30px;
+                    padding-left:140px;
+
+                    @include media(xxs) {
+                        background:none;
+                        padding-left:112px;
+                    }
                 }
             }
         }

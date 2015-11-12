@@ -654,7 +654,7 @@ address {
     padding-right: 7.5px;
   }
 
-  .col-xl-5 {
+  .col-xl-5, .pro-intro dt {
     width: 41.66667%;
     float: left;
     margin-bottom: 15px;
@@ -670,7 +670,7 @@ address {
     padding-right: 7.5px;
   }
 
-  .col-xl-7 {
+  .col-xl-7, .pro-intro dd {
     width: 58.33333%;
     float: left;
     margin-bottom: 15px;
@@ -1635,7 +1635,7 @@ address {
   }
 }
 #footer .logo {
-  width: 265px;
+  width: 268px;
   height: 65px;
   background: url(../images/logo2.gif) no-repeat left center;
   background-size: auto 100%;
@@ -2220,6 +2220,11 @@ ol.pic {
   top: 37px;
   right: 5px;
 }
+@media all and (min-width: 1440px) {
+  .pro-intro dt .detail {
+    right: 30px;
+  }
+}
 @media all and (min-width: 992px) and (max-width: 1039px) {
   .pro-intro dt .detail {
     right: 0;
@@ -2254,7 +2259,7 @@ ol.pic {
 }
 @media all and (max-width: 767px) {
   .pro-intro dt .point {
-    width: 25 0px;
+    width: 250px;
   }
 }
 @media all and (max-width: 543px) {
@@ -2426,8 +2431,8 @@ ol.certification li img {
   padding-left: 5.5em;
 }
 .contact-info dd ul li {
-  padding-left: 0;
-  text-indent: 0;
+  padding-left: 7em;
+  text-indent: -7em;
 }
 .contact-info dd ul li em {
   display: inline-block;
@@ -2436,5 +2441,11 @@ ol.certification li img {
 }
 .contact-info dd ul li span {
   margin-right: 10px;
-  padding-left: 30px;
+  padding-left: 140px;
+}
+@media all and (max-width: 543px) {
+  .contact-info dd ul li span {
+    background: none;
+    padding-left: 112px;
+  }
 }
