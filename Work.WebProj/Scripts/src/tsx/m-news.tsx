@@ -330,7 +330,7 @@
                                         onChange={this.changeStereoType.bind(this, 1) }
                                         />
                                     <span>版型 1 </span>
-                                    <img width="190" src="../../_Code/Images/editor_layout1.gif" />
+                                    <img src="../../_Code/Images/editor_layout1.gif" />
                                     </label>
                                 </div>
                             <div className="radio-inline">
@@ -342,7 +342,7 @@
                                         onChange={this.changeStereoType.bind(this, 2) }
                                         />
                                     <span>版型 2 </span>
-                                    <img width="190" src="../../_Code/Images/editor_layout2.gif" />
+                                    <img src="../../_Code/Images/editor_layout2.gif" />
                                     </label>
                                 </div>
                             <div className="radio-inline">
@@ -354,7 +354,7 @@
                                         onChange={this.changeStereoType.bind(this, 3) }
                                         />
                                     <span>版型 1 </span>
-                                    <img width="190" src="../../_Code/Images/editor_layout3.gif" />
+                                    <img src="../../_Code/Images/editor_layout3.gif" />
                                     </label>
                                 </div>
                             </div>

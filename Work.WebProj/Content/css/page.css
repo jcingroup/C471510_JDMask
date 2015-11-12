@@ -882,7 +882,7 @@ address {
     padding-right: 7.5px;
   }
 
-  .col-sm-12 {
+  .col-sm-12, .pro-intro dt, .pro-intro dd {
     width: 100%;
     float: left;
     margin-bottom: 15px;
@@ -931,7 +931,7 @@ address {
     padding-right: 7.5px;
   }
 
-  .col-xs-6 {
+  .col-xs-6, .prolist li {
     width: 50%;
     float: left;
     margin-bottom: 15px;
@@ -1028,7 +1028,7 @@ address {
     padding-right: 7.5px;
   }
 
-  .col-xxs-6 {
+  .col-xxs-6, .pro-intro dd ul.ingredient li img, .pro-intro dd ul.ingredient li figcaption {
     width: 50%;
     float: left;
     margin-bottom: 15px;
@@ -1957,7 +1957,7 @@ h5.title {
   float: right;
   margin-top: 15px;
 }
-@media all and (max-width: 543px) {
+@media all and (max-width: 767px) {
   .breadcrumb {
     float: none;
   }
@@ -2119,6 +2119,11 @@ ol.pic {
   letter-spacing: 0.243em;
   margin-bottom: 0;
 }
+@media all and (max-width: 991px) {
+  .pro h4.title {
+    letter-spacing: 0.1em;
+  }
+}
 .pro.hot {
   position: relative;
 }
@@ -2194,6 +2199,19 @@ ol.pic {
   right: 15px;
   bottom: 15px;
 }
+@media all and (max-width: 991px) {
+  .pro-intro dt .point {
+    border: 1px solid #eeeeee;
+    padding: 10px;
+  }
+}
+@media all and (max-width: 543px) {
+  .pro-intro dt .point {
+    width: 100%;
+    position: static;
+    margin-top: 15px;
+  }
+}
 .pro-intro dt .point h5.title {
   font-size: 1.125em;
 }
@@ -2228,6 +2246,12 @@ ol.pic {
   border-left-width: 8px;
   border-right-width: 2px;
   margin-right: 10px;
+}
+@media all and (max-width: 543px) {
+  .pro-intro dd ul.ingredient li figure {
+    margin-left: -7.5px;
+    margin-right: -7.5px;
+  }
 }
 .pro-intro dd .feature {
   text-align: center;
@@ -2288,8 +2312,17 @@ ol.certification li {
   height: 200px;
   margin-bottom: 15px;
 }
+@media all and (max-width: 1039px) {
+  ol.certification li {
+    height: 160px;
+  }
+}
+ol.certification li a:hover img {
+  opacity: 0.7;
+}
 ol.certification li img {
   max-height: 100%;
+  transition: opacity 0.3s;
 }
 
 .contact-info dt .map {

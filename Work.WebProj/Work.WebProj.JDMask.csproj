@@ -273,6 +273,7 @@
     <Content Include="Content\images\iconApp.gif" />
     <Content Include="Content\images\iconFeatured.gif" />
     <Content Include="Content\images\iconHome.gif" />
+    <Content Include="Content\images\iconMenuBar.gif" />
     <Content Include="Content\images\Index\banner1.jpg" />
     <Content Include="Content\images\Index\pro.jpg" />
     <Content Include="Content\images\logo.png" />
@@ -872,6 +873,7 @@
     <Content Include="Views\Products\Products_content3.cshtml" />
     <Content Include="Views\Products\Products_content4.cshtml" />
     <Content Include="Views\Products\Products_content5.cshtml" />
+    <Content Include="Views\Products\Products_content6.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
