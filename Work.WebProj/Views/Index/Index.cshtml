@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
-@* @section css {
+@section css {
 <link href="~/Content/css/swiper.min.css" rel="stylesheet">
 }
 
@@ -15,15 +15,23 @@
 var swiper = new Swiper('.swiper-container', {
     slidesPerView: 1,
     autoplay: 2500,
-    loop: true
+    loop: true,
+    speed: 1500,
+    effect: 'fade'
 });
 </script>
-} *@
+}
 
 <div id="banner" class="swiper-container">
 
     <ul class="swiper-wrapper">
         <li class="i1 swiper-slide">
+            <div class="wrap">
+                <h2>來自台灣，<br>醫學美容級專業面膜。</h2>
+                <a class="btn" href="~/AboutUs">Read Our Story &gt;&gt;</a>
+            </div>
+        </li>
+        <li class="i2 swiper-slide">
             <div class="wrap">
                 <h2>來自台灣，<br>醫學美容級專業面膜。</h2>
                 <a class="btn" href="~/AboutUs">Read Our Story &gt;&gt;</a>

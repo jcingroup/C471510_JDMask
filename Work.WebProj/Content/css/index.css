@@ -560,13 +560,23 @@ address {
   height: 60px;
   z-index: 2;
 }
+#header .wrap, #header #banner .pro, #banner #header .pro {
+  position: relative;
+}
 #header .logo {
   height: 100%;
   width: 238px;
-  z-index: 50;
   font-size: 1em;
-  float: left;
+  position: absolute;
+  left: 0;
+  top: 0;
   padding: 10px 0;
+  z-index: 50;
+}
+@media all and (max-width: 767px) {
+  #header .logo {
+    left: 10px;
+  }
 }
 #header .logo a {
   display: block;
@@ -710,7 +720,7 @@ address {
   }
 }
 #footer .logo {
-  width: 265px;
+  width: 268px;
   height: 65px;
   background: url(../images/logo2.gif) no-repeat left center;
   background-size: auto 100%;
@@ -973,6 +983,18 @@ address {
   background-size: cover;
   text-align: left;
 }
+#banner ul .i2 {
+  height: 100%;
+  background: url(../images/index/banner2.jpg) no-repeat center top;
+  background-size: cover;
+  text-align: left;
+}
+#banner ul .i3 {
+  height: 100%;
+  background: url(../images/index/banner3.jpg) no-repeat center top;
+  background-size: cover;
+  text-align: left;
+}
 #banner ul li h2 {
   color: #fff;
   font-size: 2.25em;
@@ -1031,6 +1053,7 @@ address {
 }
 #banner .pro {
   margin-top: -345px;
+  z-index: 2;
 }
 #banner .pro a {
   display: block;

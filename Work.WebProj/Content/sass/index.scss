@@ -63,7 +63,7 @@ $banner-height-xs:      320px;
             border-bottom:0;
         }
 
-        @for $i from 1 through 1 {
+        @for $i from 1 through 3 {
             .i#{$i} {
                 height: 100%;
                 background: url(#{$img-path2}/banner#{$i}.jpg) no-repeat center top;
@@ -123,6 +123,8 @@ $banner-height-xs:      320px;
     .pro {
         @extend .wrap;
         margin-top:-345px;
+
+        z-index: z(banner)+1;
 
         a {
             display: block;

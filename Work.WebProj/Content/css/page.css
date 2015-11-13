@@ -630,7 +630,7 @@ address {
     padding-right: 7.5px;
   }
 
-  .col-xl-2 {
+  .col-xl-2, .pro-detail .sell-info dt {
     width: 16.66667%;
     float: left;
     margin-bottom: 15px;
@@ -654,7 +654,7 @@ address {
     padding-right: 7.5px;
   }
 
-  .col-xl-5 {
+  .col-xl-5, .pro-intro dt {
     width: 41.66667%;
     float: left;
     margin-bottom: 15px;
@@ -670,7 +670,7 @@ address {
     padding-right: 7.5px;
   }
 
-  .col-xl-7 {
+  .col-xl-7, .pro-intro dd {
     width: 58.33333%;
     float: left;
     margin-bottom: 15px;
@@ -694,7 +694,7 @@ address {
     padding-right: 7.5px;
   }
 
-  .col-xl-10 {
+  .col-xl-10, .pro-detail .sell-info dd {
     width: 83.33333%;
     float: left;
     margin-bottom: 15px;
@@ -1485,13 +1485,23 @@ address {
   height: 60px;
   z-index: 2;
 }
+#header .wrap, #header #banner h2.title, #banner #header h2.title, #header #banner p, #banner #header p {
+  position: relative;
+}
 #header .logo {
   height: 100%;
   width: 238px;
-  z-index: 50;
   font-size: 1em;
-  float: left;
+  position: absolute;
+  left: 0;
+  top: 0;
   padding: 10px 0;
+  z-index: 50;
+}
+@media all and (max-width: 767px) {
+  #header .logo {
+    left: 10px;
+  }
 }
 #header .logo a {
   display: block;
@@ -1635,7 +1645,7 @@ address {
   }
 }
 #footer .logo {
-  width: 265px;
+  width: 268px;
   height: 65px;
   background: url(../images/logo2.gif) no-repeat left center;
   background-size: auto 100%;
@@ -2034,10 +2044,15 @@ h5.title {
   margin: 0 10px;
 }
 .info li span, .pro-detail .sell-info dd ul li span, .contact-info dd ul li span {
-  display: inline-block;
+  display: block;
   min-height: 25px;
+  text-indent: 0;
   background: url(../images/iconApp.gif) no-repeat;
-  padding-left: 120px;
+  margin-top: 5px;
+  padding-left: 30px;
+}
+.info li span:nth-of-type(1), .pro-detail .sell-info dd ul li span:nth-of-type(1), .contact-info dd ul li span:nth-of-type(1) {
+  margin-top: -20px;
 }
 .info li span.wechat, .pro-detail .sell-info dd ul li span.wechat, .contact-info dd ul li span.wechat {
   background-position: 0 -54px;
@@ -2220,6 +2235,11 @@ ol.pic {
   top: 37px;
   right: 5px;
 }
+@media all and (min-width: 1440px) {
+  .pro-intro dt .detail {
+    right: 30px;
+  }
+}
 @media all and (min-width: 992px) and (max-width: 1039px) {
   .pro-intro dt .detail {
     right: 0;
@@ -2254,7 +2274,7 @@ ol.pic {
 }
 @media all and (max-width: 767px) {
   .pro-intro dt .point {
-    width: 25 0px;
+    width: 250px;
   }
 }
 @media all and (max-width: 543px) {
@@ -2426,8 +2446,8 @@ ol.certification li img {
   padding-left: 5.5em;
 }
 .contact-info dd ul li {
-  padding-left: 0;
-  text-indent: 0;
+  padding-left: 7em;
+  text-indent: -7em;
 }
 .contact-info dd ul li em {
   display: inline-block;
@@ -2435,6 +2455,13 @@ ol.certification li img {
   text-align: right;
 }
 .contact-info dd ul li span {
-  margin-right: 10px;
-  padding-left: 30px;
+  display: inline-block;
+  margin: 0 10px 5px 0;
+}
+@media all and (max-width: 543px) {
+  .contact-info dd ul li span {
+    display: block;
+    background: none;
+    padding: 0;
+  }
 }
