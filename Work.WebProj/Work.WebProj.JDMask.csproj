@@ -493,6 +493,9 @@
     <Content Include="Content\backstage_sass\sass\_scripts.scss" />
     <Content Include="Content\backstage_sass\sass\_variables.scss" />
     <Content Include="Content\sass\component\_editor.scss" />
+    <Content Include="Content\fonts\fontAwesome\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontAwesome\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontAwesome\FontAwesome.otf" />
     <None Include="gulpfile.js" />
     <Content Include="Content\images\noIE\bg.gif" />
     <Content Include="Content\images\noIE\brow.gif" />
