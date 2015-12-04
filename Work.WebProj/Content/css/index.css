@@ -675,6 +675,7 @@ address {
     right: 15px;
     top: 50%;
     transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
   }
 }
 
@@ -852,6 +853,7 @@ address {
     left: 50%;
     margin-top: 0;
     transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
   }
 }
 
