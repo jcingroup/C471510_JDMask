@@ -512,7 +512,7 @@
     <Content Include="Content\js\bxslider\jquery.bxslider.min.css" />
     <Content Include="Content\js\bxslider\jquery.bxslider.min.js" />
     <Content Include="Content\js\swiper\swiper.min.js" />
-    <Content Include="index.html" />
+    <None Include="index.html" />
     <Content Include="ckeditor\adapters\jquery.js" />
     <Content Include="ckeditor\build-config.js" />
     <Content Include="ckeditor\ckeditor.js" />
@@ -871,7 +871,7 @@
     <Content Include="Views\Shared\DisplayTemplates\MetaRobotsHelperModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\CanonicalHelperModel.cshtml" />
     <Content Include="Scripts\src\jsx-inc\c-ImgFileSort.jsx" />
-    <Content Include="package.json" />
+    <None Include="package.json" />
     <Content Include="Views\Shared\DisplayTemplates\TabletMenuHelperModel.cshtml" />
     <None Include="MvcSiteMapSchema.xsd">
       <SubType>Designer</SubType>
@@ -993,7 +993,7 @@
     <Folder Include="_Code\CReport\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <None Include="packages.config" />
     <Content Include="_Code\Ashx\AjaxDownLoadFile.ashx" />
     <Content Include="_Code\Ashx\ValidateCode.ashx" />
     <Content Include="_Code\SysDoc\資料庫使用說明.docx" />
