@@ -1600,6 +1600,7 @@ address {
     right: 15px;
     top: 50%;
     transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
   }
 }
 
@@ -1777,6 +1778,7 @@ address {
     left: 50%;
     margin-top: 0;
     transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
   }
 }
 
@@ -2141,6 +2143,7 @@ ol.pic {
   left: 50%;
   top: 30%;
   transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
   z-index: 90;
   transition: top 0.5s, opacity 0.3s;
 }
