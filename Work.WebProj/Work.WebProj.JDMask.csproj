@@ -253,6 +253,7 @@
     <Content Include="Content\backstage_css\backstage_page.css" />
     <Content Include="Content\backstage_css\bootstrap-datetimepicker-build.css" />
     <Content Include="Content\backstage_css\toastr.css" />
+    <Content Include="Content\backstage_css\tutorial.css" />
     <Content Include="Content\backstage_sass\css\ie9-page-blessed1.css" />
     <Content Include="Content\backstage_sass\css\ie9-page.css" />
     <Content Include="Content\backstage_sass\css\mobile.css" />
@@ -939,6 +940,7 @@
     <Content Include="_Code\Maindoor\body\images\login_out.gif" />
     <Content Include="_Code\Maindoor\body\images\topBg.gif" />
     <Content Include="_Code\SysDoc\Doc.xml" />
+    <Content Include="_Code\SysDoc\NewsData.html" />
     <Content Include="_Code\SysUpFiles\CKfinderUpload\memo.txt" />
     <Content Include="_Code\SysUpFiles\memo.txt" />
     <Content Include="Views\Shared\DisplayTemplates\SiteMapPathHelperModel.cshtml" />

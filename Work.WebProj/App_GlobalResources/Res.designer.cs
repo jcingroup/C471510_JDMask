@@ -295,7 +295,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   查詢類似 J+D 醫學美容級專業面膜:潔芙丹妮生物科技有限公司 的當地語系化字串。
+        ///   查詢類似 J+D 醫學美容級專業面膜:潔芙丹妮生物科技有限公司 |  J+D 医学美容级专业面膜:洁芙丹妮生物科技有限公司 的當地語系化字串。
         /// </summary>
         internal static string Company_Name {
             get {

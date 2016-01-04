@@ -353,7 +353,7 @@
                                         checked={fieldData.stereotype === 3}
                                         onChange={this.changeStereoType.bind(this, 3) }
                                         />
-                                    <span>版型 1 </span>
+                                    <span>版型 3 </span>
                                     <img src="../../_Code/Images/editor_layout3.gif" />
                                     </label>
                                 </div>
