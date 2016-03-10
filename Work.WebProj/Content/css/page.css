@@ -2048,10 +2048,10 @@ h5.title {
 .info li span, .pro-detail .sell-info dd ul li span, .contact-info dd ul li span {
   display: block;
   min-height: 25px;
-  text-indent: 0;
+  text-indent: -4em;
   background: url(../images/iconApp.gif) no-repeat;
   margin-top: 5px;
-  padding-left: 30px;
+  padding-left: 6em;
 }
 .info li span:nth-of-type(1), .pro-detail .sell-info dd ul li span:nth-of-type(1), .contact-info dd ul li span:nth-of-type(1) {
   margin-top: -20px;
