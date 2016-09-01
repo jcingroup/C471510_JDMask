@@ -31,7 +31,7 @@ namespace DotWeb.AppStart
         }
         protected void Application_BeginRequest(Object sender, EventArgs e)
         {
-            if (false) //如不需語系設定流程 設為false
+            if (true) //如不需語系設定流程 設為false
             {
                 #region language follow
                 HttpCookie WebLang = Request.Cookies[VarCookie + ".Lang"];
